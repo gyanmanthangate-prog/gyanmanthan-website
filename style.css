@@ -874,7 +874,7 @@ footer{
 }
 
 /* Responsive */
-@media(max-width:900px){
+@media(max-width:600px){
     .comparison-grid{
         grid-template-columns:1fr;
     }

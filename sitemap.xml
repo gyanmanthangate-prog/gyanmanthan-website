@@ -1,16 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://www.gyanmanthanclasses.com/</loc>
-    <priority>1.0</priority>
-  </url>
+ <url>
+  <loc>https://www.gyanmanthanclasses.com/</loc>
+  <lastmod>2026-03-17</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1.0</priority>
+</url>
 
   <url>
 <loc>https://www.gyanmanthanclasses.com/gate-articles.html</loc>
 <lastmod>2026-03-11</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.gyanmanthanclasses.com/content/gate-strategy-prep.html</loc>
+  <lastmod>2026-03-15</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.gyanmanthanclasses.com/content/gate-mistakes.html</loc>
+  <lastmod>2026-03-15</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.gyanmanthanclasses.com/content/gate-benefits.html</loc>
+  <lastmod>2026-03-15</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.gyanmanthanclasses.com/content/gate-ece-preparation-summary.html</loc>
+  <lastmod>2026-03-15</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.gyanmanthanclasses.com/content/what-is-gate.html</loc>
+  <lastmod>2026-03-15</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.gyanmanthanclasses.com/content/whygate.html</loc>
+  <lastmod>2026-03-15</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.gyanmanthanclasses.com/content/gate-elegibility-creteria.html</loc>
+  <lastmod>2026-03-15</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.gyanmanthanclasses.com/content/gate-exam-pattern.html</loc>
+  <lastmod>2026-03-15</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.gyanmanthanclasses.com/content/gate-syllabus.html</loc>
+  <lastmod>2026-03-15</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.gyanmanthanclasses.com/content/gate-books.html</loc>
+  <lastmod>2026-03-15</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.gyanmanthanclasses.com/signals/intro-signals.html</loc>
+  <lastmod>2026-03-17</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.gyanmanthanclasses.com/signals/classification-of-signals.html</loc>
+  <lastmod>2026-03-17</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
 </url>
 
 </urlset>

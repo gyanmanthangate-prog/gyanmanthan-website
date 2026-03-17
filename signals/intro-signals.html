@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Introduction to Signals (1D, 2D, 3D) | GATE ECE Notes</title>
+<meta name="description" content="Introduction to Signals for GATE ECE: Learn 1D, 2D, 3D signals with examples like ECG, audio, images and video. Simple and clear explanation.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="GyanManthan Classes">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.gyanmanthanclasses.com/signals/intro-signals.html">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta property="og:title" content="Introduction to Signals (1D, 2D, 3D) | GATE ECE">
+<meta property="og:description" content="Learn signals with real examples: ECG, audio, images and video. Best beginner guide for GATE ECE.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.gyanmanthanclasses.com/signals/intro-signals.html">
+<meta property="og:image" content="https://www.gyanmanthanclasses.com/images/sinewave-preview.jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/blog.css">
+<link rel="stylesheet" href="../assets/signals.css">
+<link rel="stylesheet" href="/assets/katex/katex.min.css">
+<script defer src="/assets/katex/katex.min.js"></script>
+<script defer src="/assets/katex/auto-render.min.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Introduction to Signals (1D, 2D, 3D)",
+  "description": "Learn Introduction to Signals for GATE ECE with 1D, 2D, 3D examples like ECG, audio, images and video.",
+  "author": {
+    "@type": "Organization",
+    "name": "GyanManthan Classes"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GyanManthan Classes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.gyanmanthanclasses.com/images/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.gyanmanthanclasses.com/signals/intro-signals.html"
+  },
+  "image": "https://www.gyanmanthanclasses.com/images/preview.png",
+  "datePublished": "2026-03-15",
+  "dateModified": "2026-03-15"
+}
+</script>
+</head>
+<body>
+  
+<!-- Header -->
+<div id="header"></div>
+
+<!-- Main Blog Area -->
+<div class="blog-container">
+
+  <!-- Hamburger for mobile -->
+  <div class="hamburger" id="hamburger">☰</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar-component"></div>
+
+  <!-- Right Content -->
+  <div class="blog-right reveal" id="rightContent">
+    <!-- Introduction to Signals Section -->
+<section class="generic-content-section">
+
+  <h1><h1>Introduction to Signals (1D, 2D and 3D Signals Explained)</h1></h1>
+  <p>Signals are information carriers that transmit data in communication, electronics, and control systems. They vary over time or space and have properties like amplitude, frequency, and phase.</p>
+
+  <!-- 1D Signal -->
+  <div class="media-block">
+    <div class="media-text">
+      <h2>1D Signals</h2>
+      <p>A 1D signal varies along a single variable (usually time).</p>
+      <ul>
+        <li>ECG waveform: y = f(t), t = time, y = heart voltage</li>
+        <li>Audio from microphone: y = f(t), time-varying sound</li>
+      </ul>
+    </div>
+    <div class="media-content">
+      <img src="/images/1d-signals.png" alt="1D Signal Example ECG waveform time vs amplitude" height="30px"; width="auto">
+    </div>
+  </div>
+
+  <!-- 2D Signal -->
+  <div class="media-block">
+    <div class="media-text">
+      <h2>2D Signals</h2>
+      <p>A 2D signal varies along two variables (space + space/time).</p>
+      <ul>
+        <li>Grayscale image: y = f(x, k)</li>
+        <li>Temperature map on a plate: y = f(x, k)</li>
+        <li>Example - $
+\text{rect}(x, y) =
+\begin{cases}
+1, & \text{for } x < \frac{1}{2} \text{ and } y < \frac{1}{2} \\
+0, & \text{otherwise}
+\end{cases}
+$</li>
+      </ul>
+    </div>
+    <div class="media-content">
+      <img src="/images/2d-rect-function-plot.png" alt="22D plot of rect(x, y) function showing values 1 for 0 ≤ x, y &lt; 0.5 and 0 otherwise">
+    </div>
+  </div>
+
+  <!-- 3D Signal -->
+   <div class="media-block">
+    <div class="media-text">
+     <h2>3D Signals</h2>
+      <p>A 3D signal varies along three variables (2 space + time or 3D space).</p>
+      <ul>
+        <li>Color video: y = f(x, y, t)</li>
+        <li>3D medical scan: y = f(x, y, z)</li>
+        <li>Example: $
+\text{rect}(x, y, z) =
+\begin{cases} 
+1, & \text{if } 0 \le x < \frac{1}{2},\ 0 \le y < \frac{1}{2},\ 0 \le z < \frac{1}{2} \\[2mm]
+0, & \text{otherwise}
+\end{cases}
+$</li>
+      </ul>
+    </div>
+    <div class="media-content">
+      <img src="/images/3d-rectangular-cube-plot.png" alt="3D rectangular cube representing rect(x, y, z) function for 0 &le; x, y, z &lt; 0.5">
+    </div>
+  </div>
+
+  <!-- <div class="media-block">
+    <div class="media-text">
+     
+    </div>
+    <div class="media-content">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Why Signals are Important -->
+  <div class="media-block">
+    <div class="media-text">
+      <h2>Why Signals are Important?</h2>
+      <ul>
+        <li>Communication: Mobile, TV, Internet rely on signals</li>
+        <li>Control & Measurement: Sensors in drones/robots use signals</li>
+        <li>Medical: ECG, EEG for monitoring health</li>
+        <li>Entertainment: Music, video, movies are signals</li>
+        <li>Nature: Voice, birdsong, ocean waves—all signals</li>
+      </ul>
+
+      <table>
+        <tr>
+          <th>Application</th>
+          <th>Signal Type</th>
+          <th>Example</th>
+        </tr>
+        <tr>
+          <td>Medical</td>
+          <td>1D</td>
+          <td>ECG</td>
+        </tr>
+        <tr>
+          <td>Image</td>
+          <td>2D</td>
+          <td>Grayscale photo</td>
+        </tr>
+        <tr>
+          <td>Video</td>
+          <td>3D</td>
+          <td>Color video clip</td>
+        </tr>
+      </table>
+    </div>
+    <!-- <div class="media-content">
+      <img src="images/signals_nature.png" alt="Signals in Nature">
+    </div> -->
+  </div>
+
+  <!-- Social Share -->
+  <div class="social-share">
+  <span>Share this page:</span>
+
+  <div class="social-share-items">
+    <a href="#" data-share="whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="#" data-share="facebook" target="_blank" rel="noopener">Facebook</a>
+    <a href="#" data-share="twitter" target="_blank" rel="noopener">Twitter</a>
+    <a href="#" data-share="linkedin" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</div>
+
+  <!-- Comment Section -->
+  <section class="comment-section">
+    <h2>Discussion / Comments</h2>
+    <div id="login-buttons">
+      <button id="google-login">Login with Google</button>
+    </div>
+    <div id="comment-form" style="display:none;">
+      <textarea id="comment-input" placeholder="Write your comment..."></textarea>
+      <button id="post-comment">Post Comment</button>
+    </div>
+    <div id="comments-list"></div>
+    <button id="logout-btn">Logout</button>
+  </section>
+
+</section>
+<br />
+<p>
+  <a href="/signals/classification-of-signals.html" title="GATE ECE Preparation Conclusion">Next: Classification of Signals for GATE ECE (Types of Signals Explained)</a>
+</p>
+  </div><!-- </div> blog-right ends-->
+
+</div> <!-- blog-container -->
+
+<!-- Footer -->
+<div id="footer"></div>
+
+<!-- Script -->
+ <script src="../assets/signals.js" type="module"></script>
+<script src="/script.js" defer></script>
+ <script src="/blog.js"></script>
+ <script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement !== "undefined") {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}
+      ]
+    });
+  }
+});
+</script>
+</body>
+</html>
+
+
+
