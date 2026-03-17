@@ -1,0 +1,5 @@
+# Python scripts ignore
+*.py
+
+# Optional: pycache ignore
+__pycache__/

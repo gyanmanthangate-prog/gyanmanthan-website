@@ -22,7 +22,8 @@
 <meta property="og:image" content="https://www.gyanmanthanclasses.com/images/preview.jpg">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/blog.css">
 
   <style>
 
@@ -30,7 +31,6 @@ body {
   margin: 0;
   padding: 0;
   /* font-family: Arial, sans-serif; */
-  background: #0f172a;
   color: white;
 }
 
@@ -97,9 +97,18 @@ text-align: center;
   <!-- Header include -->
   <div id="header"></div>
 
-  <!-- Main Content -->
-  
- <div class="coming-container">
+<!-- Main Blog Area -->
+<div class="blog-container">
+
+  <!-- Hamburger for mobile -->
+  <div class="hamburger" id="hamburger">☰</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar-component"></div>
+
+  <!-- Right Content -->
+   <div class="blog-right reveal" id="rightContent">
+     <div class="coming-container">
     <div class="coming-title">Blogs Coming Soon 🚀</div>
     <div class="coming-sub">
       High-quality GATE ECE articles are on the way. Stay tuned!
@@ -107,10 +116,22 @@ text-align: center;
     <div class="loader"></div>
   </div>
 
+</div>
+</div>
+
+
+
+
+
+  <!-- Main Content -->
+  
+
+
 
   <!-- Footer include -->
   <div id="footer"></div>
 
-   <script src="script.js" defer></script> <!-- existing JS -->
+    <script src="/blog.js"></script>
+<script src="/script.js" defer></script> <!-- existing JS -->
 </body>
 </html>

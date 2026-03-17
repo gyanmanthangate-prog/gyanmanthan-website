@@ -2,7 +2,7 @@
 
 // Header
 
-fetch('./header.html')
+fetch('/header.html')
   .then(res => res.text())
   .then(data => {
 
@@ -59,7 +59,7 @@ fetch('./header.html')
 
 });
 //footer
-fetch('footer.html')
+fetch('/footer.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('footer').innerHTML = data;
@@ -100,7 +100,7 @@ window.onload = function() {
 }
 
   // WhatsApp
-fetch('./whatsapp.html')
+fetch('/whatsapp.html')
   .then(res => res.text())
   .then(data => {
     const div = document.createElement('div');
@@ -116,7 +116,7 @@ fetch('./whatsapp.html')
   });
 
 // Back To Top
-fetch('./backtotop.html')
+fetch('/backtotop.html')
   .then(res => res.text())
   .then(data => {
     const div = document.createElement('div');
