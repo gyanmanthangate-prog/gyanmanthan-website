@@ -3,3 +3,9 @@
 
 # Optional: pycache ignore
 __pycache__/
+
+#template file ignore
+template.html
+
+#test template
+templatetest.js

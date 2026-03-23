@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GATE Practice Test | GyanManthan Classes</title>
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.gyanmanthanclasses.com/test-file/signal-test-1.html">
+<meta property="og:image" content="https://www.gyanmanthanclasses.com/images/exam.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:title" content="Free GATE Practice Test | GyanManthan Classes">
+<meta property="og:description" content="Attempt this free GATE ECE practice test with timer, solutions & real exam experience.">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/blog.css">
+<link rel="stylesheet" href="test.css">
+<link rel="stylesheet" href="/assets/katex/katex.min.css">
+<script defer src="/assets/katex/katex.min.js"></script>
+<script defer src="/assets/katex/auto-render.min.js"></script>
+</head>
+<body>
+<!-- Header -->
+<div id="header"></div>
+<div id="timer">
+  <div>⏳ 00:00</div>
+</div>
+
+<!-- Main Blog Area -->
+<!-- EXAM SECTION START -->
+
+<div class="main-content">
+<div id="instructionsBox" style="padding-top:140px !important; max-width:800px;margin:40px auto;background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+
+  <h2 style="text-align:center;">📘 Test Instructions</h2>
+
+  <ul style="line-height:1.6;">
+  <li>Total Questions: <b>10</b></li>
+  <li>Total Marks: <b>10</b></li>
+  <li>Each Question carries <b>1 mark</b></li>
+  <li>Negative Marking: <b>-0.33</b> for each wrong answer</li>
+  <li>All questions are <b>objective (MCQ)</b></li>
+  <li>No marks will be deducted for unattempted questions</li>
+  <li>Total Time: <b>7.5 minutes</b></li>
+  <li>Click <b>Start Test</b> to begin</li>
+</ul>
+
+  <div style="text-align:center;margin-top:20px;">
+    <button onclick="startTest()" style="background:#28a745;padding:10px 20px;font-size:16px;">
+      ▶ Start Test
+    </button>
+  </div>
+
+</div>
+<button onclick="window.location.href='/gate-articles.html'">
+  📘 Go to Articles
+</button>
+
+  <!-- EXAM SECTION -->
+  <div id="examApp" style="display: none;">
+
+    <div style="display:flex;gap:10px;padding:10px; align-items: flex-start;">
+
+      <!-- PALETTE -->
+      <div id="palette" style="width:120px;"></div>
+
+      <!-- QUESTION AREA -->
+      <div style="flex:1;">
+
+        <div id="questionBox"></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<!-- EXAM SECTION END -->
+
+
+  
+
+<!-- Footer -->
+<div id="footer"></div>
+
+<!-- Script -->
+<script src="/script.js" defer></script>
+ <script src="/blog.js"></script>
+ <script src="test.js"></script>
+ <script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement !== "undefined") {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}
+      ]
+    });
+  }
+});
+</script>
+</body>
+</html>
+
+
+
