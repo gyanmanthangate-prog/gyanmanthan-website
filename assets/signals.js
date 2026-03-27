@@ -105,3 +105,57 @@ setTimeout(() => {
         if(type === "linkedin") link.href = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}`;
     });
 });
+
+// Zoom effect on images
+document.querySelectorAll(".zoomable").forEach(img => {
+  img.addEventListener("click", () => {
+    const overlay = document.createElement("div");
+    overlay.classList.add("zoom-overlay");
+
+    const zoomedImg = document.createElement("img");
+    zoomedImg.src = img.src;
+
+    overlay.appendChild(zoomedImg);
+    document.body.appendChild(overlay);
+
+    // trigger animation
+    setTimeout(() => overlay.classList.add("show"), 10);
+
+    overlay.addEventListener("click", () => {
+      overlay.classList.remove("show");
+      setTimeout(() => overlay.remove(), 300);
+    });
+  });
+});
+
+// Alert countdown
+const CONFIG = {
+  SHOW_ALERT: false,
+  SHOW_COUNTDOWN: false,
+  DEADLINE: "2026-04-10T23:59:59"
+};
+const deadline = new Date("2026-04-10T23:59:59").getTime();
+
+const countdownEl = document.getElementById("countdown");
+
+if(countdownEl){
+  setInterval(() => {
+
+    const now = new Date().getTime();
+    const gap = deadline - now;
+
+    if(gap <= 0){
+ document.getElementById("topAlert").style.display = "none";
+
+  document.querySelector("header").style.top = "0px";
+  return;
+    }
+
+    const days = Math.floor(gap / (1000*60*60*24));
+    const hours = Math.floor((gap / (1000*60*60)) % 24);
+    const minutes = Math.floor((gap / (1000*60)) % 60);
+
+    countdownEl.innerHTML = `⏳ ${days}d ${hours}h ${minutes}m`;
+
+  }, 1000);
+}

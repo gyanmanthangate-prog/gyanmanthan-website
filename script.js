@@ -56,8 +56,37 @@ fetch('/header.html')
       });
 
     }
+    initCountdown();
 
 });
+function initCountdown() {
+
+  const countdownEl = document.getElementById("countdown");
+  const alertBar = document.getElementById("topAlert");
+
+  if (!countdownEl) return;
+
+  const deadline = new Date("2026-04-10T23:59:59").getTime();
+
+  setInterval(() => {
+
+    const now = new Date().getTime();
+    const gap = deadline - now;
+
+    if (gap <= 0) {
+      if (alertBar) alertBar.style.display = "none";
+      countdownEl.innerHTML = "";
+      return;
+    }
+
+    const days = Math.floor(gap / (1000*60*60*24));
+    const hours = Math.floor((gap / (1000*60*60)) % 24);
+    const minutes = Math.floor((gap / (1000*60)) % 60);
+
+    countdownEl.innerHTML = `⏳ ${days}d ${hours}h ${minutes}m`;
+
+  }, 1000);
+}
 //footer
 fetch('/footer.html')
   .then(response => response.text())
@@ -262,6 +291,50 @@ if (brochureBtn && brochureModal && closeBrochure && brochureForm) {
     })
     .catch(() => alert("Form submission failed. Try again."));
   });
+
+}
+
+// Alert countdown
+// Alert countdown
+const CONFIG = {
+  SHOW_ALERT: true,
+  SHOW_COUNTDOWN: true,
+  DEADLINE: "2026-04-10T23:59:59"
+};
+
+const countdownEl = document.getElementById("countdown");
+const alertBar = document.getElementById("topAlert");
+const header = document.querySelector("header");
+
+if (!CONFIG.SHOW_ALERT) {
+  if (alertBar) alertBar.style.display = "none";
+  if (header) header.style.top = "0px";
+}
+
+if (!CONFIG.SHOW_COUNTDOWN) {
+  if (countdownEl) countdownEl.innerHTML = "";
+} else if (countdownEl) {
+
+  const deadline = new Date(CONFIG.DEADLINE).getTime();
+
+  setInterval(() => {
+
+    const now = new Date().getTime();
+    const gap = deadline - now;
+
+    if (gap <= 0) {
+      if (alertBar) alertBar.style.display = "none";
+      if (header) header.style.top = "0px";
+      return;
+    }
+
+    const days = Math.floor(gap / (1000*60*60*24));
+    const hours = Math.floor((gap / (1000*60*60)) % 24);
+    const minutes = Math.floor((gap / (1000*60)) % 60);
+
+    countdownEl.innerHTML = `⏳ ${days}d ${hours}h ${minutes}m`;
+
+  }, 1000);
 
 }
 

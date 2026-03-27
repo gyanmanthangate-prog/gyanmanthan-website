@@ -3,3 +3,15 @@
 
 # Optional: pycache ignore
 __pycache__/
+
+#template file ignore
+template.html
+
+#test template
+templatetest.js
+
+#question template
+question.json
+
+#check-test-sigal.js code
+backup-check-test-signal.js

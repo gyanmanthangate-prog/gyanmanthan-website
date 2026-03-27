@@ -1,0 +1,48 @@
+{
+  "time": 1800,
+  "instructions": [
+    "Attempt all questions",
+    "Negative marking applicable",
+    "No calculator allowed"
+  ],
+  "questions": [
+    {
+      "q": { "type": "text", "value": "What is the derivative of the unit step function u(t)?" },
+      "type": "mcq",
+      "options": ["Ramp", "Impulse", "Constant", "Zero"],
+      "answer": { "type": "text", "value": "Impulse" },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": "The derivative of unit step is the Dirac delta (impulse)."
+    },
+
+    {
+      "q": { "type": "image", "value": "images/q1.png" },
+      "type": "mcq",
+      "options": [
+        { "type": "image", "value": "images/opt1.png" },
+        { "type": "image", "value": "images/opt2.png" },
+        { "type": "image", "value": "images/opt3.png" },
+        { "type": "image", "value": "images/opt4.png" }
+      ],
+      "answer": 1,
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "image",
+        "value": "images/opt4.png"
+      }
+    },
+    {
+      "q": { "type": "image", "value": "images/q2.png" },
+      "type": "nat",
+      "answer": 5,
+      "marks": 1,
+      "negative": 0,
+      "explanation": {
+        "type": "text",
+        "value": "After solving, answer = 5"
+      }
+    }
+  ]
+}

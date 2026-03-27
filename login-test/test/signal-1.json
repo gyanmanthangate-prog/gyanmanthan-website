@@ -1,0 +1,115 @@
+{
+  "time": 600,
+  "instructions": [
+  "<b>Attempt all questions</b>",
+  "There are <b>6 questions</b> in total, each worth <b>1 mark</b>.",
+  "A wrong answer will incur a penalty of <b>0.33 marks</b>.",
+  "You may use a scientific calculator if needed.",
+  "Time allotted: <b>10 minutes</b>.",
+  "Once you finish, make sure to submit your test."
+],
+  "questions": [
+    {
+      "q": { "type": "text", "value": "What is the derivative of the unit step function u(t)?" },
+      "type": "mcq",
+      "options": ["Ramp", "Impulse", "Constant", "Zero"],
+      "answer": { "type": "text", "value": "Impulse" },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": "(B) The derivative of unit step is the Dirac delta (impulse)."
+    },
+{
+  "q": { 
+    "type": "text", 
+    "value": "The function f(t) has the Fourier Trasnsform f(w). <br /> The Fourier transfoem of $$\\int_{-\\infty}^{\\infty} g(t)e^{-j\\omega t}dt$$ is:" 
+  },
+  "type": "mcq",
+  "options": [" $\\displaystyle\\frac{1}{2\\pi} f(\\omega)$ <br><br>",
+    " $\\displaystyle\\frac{1}{2\\pi} f(-\\omega)$ <br><br>",
+    " $\\displaystyle2\\pi f(-\\omega)$ <br><br>",
+    " $\\displaystyle 2\\pi f(\\omega)$ <br>"],
+  "answer": { "type": "text", "value": "$$\\frac{1}{2\\pi} f(-\\omega)$$" },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "(C) Using the duality property of the Fourier Transform: if $$f(t) \\xleftrightarrow{\\mathcal{F}} g(\\omega)$$, then $$g(t) \\xleftrightarrow{\\mathcal{F}} 2\\pi f(-\\omega)$$. Hence, the Fourier transform of $$\\int_{-\\infty}^{\\infty} g(t)e^{-j\\omega t}dt$$ is $$2\\pi f(-\\omega)$$."
+  }
+},
+{
+  "q": { 
+    "type": "html", 
+    "value": "Match the following signal types:<br><br><table border='1' cellpadding='8' cellspacing='0'><tr><th>List-I (Signal)</th><th>List-II (Property)</th></tr><tr><td>Continuous-time periodic signal</td><td>(P) Periodic</td></tr><tr><td>Continuous-time non-periodic signal</td><td>(Q) Non-periodic</td></tr><tr><td>Discrete-time periodic signal</td><td>(P) Periodic</td></tr><tr><td>Discrete-time non-periodic signal</td><td>(Q) Non-periodic</td></tr></table><br>Choose the correct option:"},
+  "type": "mcq",
+  "options": [
+    "All correctly matched",
+    "Only continuous-time signals are correct",
+    "Only discrete-time signals are correct",
+    "All incorrect"
+  ],
+  "answer": { "type": "text", "value": "All correctly matched" },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "(A)The classification of signals into periodic and non-periodic is independent of whether the signal is continuous-time or discrete-time. Both continuous-time and discrete-time signals can be periodic as well as non-periodic. Hence, all given matches are correct."
+  }
+},
+  {
+  "q": { 
+    "type": "html", 
+    "value": "Match the following transforms:<br><br><table border='1' cellpadding='8' cellspacing='0'><tr><th>List-I (Transform)</th><th>List-II (Signal Type)</th></tr><tr><td>DTFS</td><td>(P) Discrete-time periodic</td></tr><tr><td>DTFT</td><td>(Q) Discrete-time non-periodic</td></tr><tr><td>CTFS</td><td>(R) Continuous-time periodic</td></tr><tr><td>CTFT</td><td>(S) Continuous-time non-periodic</td></tr></table><br>Choose the correct option:"
+  },
+  "type": "mcq",
+  "options": [
+    "All correctly matched",
+    "Only DTFS and CTFS are correct",
+    "Only DTFT and CTFT are correct",
+    "All incorrect"
+  ],
+  "answer": { "type": "text", "value": "All correctly matched" },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "(A) Fourier Series (DTFS, CTFS) is used for periodic signals, while Fourier Transform (DTFT, CTFT) is used for non-periodic signals. DT indicates discrete-time signals and CT indicates continuous-time signals. Hence, all given matches are correct."
+  }
+},
+
+    {
+      "q": { "type": "text", "value": "The signals $f_1(t)$ and $f_2(t)$ are shown below. The convolution of $f_1(t)$ and $f_2(t)$, i.e <br /> y(t) = $f_1(t)$ * $f_2(t)$$ will be represanted by which of the following option given below:<br /> <img src='/images/signal-ques-1.png'>"},
+      "type": "mcq",
+      "options": [
+    { "type": "text", "value": ""},
+    { "type": "text", "value": "" },
+    { "type": "text", "value": "" },
+    { "type": "text", "value": "" }
+      ],
+      "answer": 2,
+      "marks": 1,
+      "negative": 0.33,
+  "explanation": {
+  "type": "html",
+  "value": "<br /><br /><u>Convolution of two signals:</u><br><ol><li><b>Limits of convolved signal:</b><br>&nbsp;&nbsp;- Upper limit = sum of upper limits of individual signals.<br>&nbsp;&nbsp;- Lower limit = sum of lower limits of individual signals.</li><li><b>Duration:</b><br>&nbsp;&nbsp;- Duration of convolved signal = duration of signal 1 + duration of signal 2.</li><li><b>Shape:</b><br>&nbsp;&nbsp;- Convolution slides one signal over another, multiplying and summing overlaps.</li><li><b>Linearity & Commutativity:</b><br>&nbsp;&nbsp; x(t) * h(t) = h(t) * x(t).</li><li><b>Energy spread:</b><br>&nbsp;&nbsp;- Energy spreads over combined interval of two signals.</li><li><b>Impulse property:</b><br>&nbsp;&nbsp;- Convolution with delta function reproduces the other signal.</li></ol>"
+}
+    },
+    
+    {
+    "q": { "type": "text", "value": "The function x(t) is is shown in the figure. <br /> <img src='/images/signal-quest-2.png'> <br /> Even and Odd part of a unit step function, u(t) are respectively <br /> <br />" },
+      "type": "mcq",
+      "options": [
+    { "type": "text", "value": " $\\displaystyle \\frac{1}{2}, \\frac{1}{2} x(t)$ <br /><br />"},
+    { "type": "text", "value": " $\\displaystyle +\\frac{1}{2}, \\frac{1}{2} x(t)$ <br /><br />" },
+    { "type": "text", "value": " $\\displaystyle \\frac{1}{2}, -\\frac{1}{2} x(t)$ <br /><br />" },
+    { "type": "text", "value": " $\\displaystyle -\\frac{1}{2}, \\frac{1}{2} x(t)$ <br /><br />" }
+      ],
+      "answer": 2,
+      "marks": 1,
+      "negative": 0.33,
+     "explanation": {
+  "type": "text",
+  "value": "Answer is (C) $$u(t) = x_e(t) + x_o(t), \\quad x_e(t) = \\frac{u(t)+u(-t)}{2}, \\; x_o(t) = \\frac{u(t)-u(-t)}{2}, \\; x_e(-t)=x_e(t), \\; x_o(-t)=-x_o(t)$$"
+}
+    }
+  ]
+}
