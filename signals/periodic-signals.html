@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Periodic Signals (Continuous & Discrete) | GATE ECE Notes & Examples</title>
+<meta name="description" content="Learn Periodic Signals for GATE ECE: Understand continuous and discrete-time signals with examples, fundamental period, common mistakes, and exam tips. Clear, simple explanation.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="GyanManthan Classes">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.gyanmanthanclasses.com/signals/periodic-signals.html">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta property="og:title" content="Periodic Signals (Continuous & Discrete) | GATE ECE Notes & Examples">
+<meta property="og:description" content="Learn Periodic Signals for GATE ECE: Understand continuous & discrete-time signals with examples, fundamental period, common mistakes, and exam tips. Clear and simple guide.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.gyanmanthanclasses.com/signals/periodic-signals.html">
+<meta property="og:image" content="https://www.gyanmanthanclasses.com/images/sinewave-preview.jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/blog.css">
+<link rel="stylesheet" href="/assets/topic.css">
+<link rel="stylesheet" href="../assets/signals.css">
+<link rel="stylesheet" href="/assets/katex/katex.min.css">
+<script defer src="/assets/katex/katex.min.js"></script>
+<script defer src="/assets/katex/auto-render.min.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Periodic Signals (Continuous & Discrete) | GATE ECE Notes & Examples",
+  "description": "Learn Periodic Signals for GATE ECE: Understand continuous and discrete-time signals with examples, fundamental period, common mistakes, and exam tips. Clear and simple guide.",
+  "author": {
+    "@type": "Organization",
+    "name": "GyanManthan Classes"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GyanManthan Classes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.gyanmanthanclasses.com/images/gmc-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.gyanmanthanclasses.com/signals/periodic-signals.html"
+  },
+  "image": "https://www.gyanmanthanclasses.com/images/sinewave-preview.jpeg",
+  "datePublished": "2026-03-26",
+  "dateModified": "2026-03-26"
+}
+</script>
+</head>
+<body>
+  
+<!-- Header -->
+<div id="header"></div>
+
+<!-- Main Blog Area -->
+<div class="blog-container">
+
+  <!-- Hamburger for mobile -->
+  <div class="hamburger" id="hamburger">☰</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar-component"></div>
+
+  <!-- Right Content -->
+  <div class="blog-right reveal" id="rightContent">
+    <!-- body Content -->
+<section class="generic-content-section">
+
+  <h1>Periodic Signals (Continuous & Discrete) – Concepts, Conditions & GATE Tricks</h1>
+
+<p>
+Periodic signals form the backbone of signal processing, communication, and electronics. Any signal that repeats itself after a fixed interval is called periodic. 
+From AC waveforms to digital sequences, periodicity helps us simplify analysis using powerful tools like Fourier Series.
+If you truly understand this topic, many GATE questions become direct scoring.
+</p>
+<p class="keywords">
+  <strong>Keywords:</strong> periodic signals, continuous-time periodic signals, discrete-time periodic signals, fundamental period of a signal, periodic vs aperiodic signals, sum of periodic signals, GATE ECE signals and systems, signal periodicity examples, LCM condition discrete signals
+</p>
+
+<!-- block -->
+<div class="media-block">
+  <div class="media-text">
+    <h2>Continuous vs Discrete Periodic Signals (Core Differences)</h2>
+    <ul>
+      <li>Continuous-time signals repeat after time T</li>
+      <li>Discrete-time signals repeat after N samples</li>
+      <li>CT signals are always periodic for sinusoidal inputs</li>
+      <li>DT signals are periodic only if frequency is rational</li>
+      <li>Fundamental period must be smallest possible value</li>
+    </ul>
+
+    <table>
+      <tr>
+        <th>Feature</th>
+        <th>Continuous-Time</th>
+        <th>Discrete-Time</th>
+      </tr>
+      <tr>
+        <td>Definition</td>
+        <td>x(t) = x(t + T)</td>
+        <td>x[n] = x[n + N]</td>
+      </tr>
+      <tr>
+        <td>Period</td>
+        <td>Any real value (T)</td>
+        <td>Integer only (N)</td>
+      </tr>
+      <tr>
+        <td>Example</td>
+        <td>sin(2πt)</td>
+        <td>cos(πn/2)</td>
+      </tr>
+      <tr>
+        <td>Important Condition</td>
+        <td>Always periodic (for sinusoids)</td>
+        <td>ω / 2π must be rational</td>
+      </tr>
+    </table>
+  </div>
+  <div class="media-content">
+    <img src="/images/ct_vs_dt_periodic.png" alt="continuous vs discrete periodic signals comparison waveform" class="zoomable"  loading="lazy">
+  </div>
+</div>
+
+<!-- block -->
+<div class="media-block">
+  <div class="media-text">
+    <h2>GATE-Level Insights & Common Mistakes</h2>
+    <ul>
+      <li>DT signal like cos(n) is NOT periodic ❌</li>
+      <li>Check ω / 2π carefully before assuming periodicity</li>
+      <li>Fundamental period is always the smallest valid value</li>
+      <li>Combination of periodic signals may NOT be periodic</li>
+      <li>LCM concept is used when multiple periods exist</li>
+    </ul>
+
+    <table>
+      <tr>
+        <th>Signal</th>
+        <th>Periodic?</th>
+        <th>Reason</th>
+      </tr>
+      <tr>
+        <td>cos(πn/2)</td>
+        <td>Yes</td>
+        <td>ω/2π = 1/4 (rational)</td>
+      </tr>
+      <tr>
+        <td>cos(n)</td>
+        <td>No</td>
+        <td>ω/2π is irrational</td>
+      </tr>
+      <tr>
+        <td>sin(2πt)</td>
+        <td>Yes</td>
+        <td>Always periodic in CT</td>
+      </tr>
+      <tr>
+        <td>sin(t) + cos(√2 t)</td>
+        <td>No</td>
+        <td>No common period</td>
+      </tr>
+    </table>
+  </div>
+<div class="media-content">
+  <figure>
+    <img src="/images/gate_periodic_tricks_annotated.png" 
+         alt="GATE exam periodic signal tricks and mistakes" 
+         class="zoomable"  
+         loading="lazy">
+    <figcaption>("n" is in radian)</figcaption>
+  </figure>
+</div>
+</div>
+
+<div class="media-block">
+  <div class="media-text">
+    <h2>Period of Sum of Two Signals (Continuous vs Discrete)</h2>
+
+    <p>
+      When two periodic signals are added, the result is <strong>not always periodic</strong>. 
+      The key idea is whether both signals repeat together after some common interval.
+    </p>
+
+    <p><strong>For Continuous-Time Signals:</strong></p>
+
+    <p>
+      If two signals have fundamental periods $T_1$ and $T_2$, then:
+    </p>
+
+    <p>
+      Resultant signal is periodic only if 
+      $$\frac{T_1}{T_2} \text{ is rational}$$
+    </p>
+
+    <p>
+      In that case, overall period:
+      $$T = \mathrm{LCM}(T_1, T_2)$$
+    </p>
+
+    <p>
+      Example:
+      $$\sin(2\pi t) + \cos(4\pi t)$$
+    </p>
+
+    <p>
+      Here,
+      $$T_1 = 1, \quad T_2 = \frac{1}{2}$$
+    </p>
+
+    <p>
+      Since $\frac{T_1}{T_2} = 2$ (rational), signal is periodic.
+      <br>
+      <u>Overall period:</u>
+      $$T = \mathrm{LCM}(1, \tfrac{1}{2}) = 1$$
+    </p>
+
+    <p><strong>For Discrete-Time Signals:</strong></p>
+
+    <p>
+      If signals have periods $N_1$ and $N_2$, then:
+    </p>
+
+    <p>
+      Both signals must be individually periodic.
+    </p>
+
+    <p>
+      <u>Overall period:</u>
+      $$N = \mathrm{LCM}(N_1, N_2)$$
+    </p>
+
+    <p>
+      Example:
+      $$\cos\left(\frac{\pi n}{2}\right) + \cos\left(\frac{\pi n}{3}\right)$$
+    </p>
+
+    <p>
+      Here,
+      $$N_1 = 4, \quad N_2 = 6$$
+    </p>
+
+    <p>
+      Overall period:
+      $$N = \mathrm{LCM}(4, 6) = 12$$
+    </p>
+
+    <p style="color: red;">
+      ⚠️ Important: If even one signal is non-periodic, the sum is always non-periodic.
+    </p>
+
+  </div>
+  <!-- <div class="media-content">
+    <img src="images/sum_of_signals_periodicity.png" alt="period of sum of continuous and discrete signals illustration">
+  </div> -->
+</div> <br />
+
+  <!-- Social Share -->
+<div class="social-share">
+  <span>Share this page:</span>
+
+  <div class="social-share-items">
+    <a href="#" data-share="whatsapp" target="_blank" rel="noopener" title="Share on WhatsApp">
+      <img src="/images/whatsapp-color-svgrepo-com.svg" alt="WhatsApp" />
+    </a>
+
+    <a href="#" data-share="facebook" target="_blank" rel="noopener" title="Share on Fb">
+      <img src="/images/facebook-svgrepo-com.svg" alt="Facebook" />
+    </a>
+
+    <a href="#" data-share="twitter" target="_blank" rel="noopener" title="Share on X">
+      <img src="/images/Twitter-X-Streamline-Bootstrap.svg" alt="Twitter" />
+    </a>
+
+    <a href="#" data-share="linkedin" target="_blank" rel="noopener" title="Share on X">
+      <img src="/images/linkedin-svgrepo-com.svg" alt="LinkedIn" />
+    </a>
+  </div>
+</div><!-- template copy till here-->
+
+  <!-- Comment Section -->
+  <section class="comment-section">
+    <h2>Discussion / Comments</h2>
+    <div id="login-buttons">
+      <button id="google-login">Login with Google</button>
+    </div>
+    <div id="comment-form" style="display:none;">
+      <textarea id="comment-input" placeholder="Write your comment..."></textarea>
+      <button id="post-comment">Post Comment</button>
+    </div>
+    <div id="comments-list"></div>
+    <button id="logout-btn">Logout</button>
+  </section>
+
+</section>
+<br />
+<p>
+  <a href="/signals/coming-soon.html" 
+   title="Energy and Power Signals for GATE ECE: Concepts, Examples & Formulas">
+   Next: Energy & Power Signals – Concepts & Examples
+</a>
+</p>
+  </div><!-- </div> blog-right ends-->
+
+</div> <!-- blog-container -->
+
+<!-- Footer -->
+<div id="footer"></div>
+
+<!-- Script -->
+ <script src="../assets/signals.js" type="module"></script> 
+<script src="/script.js" defer></script>
+ <script src="/blog.js"></script>
+ <script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement !== "undefined") {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}
+      ]
+    });
+  }
+});
+</script>
+</body>
+</html>
+
+
+

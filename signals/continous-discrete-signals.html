@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Continuous & Discrete-Time Signals | GATE ECE Notes & Examples</title>
+<meta name="description" content="Learn Continuous and Discrete-Time Signals for GATE ECE: Understand fundamental concepts, examples like unit step, impulse, sinusoidal signals, and exam tips. Clear and simple explanation.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="GyanManthan Classes">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.gyanmanthanclasses.com/signals/continous-discrete-signals.html">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta property="og:title" content="Continuous & Discrete-Time Signals | GATE ECE Notes & Examples">
+<meta property="og:description" content="Learn Continuous & Discrete-Time Signals for GATE ECE: Understand fundamental concepts, examples like unit step, impulse, sinusoidal signals, and exam tips. Clear and simple guide.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.gyanmanthanclasses.com/signals/continous-discrete-signals.html">
+<meta property="og:image" content="https://www.gyanmanthanclasses.com/images/sinewave-preview.jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/blog.css">
+<link rel="stylesheet" href="/assets/topic.css">
+<link rel="stylesheet" href="../assets/signals.css">
+<link rel="stylesheet" href="/assets/katex/katex.min.css">
+<script defer src="/assets/katex/katex.min.js"></script>
+<script defer src="/assets/katex/auto-render.min.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Continuous & Discrete-Time Signals | GATE ECE Notes & Examples",
+  "description": "Learn Continuous and Discrete-Time Signals for GATE ECE: Understand fundamental concepts, examples like unit step, impulse, sinusoidal signals, and exam tips. Clear and simple guide.",
+  "author": {
+    "@type": "Organization",
+    "name": "GyanManthan Classes"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GyanManthan Classes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.gyanmanthanclasses.com/images/gmc-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.gyanmanthanclasses.com/signals/continuous-discrete-signals.html"
+  },
+  "image": "https://www.gyanmanthanclasses.com/images/sinewave-preview.png",
+  "datePublished": "2026-03-26",
+  "dateModified": "2026-03-26"
+}
+</script>
+</head>
+<body>
+  
+<!-- Header -->
+<div id="header"></div>
+
+<!-- Main Blog Area -->
+<div class="blog-container">
+
+  <!-- Hamburger for mobile -->
+  <div class="hamburger" id="hamburger">☰</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar-component"></div>
+
+  <!-- Right Content -->
+  <div class="blog-right reveal" id="rightContent">
+    <!-- body Content -->
+<section class="generic-content-section">
+<h1>Continuous & Discrete-Time Signals – Concepts, Examples & GATE Tricks</h1>
+
+<p>
+Continuous and discrete-time signals form the backbone of signal processing in GATE ECE. Understanding their differences, fundamental periods, and key examples like unit step, impulse, and sinusoidal signals is crucial for scoring in the exam.
+</p>
+
+<!-- Block 1: Continuous-Time Signals -->
+<div class="media-block">
+  <div class="media-text">
+    <h2>Continuous-Time Signals (CT Signals)</h2>
+    <p>
+      A continuous-time signal is defined for <strong>all values of time t</strong>. Common examples include analog signals like ECG, audio, and temperature variations.
+    </p>
+    <ul>
+      <li>Unit step signal: $u(t)$</li>
+      <li>Unit impulse (Dirac) signal: $\delta(t)$</li>
+      <li>Ramp signal: $r(t)$</li>
+      <li>Sinusoidal signal: $x(t) = A \cos(\omega t + \phi)$</li>
+      <li>Exponential signal: $x(t) = A e^{st}$</li>
+    </ul>
+    <p>
+      <strong>Fundamental period:</strong> For a sinusoidal CT signal $x(t) = A \cos(\omega t + \phi)$, period $T$ is
+      $$T = \frac{2\pi}{\omega}$$
+    </p>
+    <p style="color: red;">
+      ⚠️ GATE Tip: Only signals where $\frac{\omega_1}{\omega_2}$ is rational are periodic when summed.
+    </p>
+  </div>
+  <div class="media-content">
+    <img src="/images/continous-time-signals.png" alt="Continuous-Time Signals Examples">
+  </div>
+</div>
+
+<!-- Block 2: Discrete-Time Signals -->
+<div class="media-block">
+  <div class="media-text">
+    <h2>Discrete-Time Signals (DT Signals)</h2>
+    <p>
+      A discrete-time signal is defined only at <strong>integer values of n</strong>. These signals are obtained by sampling continuous-time signals or exist naturally in digital systems.
+    </p>
+    <ul>
+      <li>Unit step: $u[n]$</li>
+      <li>Unit impulse: $\delta[n]$</li>
+      <li>Sinusoidal: $x[n] = A \cos(\omega_0 n + \phi)$</li>
+      <li>Exponential: $x[n] = A \alpha^n$</li>
+    </ul>
+    <p>
+      <strong>Fundamental period:</strong> For a DT sinusoid $x[n] = A \cos(\omega_0 n + \phi)$, it is periodic if
+      $$\omega_0 / (2\pi) = \text{rational} \Rightarrow x[n+N] = x[n]$$
+      and the period $N$ is the smallest integer satisfying this.
+    </p>
+    <p style="color: red;">
+      ⚠️ GATE Tip: Discrete-time sinusoids may appear non-periodic for some $\omega_0$ even if it looks sinusoidal. Check rational condition carefully.
+    </p>
+    <table>
+      <tr>
+        <th>Signal</th>
+        <th>Expression</th>
+        <th>Fundamental Period</th>
+      </tr>
+      <tr>
+        <td>CT Sinusoid</td>
+        <td>$x(t) = \cos(2\pi t)$</td>
+        <td>$T = 1$</td>
+      </tr>
+      <tr>
+        <td>CT Sinusoid</td>
+        <td>$x(t) = \cos(4\pi t)$</td>
+        <td>$T = 0.5$</td>
+      </tr>
+      <tr>
+        <td>DT Sinusoid</td>
+        <td>$x[n] = \cos(\pi n / 2)$</td>
+        <td>$N = 4$</td>
+      </tr>
+      <tr>
+        <td>DT Sinusoid</td>
+        <td>$x[n] = \cos(\pi n / 3)$</td>
+        <td>$N = 6$</td>
+      </tr>
+    </table>
+  </div>
+  <div class="media-content">
+    <img src="/images/discrete_signals.png" alt="Discrete-Time Signals Examples">
+  </div>
+</div>
+
+<!-- Block 3: Continuous vs Discrete Summary -->
+<div class="media-block">
+  <div class="media-text">
+    <h2>Continuous vs Discrete Signals – Quick Comparison</h2>
+    <ul>
+      <li>CT signals: defined for all real t; DT signals: defined for integer n</li>
+      <li>CT sinusoid always periodic; DT sinusoid periodic only if $\omega_0/2\pi$ is rational</li>
+      <li>CT sum of sinusoids: periodic if ratio of frequencies rational; DT sum: period = LCM(N1,N2)</li>
+      <li>GATE Tip: Carefully check DT signal periods, many students make mistakes assuming all DT sinusoids are periodic</li>
+    </ul>
+    <p>
+      <strong>Example – Period of Sum (DT):</strong> 
+      $$x[n] = \cos(\pi n/2) + \cos(\pi n/3) \Rightarrow N = LCM(4,6) = 12$$
+    </p>
+  </div>
+  <div class="media-content">
+    <img src="/images/continuous_discrete_comparison.png" alt="Continuous vs Discrete-Time Signals Comparison">
+  </div>
+</div>
+
+    <br />
+
+  <!-- Social Share -->
+<div class="social-share">
+  <span>Share this page:</span>
+
+  <div class="social-share-items">
+    <a href="#" data-share="whatsapp" target="_blank" rel="noopener" title="Share on WhatsApp">
+      <img src="/images/whatsapp-color-svgrepo-com.svg" alt="WhatsApp" />
+    </a>
+
+    <a href="#" data-share="facebook" target="_blank" rel="noopener" title="Share on Fb">
+      <img src="/images/facebook-svgrepo-com.svg" alt="Facebook" />
+    </a>
+
+    <a href="#" data-share="twitter" target="_blank" rel="noopener" title="Share on X">
+      <img src="/images/Twitter-X-Streamline-Bootstrap.svg" alt="Twitter" />
+    </a>
+
+    <a href="#" data-share="linkedin" target="_blank" rel="noopener" title="Share on X">
+      <img src="/images/linkedin-svgrepo-com.svg" alt="LinkedIn" />
+    </a>
+  </div>
+</div><!-- template copy till here-->
+
+  <!-- Comment Section -->
+  <section class="comment-section">
+    <h2>Discussion / Comments</h2>
+    <div id="login-buttons">
+      <button id="google-login">Login with Google</button>
+    </div>
+    <div id="comment-form" style="display:none;">
+      <textarea id="comment-input" placeholder="Write your comment..."></textarea>
+      <button id="post-comment">Post Comment</button>
+    </div>
+    <div id="comments-list"></div>
+    <button id="logout-btn">Logout</button>
+  </section>
+
+</section>
+<br />
+<p>
+  <a href="/signals/periodic-signals.html" 
+     title="Periodic Signals for GATE ECE: Continuous & Discrete, Examples & Formulas">
+     Next: Periodic Signals Explained (With Examples & Formulas)
+  </a>
+</p>
+  </div><!-- </div> blog-right ends-->
+
+</div> <!-- blog-container -->
+
+<!-- Footer -->
+<div id="footer"></div>
+
+<!-- Script -->
+ <script src="../assets/signals.js" type="module"></script> 
+<script src="/script.js" defer></script>
+ <script src="/blog.js"></script>
+ <script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement !== "undefined") {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}
+      ]
+    });
+  }
+});
+</script>
+</body>
+</html>
+
+
+

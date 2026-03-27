@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.gyanmanthanclasses.com/test-file/signal-test-1.html">
+<meta property="og:url" content="https://www.gyanmanthanclasses.com/login-test/test-generic.html">
 <meta property="og:image" content="https://www.gyanmanthanclasses.com/images/exam.svg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -15,14 +15,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/blog.css">
-<link rel="stylesheet" href="test.css">
+<link rel="stylesheet" href="/test-file/test.css">
 <link rel="stylesheet" href="/assets/katex/katex.min.css">
 <script defer src="/assets/katex/katex.min.js"></script>
 <script defer src="/assets/katex/auto-render.min.js"></script>
 </head>
+<script>
+  if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+  }
+</script>
 <body>
 <!-- Header -->
-<!-- <div id="header"></div> -->
 <div id="timer">
   <div>⏳ 00:00</div>
 </div>
@@ -34,28 +38,9 @@
 <div id="instructionsBox" style="padding-top:140px !important; max-width:800px;margin:40px auto;background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);">
 
   <h2 style="text-align:center;">📘 Test Instructions</h2>
-
-  <ul style="line-height:1.6;">
-  <li>Total Questions: <b>10</b></li>
-  <li>Total Marks: <b>10</b></li>
-  <li>Each Question carries <b>1 mark</b></li>
-  <li>Negative Marking: <b>-0.33</b> for each wrong answer</li>
-  <li>All questions are <b>objective (MCQ)</b></li>
-  <li>No marks will be deducted for unattempted questions</li>
-  <li>Total Time: <b>7.5 minutes</b></li>
-  <li>Click <b>Start Test</b> to begin</li>
-</ul>
-
-  <div style="text-align:center;margin-top:20px;">
-    <button onclick="startTest()" style="background:#28a745;padding:10px 20px;font-size:16px;">
-      ▶ Start Test
-    </button>
-  </div>
+<div id="instructionsContent"></div>
 
 </div>
-<!-- <button onclick="window.location.href='/gate-articles.html'">
-  📘 Go to Articles
-</button> -->
 
   <!-- EXAM SECTION -->
   <div id="examApp" style="display: none;">
@@ -79,16 +64,9 @@
 </div>
 <!-- EXAM SECTION END -->
 
-
-  
-
-<!-- Footer -->
-<!-- <div id="footer"></div> -->
-
 <!-- Script -->
-<!-- <script src="/script.js" defer></script> -->
  <script src="/blog.js"></script>
- <script src="test.js"></script>
+ <script src="check-test-signal.js"></script>
  <script>
 document.addEventListener("DOMContentLoaded", function() {
   if (typeof renderMathInElement !== "undefined") {
