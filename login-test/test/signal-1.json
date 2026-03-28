@@ -21,14 +21,14 @@
 {
   "q": { 
     "type": "text", 
-    "value": "The function f(t) has the Fourier Trasnsform f(w). <br /> The Fourier transfoem of $$\\int_{-\\infty}^{\\infty} g(t)e^{-j\\omega t}dt$$ is:" 
+    "value": "The function f(t) has the Fourier Trasnsform G(w). <br /> The Fourier transform of G(t) i.e.  G(t) = $\\int_{-\\infty}^{\\infty} G(t)e^{-j\\omega t}dt$ is:" 
   },
   "type": "mcq",
   "options": [" $\\displaystyle\\frac{1}{2\\pi} f(\\omega)$ <br><br>",
     " $\\displaystyle\\frac{1}{2\\pi} f(-\\omega)$ <br><br>",
     " $\\displaystyle2\\pi f(-\\omega)$ <br><br>",
     " $\\displaystyle 2\\pi f(\\omega)$ <br>"],
-  "answer": { "type": "text", "value": "$$\\frac{1}{2\\pi} f(-\\omega)$$" },
+  "answer": { "type": "text", "value": " $\\displaystyle2\\pi f(-\\omega)$ <br><br>" },
   "marks": 1,
   "negative": 0.33,
   "explanation": {
@@ -108,7 +108,7 @@
       "negative": 0.33,
      "explanation": {
   "type": "text",
-  "value": "Answer is (C) $$u(t) = x_e(t) + x_o(t), \\quad x_e(t) = \\frac{u(t)+u(-t)}{2}, \\; x_o(t) = \\frac{u(t)-u(-t)}{2}, \\; x_e(-t)=x_e(t), \\; x_o(-t)=-x_o(t)$$"
+  "value": "Answer is (C) $$u(t) = x_e(t) + x_o(t)$$, $$x_e(t) = \\frac{u(t)+u(-t)}{2} = \\frac{1}{2}$$, $$x_o(t) = \\frac{u(t)-u(-t)}{2}$$ $$= -\\frac{1}{2}sign(t)$$ = $$-\\frac{1}{2}x(t)$$, $$x_e(-t) =x _e(t) \\; x_o(-t) = -x_o(t)$$"
 }
     }
   ]

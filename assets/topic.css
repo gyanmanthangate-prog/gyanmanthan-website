@@ -48,7 +48,7 @@ h1, h2, h3 {
 table { width: 100%; border-collapse: collapse; margin-top: 10px; background-color: #fff; }
 th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
 tr:nth-child(even) { background-color: #f9f9f9; }
-@media (max-width: 768px) { .media-text table {  overflow-x: auto; white-space: nowrap; } }
+@media (max-width: 768px) { .media-text table {  overflow-x: auto; white-space: now rap; word-break: break-word; } }
 
 /* Social Share */
 .social-share { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
