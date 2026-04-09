@@ -24,7 +24,7 @@ h1, h2, h3 {
 }
 
 .media-block { display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap; align-items: center;}
-.media-text { flex: 1 1 400px; }
+.media-text { flex: 1 1 400px; min-width: 0;}
 .media-content { flex: 1 1 300px; display: flex; flex-direction: column; gap: 15px; align-items: center;}
  
 .media-content img { 
@@ -48,7 +48,23 @@ h1, h2, h3 {
 table { width: 100%; border-collapse: collapse; margin-top: 10px; background-color: #fff; }
 th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
 tr:nth-child(even) { background-color: #f9f9f9; }
-@media (max-width: 768px) { .media-text table {  overflow-x: auto; white-space: now rap; word-break: break-word; } }
+.table-wrapper {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-wrapper table {
+    display: table;
+    min-w idth: 700px;   /* 🔥 force overflow */
+}
+
+.table-wrapper th,
+.table-wrapper td {
+    white-space: nowrap; /* no wrapping */
+}
+
+
 
 /* Social Share */
 .social-share { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
