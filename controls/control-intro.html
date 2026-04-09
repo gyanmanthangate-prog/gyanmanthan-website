@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Control Systems Introduction | Concepts, Objectives & Real-Life Examples (GATE ECE)</title>
+<meta name="description" content="Learn the fundamentals of Control Systems engineering with clear intuition, real-life examples, and core objectives. Understand how systems achieve desired output despite disturbances — essential for GATE ECE preparation.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="GyanManthan Classes">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.gyanmanthanclasses.com/controls/control-intro.html">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta property="og:title" content="Control Systems Introduction | Concepts, Objectives & Real-Life Examples (GATE ECE)">
+<meta property="og:description" content="Understand Control Systems with clear intuition and real-life examples. Learn how systems achieve desired output despite disturbances — a must-know foundation for GATE ECE.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.gyanmanthanclasses.com/controls/control-intro.html">
+<meta property="og:image" content="https://www.gyanmanthanclasses.com/images/sinewave-preview.jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/blog.css">
+<link rel="stylesheet" href="../assets/topic.css">
+<link rel="stylesheet" href="/assets/katex/katex.min.css">
+<script defer src="/assets/katex/katex.min.js"></script>
+<script defer src="/assets/katex/auto-render.min.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Control Systems Introduction | Concepts, Objectives & Real-Life Examples (GATE ECE)",
+  "description": "Learn the fundamentals of Control Systems engineering with clear intuition and real-life examples. Understand how systems achieve desired output despite disturbances — essential for GATE ECE preparation.",
+  "author": {
+    "@type": "Organization",
+    "name": "GyanManthan Classes"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GyanManthan Classes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.gyanmanthanclasses.com/images/gmc-logo.png"
+    }
+  },
+  "datePublished": "2026-04-09",
+  "dateModified": "2026-04-09",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.gyanmanthanclasses.com/controls/control-intro.html"
+  },
+  "image": "https://www.gyanmanthanclasses.com/images/sinewave-preview.jpeg",
+  "keywords": "Control Systems, Introduction to Control Systems, GATE ECE Control Systems, Feedback Systems, Open Loop and Closed Loop Systems",
+  "articleSection": "Control Systems",
+  "inLanguage": "en"
+}
+</script>
+</head>
+<body>
+  
+<!-- Header -->
+<div id="header"></div>
+
+<!-- Main Blog Area -->
+<div class="blog-container">
+
+  <!-- Hamburger for mobile -->
+  <div class="hamburger" id="hamburger">☰</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar-component"></div>
+
+  <!-- Right Content -->
+  <div class="blog-right reveal" id="rightContent">
+    <!-- body Content -->
+<section class="generic-content-section">
+
+  <h1>Introduction to Control Systems | GATE ECE</h1>
+
+<p>Control Systems engineering deals with designing systems that behave in a desired manner. Whether it is maintaining speed of a motor, stabilizing an aircraft, or controlling temperature — the goal is always the same: <strong>achieve desired output despite disturbances</strong>.</p>
+
+<p>This chapter builds the foundation for entire Control Systems subject and is highly important for GATE as almost every question indirectly depends on these concepts.</p>
+
+<p class="keywords">
+<strong>Keywords:</strong> control system basics, open loop vs closed loop, feedback systems, control systems introduction GATE, block diagram basics, transfer function intro, control engineering fundamentals
+</p>
+
+<div class="media-block">
+  <div class="media-text">
+    <h2>What is a Control System?</h2>
+
+    <p>A control system is a system that manages, commands, directs, or regulates the behavior of other devices or systems to achieve a desired output.</p>
+
+    <p><strong>Input → System → Output (controlled)</strong></p>
+
+    <p>$$ \text{Output} = \text{System}(\text{Input}) $$</p>
+
+    <h3>Examples:</h3>
+    <ul>
+      <li>Fan speed control</li>
+      <li>Temperature control (AC)</li>
+      <li>Automatic voltage regulator</li>
+    </ul>
+  </div>
+
+  <!-- <div class="media-content">
+    <img src="/images/control_system_basic.png" alt="Basic control system block diagram">
+  </div> -->
+</div>
+
+<div class="media-block">
+  <div class="media-text">
+    <h2>Open Loop Control System</h2>
+<p>An open loop control system is one in which the output does not influence the input, meaning <strong>no feedback is used</strong>.</p>
+
+    <h3>Examples:</h3>
+    <ul>
+      <li>Electric heater</li>
+      <li>Washing machine (timer-based)</li>
+    </ul>
+
+    <h3>Key Points:</h3>
+    <ul>
+      <li>Simple and low cost</li>
+      <li>No error correction</li>
+      <li>Less accurate</li>
+    </ul>
+  </div>
+
+  <div class="media-content">
+    <img src="/images/olcs.png" alt="Open loop control system diagram" class="zoomable"  loading="lazy">
+    <figcaption> Open Loop Control System Representation</figcaption>
+  </div>
+</div>
+
+<div class="media-block">
+  <div class="media-text">
+    <h2>Closed Loop Control System (Feedback)</h2>
+
+    <p>A closed loop system uses <strong>feedback</strong> to compare output with desired value.</p>
+
+    <p>$$ e(t) = r(t) - y(t) $$</p>
+
+    <h3>Advantages:</h3>
+    <ul>
+      <li>High accuracy</li>
+      <li>Automatic correction</li>
+      <li>Handles disturbances</li>
+    </ul>
+  </div>
+
+  <div class="media-content">
+    <img src="/images/clcs.png" alt="Closed loop system diagram" class="zoomable"  loading="lazy">
+    <figcaption> Closed Loop Control System Representation</figcaption>
+  </div>
+</div>
+
+<div class="media-block">
+  <div class="media-text">
+    <h2>Open Loop vs Closed Loop</h2>
+<div class="table-wrapper">
+    <table>
+      <tr>
+        <th>Feature</th>
+        <th>Open Loop</th>
+        <th>Closed Loop</th>
+      </tr>
+      <tr>
+        <td>Feedback</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Accuracy</td>
+        <td>Low</td>
+        <td>High</td>
+      </tr>
+      <tr>
+        <td>Complexity</td>
+        <td>Simple</td>
+        <td>Complex</td>
+      </tr>
+    </table>
+  </div>
+  </div>
+  </div>
+
+  <!-- <div class="media-content">
+    <img src="/images/control_compare.png" alt="Comparison diagram">
+  </div> -->
+
+<div class="media-block">
+  <div class="media-text">
+    <h2>Basic Components</h2>
+
+    <ul>
+      <li>Input (Reference) Signal</li>
+      <li>Summer</li>
+      <li>Plant</li>
+      <li>Feedback</li>
+      <li>Take-Off Point</li>
+      <li>Output/Desired Signal</li>
+    </ul>
+
+    <p>$$ T(s) = \frac{G(s)}{1 + G(s)H(s)} $$</p>
+  </div>
+
+  <div class="media-content">
+    <img src="/images/control_components.png" alt="Control system components" class="zoomable"  loading="lazy">>
+  </div>
+</div>
+
+  <!-- Social Share -->
+<div class="social-share">
+  <span>Share this page:</span>
+
+  <div class="social-share-items">
+    <a href="#" data-share="whatsapp" target="_blank" rel="noopener" title="Share on WhatsApp">
+      <img src="/images/whatsapp-color-svgrepo-com.svg" alt="WhatsApp" />
+    </a>
+
+    <a href="#" data-share="facebook" target="_blank" rel="noopener" title="Share on Fb">
+      <img src="/images/facebook-svgrepo-com.svg" alt="Facebook" />
+    </a>
+
+    <a href="#" data-share="twitter" target="_blank" rel="noopener" title="Share on X">
+      <img src="/images/Twitter-X-Streamline-Bootstrap.svg" alt="Twitter" />
+    </a>
+
+    <a href="#" data-share="linkedin" target="_blank" rel="noopener" title="Share on X">
+      <img src="/images/linkedin-svgrepo-com.svg" alt="LinkedIn" />
+    </a>
+  </div>
+</div><!-- template copy till here-->
+
+  <!-- Comment Section -->
+  <section class="comment-section">
+    <h2>Discussion / Comments</h2>
+    <div id="login-buttons">
+      <button id="google-login">Login with Google</button>
+    </div>
+    <div id="comment-form" style="display:none;">
+      <textarea id="comment-input" placeholder="Write your comment..."></textarea>
+      <button id="post-comment">Post Comment</button>
+    </div>
+    <div id="comments-list"></div>
+    <button id="logout-btn">Logout</button>
+  </section>
+
+</section>
+<br />
+<p>
+  <a href="/controls/coming-soon.html" title="SEO based title">Next: Block Diagram Reduction Technique</a>
+</p>
+  </div><!-- </div> blog-right ends-->
+
+</div> <!-- blog-container -->
+
+<!-- Footer -->
+<div id="footer"></div>
+
+<!-- Script -->
+ <script src="../assets/signals.js" type="module"></script>
+<script src="/script.js" defer></script>
+ <script src="/blog.js"></script>
+ <script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement !== "undefined") {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}
+      ]
+    });
+  }
+});
+</script>
+</body>
+</html>
