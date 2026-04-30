@@ -21,38 +21,30 @@ fetch('/header.html')
         e.stopPropagation();
         menuToggle.classList.toggle("active");
 
-        if (window.innerWidth <= 1190) {
-
-          if (nav.style.height && nav.style.height !== "0px") {
-            nav.style.height = "0px";
-            nav.style.opacity = "0";
-          } else {
-            nav.style.height = nav.scrollHeight + "px";
-            nav.style.opacity = "1";
-          }
-
-        }
+        nav.classList.toggle("show");
 
       });
+      nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("show");
+      menuToggle.classList.remove("active");
+    });
+  });
 
       // close menu when clicking outside
-      document.addEventListener("click", (e) => {
-        if (window.innerWidth <= 1190) {
-          if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
-            nav.style.height = "0px";
-            nav.style.opacity = "0";
-            menuToggle.classList.remove("active");
-          }
-        }
-      });
+     document.addEventListener("click", (e) => {
+  if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+    nav.classList.remove("show");
+    menuToggle.classList.remove("active");
+  }
+});
 
       // reset on resize
       window.addEventListener("resize", () => {
         if (window.innerWidth > 1190) {
-          nav.style.height = "";
-          nav.style.opacity = "";
-          menuToggle.classList.remove("active");
-        }
+  nav.classList.remove("show");
+  menuToggle.classList.remove("active");
+}
       });
 
     }
@@ -337,4 +329,5 @@ if (!CONFIG.SHOW_COUNTDOWN) {
   }, 1000);
 
 }
+
 
