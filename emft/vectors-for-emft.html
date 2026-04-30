@@ -86,7 +86,7 @@
 <strong>Keywords:</strong> vectors EMFT, gradient divergence curl, coordinate systems EMFT, vector algebra GATE, del operator, field theory basics
 </p>
 
-<!-- <div class="media-block">
+<div class="media-block">
   <div class="media-text">
     <h2>What is a Vector?</h2>
 
@@ -104,13 +104,13 @@
   </div>
 
   <div class="media-content">
-    Click to zoom-in the images
+    <srong>Click to zoom-in the images</srong>
     <figure>
     <img src="/images/vector_basic.png" alt="Vector representation" class="zoomable" loading="lazy">
     <figcaption>Vector showing magnitude and direction, <br /> Here, x=3 and y=2</figcaption>
     </figure>
   </div>
-</div> -->
+</div>
 
 <div class="media-block">
   <div class="media-text">
@@ -140,34 +140,6 @@
       </tr>
     </table>
     </div>
-
-  </div>
-</div>
-
-<div class="media-block">
-  <div class="media-text">
-    <h2>Coordinate Systems (Very Important)</h2>
-
-    <h3>Cartesian</h3>
-    <p>$$ \vec{A} = A_x \hat{i} + A_y \hat{j} + A_z \hat{k} $$</p>
-
-    <h3>Cylindrical</h3>
-    <p>$$ \vec{A} = A_\rho \hat{\rho} + A_\phi \hat{\phi} + A_z \hat{z} $$</p>
-
-    <h3>Spherical</h3>
-    <p>$$ \vec{A} = A_r \hat{r} + A_\theta \hat{\theta} + A_\phi \hat{\phi} $$</p>
-
-    <ul>
-      <li>Use cylindrical for wires</li>
-      <li>Use spherical for charges</li>
-    </ul>
-  </div>
-
-  <div class="media-content">
-    <figure>
-    <img src="/images/coordinate_systems.png" alt="Coordinate systems" class="zoomable" loading="lazy">
-    <figcaption>Cartesian vs Cylindrical vs Spherical</figcaption>
-    </figure>
   </div>
 </div>
 
@@ -227,6 +199,43 @@
 
 <div class="media-block">
   <div class="media-text">
+    <h2>Vector Projection (Very Important)</h2>
+
+    <p>Vector projection helps us find how much of one vector lies along another vector.</p>
+
+    <h3>Projection of $\vec{A}$ on $\vec{B}$:</h3>
+
+    <div>$$ \text{Projection} = \frac{\vec{A} \cdot \vec{B}}{|\vec{B}|} $$</div>
+
+    <h3>Vector Form:</h3>
+
+    <div>$$ \text{Proj}_{\vec{B}} \vec{A} = \frac{\vec{A} \cdot \vec{B}}{|\vec{B}|^2} \vec{B} $$</div>
+
+    <h3>Key Understanding:</h3>
+    <ul>
+      <li>Gives component of $\vec{A}$ along $\vec{B}$</li>
+      <li>Always along direction of $\vec{B}$</li>
+      <li>Uses dot product (cosine relation)</li>
+    </ul>
+
+    <h3>Physical Meaning:</h3>
+    <ul>
+      <li>Work done = projection of force along displacement</li>
+      <li>Only parallel component contributes</li>
+    </ul>
+
+  </div>
+
+  <div class="media-content">
+    <figure>
+      <img src="/images/vector_projection.png" alt="Vector projection diagram showing A projected onto B" class="zoomable" loading="lazy">
+      <figcaption>Projection of vector A onto vector B <br /> Click to zoom-in</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div class="media-block">
+  <div class="media-text">
     <h2>Physical Meaning (Where Students Struggle)</h2>
 
     <div class="table-wrapper">
@@ -263,26 +272,23 @@
 
     <ul>
       <li>Divergence ≠ 0 → Charge present</li>
+          <p>
+If $\nabla \cdot \vec{D} > 0$ → positive charge (source)  
+<br>
+If $\nabla \cdot \vec{D} < 0$ → negative charge (sink)
+</p>
       <li>Curl ≠ 0 → Rotational field</li>
       <li>Curl = 0 → Conservative field</li>
     </ul>
-
-    <p>$$ \nabla \cdot \vec{D} = \rho $$</p>
-
   </div>
-</div>
-
-<div class="media-block">
-  <div class="media-text">
+    <div class="media-text">
     <h2>Common Mistakes</h2>
-
     <ul>
       <li>Mixing coordinate systems</li>
       <li>Wrong unit vectors</li>
       <li>Confusing divergence and curl</li>
       <li>Forgetting determinant in cross product</li>
     </ul>
-
   </div>
 </div>
 
@@ -299,19 +305,15 @@
     </ul>
 
   </div>
-</div>
-
-<div class="media-block">
-  <div class="media-text">
+    <div class="media-text">
     <h2>Mini Practice (GATE Level)</h2>
 
     <p><strong>Q:</strong> If $\vec{A} = x\hat{i} + y\hat{j} + z\hat{k}$, find divergence.</p>
 
     <p><strong>Solution:</strong></p>
     <p>$$ \nabla \cdot \vec{A} = \frac{\partial x}{\partial x} + \frac{\partial y}{\partial y} + \frac{\partial z}{\partial z} = 3 $$</p>
-
   </div>
-</div> 
+</div>
 
   <!-- Social Share -->
 <div class="social-share">
@@ -353,7 +355,9 @@
 </section>
 <br />
 <p>
-  <a href="/controls/coming-soon.html" title="SEO based title">Next: Coordinate Systems</a>
+  <a href="/emft/coordinate-systems.html" title="Coordinate Systems in EMFT (Cartesian, Cylindrical & Spherical) | GATE ECE Guide">
+  Next: Coordinate Systems (Cartesian, Cylindrical & Spherical)
+</a>
 </p>
   </div><!-- </div> blog-right ends-->
 
