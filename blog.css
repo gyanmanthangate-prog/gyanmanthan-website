@@ -148,20 +148,36 @@
 
   /* Hamburger */
   .hamburger {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    padding: 10px 15px;
-    /* background: #111; */
-    /* color: #fff; */
-    color: #ff6600;
-    font-weight: bolder;
-    border-radius: 8px;
-    position: fixed;
-    top: 100px;
-    right: 20px;
-    z-index: 999;
-  }
+  display: none;
+  flex-direction: column;   /* ADD */
+  gap: 5px;                 /* ADD */
+  cursor: pointer;
+  padding: 10px 15px;
+  position: fixed;
+  /* top: 100px; */
+  right: 20px;
+  z-index: 999;
+}
+
+/* lines */
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #ff6600;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* animation */
+.hamburger.active span:nth-child(1){
+  transform: rotate(45deg) translate(5px,5px);
+}
+.hamburger.active span:nth-child(2){
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3){
+  transform: rotate(-45deg) translate(6px,-6px);
+}
 
   /* ================ right content CSS ====== */
   .blog-right h4 {
@@ -239,7 +255,7 @@
     }
 
     .hamburger {
-      display: block;
+      display: flex;
     }
 
     .sidebar {
