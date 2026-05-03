@@ -1,3 +1,17 @@
+ function initNestedAccordions(scope = document){
+  const nestedAccordions =
+    scope.querySelectorAll('.nested-accordion');
+  nestedAccordions.forEach(acc => {
+    acc.addEventListener('click', () => {
+      nestedAccordions.forEach(a => {
+        if(a !== acc){
+          a.classList.remove('active');
+        }
+      });
+      acc.classList.toggle('active');
+    });
+  });
+}
  // Accordion
 const accordions = document.querySelectorAll('.sidebar .accordion');
 accordions.forEach(acc => {
@@ -8,7 +22,7 @@ accordions.forEach(acc => {
     acc.classList.toggle('active');
   });
 });
-
+initNestedAccordions();
 
 // Subtopic click loader
 const subtopicLinks = document.querySelectorAll('.subtopics a');
@@ -88,7 +102,7 @@ fetch('/sidebar.html')
 
       });
     });
-
+initNestedAccordions(sidebar);
   });
 
   document.addEventListener('click', (e) => {

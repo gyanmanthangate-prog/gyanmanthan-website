@@ -1,0 +1,252 @@
+{
+  "time": 1200,
+  "instructions": [
+    "<b>Attempt all questions</b>",
+    "There are <b>10 questions</b> in total, each worth <b>1 mark</b>.",
+    "A wrong answer will incur a penalty of <b>0.33 marks</b>.",
+    "Scientific calculator is allowed.",
+    "Time allotted: <b>30 minutes</b>.",
+    "Submit the test after completion."
+  ],
+  "questions": [
+    {
+      "q": {
+        "type": "text",
+        "value": "For a unity feedback system with open loop transfer function $G(s)=\\frac{K}{s(s+2)(s+5)}$, the system becomes marginally stable for:"
+      },
+      "type": "mcq",
+      "options": [
+        "$K=70$",
+        "$K=35$",
+        "$K=14$",
+        "$K=21$"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "$K=70$"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Characteristic equation: $s^3+7s^2+10s+K=0$. Using Routh criterion, marginal stability occurs when $70-K=0$. Hence $K=70$."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "The number of branches and nodes respectively in the signal flow graph corresponding to the equation $x_3=a x_1+b x_2$ are:"
+      },
+      "type": "mcq",
+      "options": [
+        "2 branches, 3 nodes",
+        "3 branches, 2 nodes",
+        "2 branches, 2 nodes",
+        "3 branches, 3 nodes"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "2 branches, 3 nodes"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Variables $x_1,x_2,x_3$ represent 3 nodes. Terms $a x_1$ and $b x_2$ create 2 branches directed toward $x_3$."
+      }
+    },
+   {
+      "q": {
+  "type": "text",
+  "value": "For the characteristic equation $s^4+2s^3+3s^2+6s+K=0$, the range of $K$ for stability is:"
+  },
+"type": "mcq",
+"options": [
+  "0 < K < 18",
+  "0 < K < 9",
+  "0 < K < 6",
+  "0 < K < 12"
+],
+      "answer": {
+        "type": "text",
+        "value": "0 < K < 18"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Applying Routh criterion gives positivity conditions. Final condition becomes $18-K>0$. Hence stable for 0 < K < 18."
+      },
+      "youtube": "https://www.youtube.com/watch?v=abcd1234"
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "In Mason’s Gain Formula, if two loops do not touch each other, then:"
+      },
+      "type": "mcq",
+      "options": [
+        "Their gains are added",
+        "Their gains are multiplied",
+        "One gain is ignored",
+        "The determinant becomes zero"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Their gains are multiplied"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "In Mason’s Gain Formula, products of gains of non-touching loops appear in the determinant $\\Delta$."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "A characteristic equation is given as $s^5+2s^4+3s^3+6s^2+5s+10=0$. The number of roots in the right half plane is:"
+      },
+      "type": "mcq",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "2"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Using Routh array, two sign changes occur in the first column. Hence there are 2 roots in the right half plane."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "For a signal flow graph, if only one forward path exists with gain $P$ and no loops are present, then the overall transfer function is:"
+      },
+      "type": "mcq",
+      "options": [
+        "$\\frac{1}{P}$",
+        "$P$",
+        "$0$",
+        "$1+P$"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "$P$"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "By Mason’s Gain Formula, $T=\\frac{P\\Delta_1}{\\Delta}$. Since no loops exist, $\\Delta=1$ and $\\Delta_1=1$. Hence $T=P$."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "For the characteristic equation $s^3+4s^2+5s+K=0$, the system is stable when:"
+      },
+      "type": "mcq",
+      "options": [
+        "$0<K<20$",
+        "$0<K<10$",
+        "$K>20$",
+        "$K<0$"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "$0<K<20$"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Using Routh criterion: $\\frac{20-K}{4}>0$. Hence $K<20$ and also $K>0$ for stability."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "In block diagram reduction, moving a summing point after a block of transfer function $G(s)$ requires:"
+      },
+      "type": "mcq",
+      "options": [
+        "Multiplying the feedback path by $G(s)$",
+        "Dividing the feedback path by $G(s)$",
+        "No change",
+        "Adding another summing point"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Dividing the feedback path by $G(s)$"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "While shifting a summing point after a block, the branch entering the summing point must be divided by the block transfer function to maintain equivalence."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "If all the elements of a row in the Routh array become zero, then:"
+      },
+      "type": "mcq",
+      "options": [
+        "The system is always unstable",
+        "Auxiliary polynomial is formed",
+        "The order of system reduces",
+        "Roots are repeated only at origin"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Auxiliary polynomial is formed"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "A complete row of zeros indicates symmetrical roots. Auxiliary polynomial is formed from the row above and differentiated to continue the Routh array."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "For a signal flow graph, the determinant is given by $\\Delta=1-(L_1+L_2)+(L_1L_2)$. This implies:"
+      },
+      "type": "mcq",
+      "options": [
+        "Loops touch each other",
+        "There are no forward paths",
+        "Two non-touching loops exist",
+        "Only one loop exists"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Two non-touching loops exist"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "In Mason’s formula, positive product terms appear only for non-touching loops. Hence $L_1L_2$ indicates two non-touching loops."
+      }
+    }
+  ]
+}

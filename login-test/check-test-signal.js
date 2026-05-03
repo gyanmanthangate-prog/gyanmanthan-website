@@ -297,6 +297,14 @@ html += `
             ? renderContent(q.explanation)  // image or other object
             : q.explanation)
 }</p>
+${q.youtube ? `
+  <p>
+    <a href="${q.youtube}" target="_blank" rel="noopener noreferrer"
+       style="color:#ff0000;font-weight:600;">
+       ▶ Watch Solution Video
+    </a>
+  </p>
+` : ""}
       </div>
     `;
   });

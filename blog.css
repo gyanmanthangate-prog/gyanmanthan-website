@@ -115,11 +115,48 @@
   .subtopics a:hover {
     color: #ff6b35;
   }
+  /* ===== Nested Accordion ===== */
+
+.nested-accordion{
+  color: #ddd;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 14px;
+  padding: 4px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nested-accordion::after{
+  content: "+";
+  font-size: 14px;
+}
+
+.nested-accordion.active::after{
+  content: "-";
+}
+
+.nested-subtopics{
+  max-height: 0;
+  overflow: hidden;
+  padding-left: 15px;
+  transition: max-height 0.5s ease;
+}
+
+.nested-subtopics a{
+  font-size: 13px;
+  color: #aaa;
+}
 
   /* Active accordion */
   .accordion.active + .subtopics{
     max-height: 500px;
   }
+  .nested-accordion.active + .nested-subtopics{
+  max-height: 300px;
+}
   .subtopics a.active-link {
   color: orange;
   font-weight: 600;
