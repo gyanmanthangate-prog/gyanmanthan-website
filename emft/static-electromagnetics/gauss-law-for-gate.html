@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gauss’s Law in Electrostatics | Electric Flux & Gaussian Surface | GATE ECE EMFT</title>
+<meta name="description" content="Learn Gauss’s Law in EMFT for GATE ECE with electric flux, Gaussian surfaces, symmetry, and electric field calculations for sphere, cylinder, and infinite plane charge distributions explained clearly.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="GyanManthan Classes">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.gyanmanthanclasses.com/emft/static-electromagnetics/gauss-law-for-gate.html">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta property="og:title" content="Gauss’s Law in Electrostatics Explained | Electric Flux & Gaussian Surface (GATE ECE EMFT)">
+<meta property="og:description" content="Understand Gauss’s Law in EMFT for GATE ECE with electric flux, Gaussian surfaces, symmetry, and electric field calculations for sphere, cylinder, and infinite plane charge distributions explained clearly.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.gyanmanthanclasses.com/emft/static-electromagnetics/gauss-law-for-gate.html">
+<meta property="og:image" content="https://www.gyanmanthanclasses.com/images/gauss-law-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/blog.css">
+<link rel="stylesheet" href="/assets/topic.css">
+<link rel="stylesheet" href="/assets/katex/katex.min.css">
+<script defer src="/assets/katex/katex.min.js"></script>
+<script defer src="/assets/katex/auto-render.min.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Gauss’s Law in Electrostatics Explained | Electric Flux & Gaussian Surface (GATE ECE EMFT)",
+  "description": "Learn Gauss’s Law in EMFT for GATE ECE with electric flux, Gaussian surfaces, symmetry, and electric field calculations for sphere, cylinder, and infinite plane charge distributions explained clearly.",
+  "author": {
+    "@type": "Organization",
+    "name": "GyanManthan Classes"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GyanManthan Classes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.gyanmanthanclasses.com/images/gmc-logo.png"
+    }
+  },
+  "datePublished": "2026-05-05",
+  "dateModified": "2026-05-05",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.gyanmanthanclasses.com/emft/static-electromagnetics/gauss-law-for-gate.html"
+  },
+  "url": "https://www.gyanmanthanclasses.com/emft/static-electromagnetics/gauss-law-for-gate.html",
+  "image": "https://www.gyanmanthanclasses.com/images/gauss-law-og.png",
+  "keywords": "Gauss law EMFT, electric flux, Gaussian surface, electrostatics, symmetry in EMFT, electric field using Gauss law, sphere cylinder plane symmetry, GATE ECE EMFT",
+  "articleSection": "Electromagnetic Field Theory",
+  "inLanguage": "en"
+}
+</script>
+</head>
+<body>
+  
+<!-- Header -->
+<div id="header"></div>
+
+<!-- Main Blog Area -->
+<div class="blog-container">
+
+  <!-- Hamburger for mobile -->
+  <div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar-component"></div>
+
+  <!-- Right Content -->
+  <div class="blog-right reveal" id="rightContent">
+    <!-- body Content -->
+<section class="generic-content-section">
+
+<h1>Gauss’s Law in Electrostatics | Electric Flux & Gaussian Surface (GATE ECE EMFT)</h1>
+
+<p><strong>Gauss’s Law</strong> is one of the most important laws in electrostatics that relates electric flux passing through a closed surface to the charge enclosed inside it.</p>
+
+<p>This law simplifies electric field calculations for highly symmetric charge distributions like spheres, cylinders, and infinite planes. It is a very important topic for <strong>GATE ECE EMFT</strong>.</p>
+
+<p class="keywords">
+<strong>Keywords:</strong> Gauss law EMFT, electric flux, Gaussian surface, electrostatics symmetry, electric field using Gauss law, GATE ECE EMFT
+</p>
+
+<div class="media-block">
+  <div class="media-text">
+    <h2>What is Electric Flux?</h2>
+
+    <p>Electric flux represents the number of electric field lines passing through a surface.</p>
+
+    <p>If more field lines pass through the surface, flux is larger.</p>
+
+    <p>$$ \phi = \vec{E} \cdot \vec{A} $$</p>
+
+<h3>For Uniform Electric Field:</h3>
+
+<p>$$ \phi = EA \cos \theta $$</p>
+
+    <h3>Key Points:</h3>
+    <ul>
+      <li>Flux depends on electric field and area.</li>
+      <li>Angle between field and area vector is important.</li>
+      <li>Maximum flux occurs when θ = 0°.</li>
+    </ul>
+
+  </div>
+
+  <div class="media-content">
+    <figure>
+      <img src="/images/electric_flux.png" alt="Electric flux through a surface" class="zoomable">
+      <figcaption>Electric flux through a surface <br /> Click to zoom-in</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div class="media-block">
+  <div class="media-text">
+    <h2>Gauss’s Law Statement</h2>
+
+    <p>The total electric flux through any closed surface is equal to the enclosed charge divided by permittivity of free space.</p>
+
+    <p>$$ \oint \vec{E} \cdot d\vec{A} = \frac{Q_{enc}}{\varepsilon_0} $$</p>
+
+    <h3>Meaning:</h3>
+    <ul>
+      <li>Only enclosed charge contributes to net flux.</li>
+      <li>Charges outside the surface do not affect net flux.</li>
+      <li>The surface must be closed.</li>
+    </ul>
+
+  </div>
+
+  <div class="media-content">
+    <figure>
+      <img src="/images/gauss_law_closed_surface.png" alt="Gaussian surface enclosing charge" class="zoomable">
+      <figcaption>Closed Gaussian surface enclosing charge</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div class="media-block">
+  <div class="media-text">
+    <h2>What is a Gaussian Surface?</h2>
+
+    <p>A Gaussian surface is an imaginary closed surface chosen to simplify electric field calculations.</p>
+
+    <h3>Why Important?</h3>
+    <ul>
+      <li>Helps exploit symmetry.</li>
+      <li>Makes electric field calculation easier.</li>
+      <li>Widely used for sphere, cylinder and plane symmetry.</li>
+    </ul>
+
+    <h3>Common Gaussian Surfaces:</h3>
+    <ul>
+      <li>Spherical surface</li>
+      <li>Cylindrical surface</li>
+      <li>Pillbox surface</li>
+    </ul>
+
+  </div>
+</div>
+
+<div class="media-block">
+  <div class="media-text">
+    <h2>Gauss’s Law for Spherical Symmetry</h2>
+
+    <p>For a point charge or spherical charge distribution, electric field is same everywhere on the Gaussian sphere.</p>
+
+    <p>$$ E(4\pi r^2) = \frac{Q}{\varepsilon_0} $$</p>
+
+    <h3>Final Electric Field:</h3>
+
+    <p>$$ E = \frac{1}{4\pi\varepsilon_0}\frac{Q}{r^2} $$</p>
+
+    <h3>Applications:</h3>
+    <ul>
+      <li>Point charge</li>
+      <li>Charged conducting sphere</li>
+      <li>Spherical shell</li>
+    </ul>
+
+  </div>
+
+  <div class="media-content">
+    <figure>
+      <img src="/images/gauss_sphere.png" alt="Gaussian sphere symmetry" class="zoomable">
+      <figcaption>Gaussian surface for spherical symmetry</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div class="media-block">
+  <div class="media-text">
+    <h2>Gauss’s Law for Cylindrical Symmetry</h2>
+
+    <p>For infinitely long line charges, cylindrical Gaussian surfaces are used.</p>
+
+    <p>$$ E(2\pi rL) = \frac{\lambda L}{\varepsilon_0} $$</p>
+
+    <h3>Final Electric Field:</h3>
+
+    <p>$$ E = \frac{\lambda}{2\pi\varepsilon_0 r} $$</p>
+
+    <h3>Applications:</h3>
+    <ul>
+      <li>Infinite line charge</li>
+      <li>Cables and wires</li>
+      <li>Coaxial structures</li>
+    </ul>
+
+  </div>
+
+  <div class="media-content">
+    <figure>
+      <img src="/images/gauss_cylinder.png" alt="Gaussian cylindrical surface" class="zoomable">
+      <figcaption>Cylindrical Gaussian surface</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div class="media-block">
+  <div class="media-text">
+    <h2>Gauss’s Law for Infinite Plane Sheet</h2>
+
+    <p>For infinite plane charge distributions, a pillbox Gaussian surface is used.</p>
+
+    <p>$$ 2EA = \frac{\sigma A}{\varepsilon_0} $$</p>
+
+    <h3>Final Electric Field:</h3>
+
+    <p>$$ E = \frac{\sigma}{2\varepsilon_0} $$</p>
+
+    <h3>Key Observation:</h3>
+    <ul>
+      <li>Electric field is constant.</li>
+      <li>Field does not depend on distance.</li>
+    </ul>
+
+  </div>
+
+  <div class="media-content">
+    <figure>
+      <img src="/images/gauss_plane_sheet.png" alt="Gaussian pillbox surface" class="zoomable">
+      <figcaption>Pillbox Gaussian surface for infinite plane sheet</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div class="media-block">
+  <div class="media-text">
+    <h2>Importance of Symmetry</h2>
+
+    <div class="table-wrapper">
+    <table>
+      <tr>
+        <th>Charge Distribution</th>
+        <th>Symmetry</th>
+        <th>Gaussian Surface</th>
+      </tr>
+      <tr>
+        <td>Point charge</td>
+        <td>Spherical</td>
+        <td>Sphere</td>
+      </tr>
+      <tr>
+        <td>Infinite line charge</td>
+        <td>Cylindrical</td>
+        <td>Cylinder</td>
+      </tr>
+      <tr>
+        <td>Infinite plane sheet</td>
+        <td>Planar</td>
+        <td>Pillbox</td>
+      </tr>
+    </table>
+    </div>
+
+  </div>
+</div>
+
+<div class="media-block">
+  <div class="media-text">
+    <h2>GATE Level Insights</h2>
+
+    <ul>
+      <li>Choosing correct Gaussian surface is very important.</li>
+      <li>Symmetry-based questions are common.</li>
+      <li>Electric flux concepts are frequently asked.</li>
+      <li>Infinite sheet and line charge derivations are important.</li>
+    </ul>
+
+  </div>
+
+  <div class="media-text">
+    <h2>Common Mistakes</h2>
+
+    <ul>
+      <li>Using Gauss’s Law without symmetry.</li>
+      <li>Confusing open and closed surfaces.</li>
+      <li>Taking outside charges in enclosed charge calculation.</li>
+      <li>Wrong direction of area vector.</li>
+    </ul>
+
+  </div>
+</div>
+
+<div class="media-block">
+  <div class="media-text">
+    <h2>Final Summary</h2>
+
+    <p>Gauss’s Law is one of the most powerful tools in electrostatics because it converts difficult electric field problems into simple symmetry-based calculations.</p>
+
+    <p>$$ \oint \vec{E} \cdot d\vec{A} = \frac{Q_{enc}}{\varepsilon_0} $$</p>
+
+    <ul>
+      <li>Electric flux measures field lines through a surface.</li>
+      <li>Only enclosed charge contributes to net flux.</li>
+      <li>Symmetry is the key to applying Gauss’s Law.</li>
+    </ul>
+
+  </div>
+
+  <div class="media-content">
+    <figure>
+      <img src="/images/gauss_law_summary.png" alt="Overall concept of Gauss law" class="zoomable">
+      <figcaption>Overall concept of Gauss’s Law <br /> Click to zoom-in</figcaption>
+    </figure>
+  </div>
+</div>
+
+<!-- Social Share -->
+<div class="social-share">
+  <span>Share this page:</span>
+
+  <div class="social-share-items">
+    <a href="#" data-share="whatsapp" target="_blank" rel="noopener" title="Share on WhatsApp">
+      <img src="/images/whatsapp-color-svgrepo-com.svg" alt="WhatsApp" />
+    </a>
+
+    <a href="#" data-share="facebook" target="_blank" rel="noopener" title="Share on Fb">
+      <img src="/images/facebook-svgrepo-com.svg" alt="Facebook" />
+    </a>
+
+    <a href="#" data-share="twitter" target="_blank" rel="noopener" title="Share on X">
+      <img src="/images/Twitter-X-Streamline-Bootstrap.svg" alt="Twitter" />
+    </a>
+
+    <a href="#" data-share="linkedin" target="_blank" rel="noopener" title="Share on X">
+      <img src="/images/linkedin-svgrepo-com.svg" alt="LinkedIn" />
+    </a>
+  </div>
+</div>
+
+<!-- template copy till here-->
+
+<section class="comment-section">
+  <h2>Discussion / Comments</h2>
+  <div id="login-buttons">
+    <button id="google-login">Login with Google</button>
+  </div>
+
+  <div id="comment-form" style="display:none;">
+    <textarea id="comment-input" placeholder="Write your comment..."></textarea>
+    <button id="post-comment">Post Comment</button>
+  </div>
+
+  <div id="comments-list"></div>
+  <button id="logout-btn">Logout</button>
+</section>
+
+</section>
+<br />
+<p>
+  <a href="/emft/static-electromagnetics/coming-soon.html" title="Electric Potential and Potential Difference in EMFT (GATE ECE)">
+  Next: Electric Potential & Potential Difference
+</a>
+</p>
+
+</div>
+</div>
+
+<!-- Footer -->
+<div id="footer"></div>
+
+<!-- Script -->
+<script src="/assets/signals.js" type="module"></script>
+<script src="/script.js" defer></script>
+<script src="/blog.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement !== "undefined") {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}
+      ]
+    });
+  }
+});
+</script>
+
+</body>
+</html>

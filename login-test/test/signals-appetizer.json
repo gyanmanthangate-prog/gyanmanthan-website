@@ -1,0 +1,374 @@
+{
+  "time": 1500,
+  "instructions": [
+    "<b>Attempt all questions</b>",
+    "There are <b>15 questions</b> in total, each worth <b>1 mark</b>.",
+    "A wrong answer will incur a penalty of <b>0.33 marks</b>.",
+    "Scientific calculator is allowed.",
+    "Time allotted: <b>25 minutes</b>.",
+    "Submit the test after completion."
+  ],
+  "questions": [
+
+    {
+      "q": {
+        "type": "text",
+        "value": "A signal whose value is defined at every instant of time is called:"
+      },
+      "type": "mcq",
+      "options": [
+        "Discrete-time signal",
+        "Continuous-time signal",
+        "Digital signal",
+        "Random signal"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Continuous-time signal"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "A continuous-time signal is defined for all values of time."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "A signal defined only at discrete instants of time is known as:"
+      },
+      "type": "mcq",
+      "options": [
+        "Analog signal",
+        "Continuous signal",
+        "Discrete-time signal",
+        "Periodic signal"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Discrete-time signal"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Discrete-time signals exist only at specific instants."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "Which of the following is an example of a periodic signal?"
+      },
+      "type": "mcq",
+      "options": [
+        "Ramp signal",
+        "Exponential signal",
+        "Sinusoidal signal",
+        "Unit step signal"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Sinusoidal signal"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "A sinusoidal signal repeats itself after a fixed interval."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "The unit step signal u(t) is equal to:"
+      },
+      "type": "mcq",
+      "options": [
+        "0 for t>0",
+        "1 for t>0",
+        "-1 for t>0",
+        "Infinite for t>0"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "1 for t>0"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "The unit step signal is 1 for positive time."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "A signal satisfying x(-t)=x(t) is called:"
+      },
+      "type": "mcq",
+      "options": [
+        "Odd signal",
+        "Periodic signal",
+        "Even signal",
+        "Random signal"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Even signal"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Even signals are symmetric about the vertical axis."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "A signal satisfying x(-t)=-x(t) is known as:"
+      },
+      "type": "mcq",
+      "options": [
+        "Even signal",
+        "Random signal",
+        "Odd signal",
+        "Deterministic signal"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Odd signal"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Odd signals possess origin symmetry."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "Which type of signal can be completely described mathematically?"
+      },
+      "type": "mcq",
+      "options": [
+        "Random signal",
+        "Deterministic signal",
+        "Noise signal",
+        "Stochastic signal"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Deterministic signal"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Deterministic signals are completely predictable."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "Signals whose values cannot be predicted exactly are called:"
+      },
+      "type": "mcq",
+      "options": [
+        "Periodic signals",
+        "Deterministic signals",
+        "Random signals",
+        "Even signals"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Random signals"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Random signals cannot be described exactly beforehand."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "Which signal is generally represented by x[n]?"
+      },
+      "type": "mcq",
+      "options": [
+        "Continuous-time signal",
+        "Discrete-time signal",
+        "Analog signal",
+        "Periodic signal"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Discrete-time signal"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "The notation x[n] is used for discrete-time signals."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "The signal x(t)=5 is an example of:"
+      },
+      "type": "mcq",
+      "options": [
+        "Ramp signal",
+        "Constant signal",
+        "Impulse signal",
+        "Random signal"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Constant signal"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Its value remains unchanged with time."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "Which signal increases linearly with time?"
+      },
+      "type": "mcq",
+      "options": [
+        "Impulse signal",
+        "Sinusoidal signal",
+        "Ramp signal",
+        "Step signal"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Ramp signal"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "The amplitude of a ramp signal increases linearly with time."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "A digital signal is characterized by:"
+      },
+      "type": "mcq",
+      "options": [
+        "Continuous amplitude",
+        "Infinite values",
+        "Discrete amplitude levels",
+        "Continuous frequency"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Discrete amplitude levels"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Digital signals have finite or discrete amplitude values."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "The unit impulse signal is represented by:"
+      },
+      "type": "mcq",
+      "options": [
+        "u(t)",
+        "r(t)",
+        "δ(t)",
+        "sin(t)"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "δ(t)"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "δ(t) denotes the unit impulse signal."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "A signal having finite energy and zero average power is called:"
+      },
+      "type": "mcq",
+      "options": [
+        "Power signal",
+        "Energy signal",
+        "Periodic signal",
+        "Random signal"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Energy signal"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Energy signals possess finite energy and zero average power."
+      }
+    },
+
+    {
+      "q": {
+        "type": "text",
+        "value": "A periodic sinusoidal signal is generally classified as:"
+      },
+      "type": "mcq",
+      "options": [
+        "Energy signal",
+        "Power signal",
+        "Random signal",
+        "Impulse signal"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Power signal"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Periodic signals have finite average power and infinite energy."
+      }
+    }
+
+  ]
+}
