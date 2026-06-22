@@ -155,4 +155,18 @@
   <priority>0.9</priority>
 </url>
 
+<url>
+  <loc>https://www.gyanmanthanclasses.com/emft/static-electromagnetics/field-and-field-lines.html</loc>
+  <lastmod>2026-06-22</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.gyanmanthanclasses.com/emft/static-electromagnetics/gauss-law-for-gate.html</loc>
+  <lastmod>2026-06-22</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
 </urlset>
