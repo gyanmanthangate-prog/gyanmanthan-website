@@ -1,0 +1,360 @@
+{
+  "time": 900,
+  "instructions": [
+    "<b>Attempt all questions</b>",
+    "There are <b>15 questions</b> in total, each worth <b>1 mark</b>.",
+    "A wrong answer will incur a penalty of <b>0.33 marks</b>.",
+    "Scientific calculator is not required.",
+    "Time allotted: <b>15 minutes</b>.",
+    "Submit the test after completion."
+  ],
+  "questions": [
+    {
+  "q": {
+    "type": "text",
+    "value": "Which of the following correctly expresses the discrete-time unit step signal $u[n]$ in terms of the unit impulse signal $\\delta[n]$?"
+  },
+  "type": "mcq",
+  "options": [
+    "$u[n]=\\sum_{k=-\\infty}^{n}\\delta[k]$",
+    "$u[n]=\\sum_{k=0}^{\\infty}\\delta[n-k]$",
+    "$u[n]=\\sum_{k=-\\infty}^{\\infty}\\delta[n-k]$",
+    "Both A and B"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "Both A and B"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "$u[n]$ can be viewed as the cumulative sum of impulses. Also, $u[n]=\\sum_{k=0}^{\\infty}\\delta[n-k]$. Hence both expressions are valid representations."
+  },
+  "youtube": null
+},
+    {
+      "q": {
+        "type": "text",
+        "value": "For discrete-time signals, $u[n]-u[n-1]$ equals:"
+      },
+      "type": "mcq",
+      "options": [
+        "$u[n]$",
+        "$\\delta[n]$",
+        "$r[n]$",
+        "0"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "$\\delta[n]$"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "The first difference of the unit step produces a unit impulse at $n=0$."
+      }
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "If $x[n]=u[n]-u[n-5]$, then $x[n]-x[n-1]$ is:"
+      },
+      "type": "mcq",
+      "options": [
+        "$\\delta[n]-\\delta[n-5]$",
+        "$\\delta[n]-\\delta[n-4]$",
+        "$\\delta[n-1]-\\delta[n-5]$",
+        "$\\delta[n]-\\delta[n-6]$"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "$\\delta[n]-\\delta[n-5]$"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "The pulse starts at $n=0$ and ends at $n=4$. Differencing gives +1 at $n=0$ and -1 at $n=5$."
+      }
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "The signal obtained after time reversal of $u(t-2)$ is:"
+      },
+      "type": "mcq",
+      "options": [
+        "$u(-t-2)$",
+        "$u(2-t)$",
+        "$u(t+2)$",
+        "$u(-t+2)$ shifted right by 2"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "$u(2-t)$"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Replace $t$ by $-t$: $u((-t)-2)=u(-t-2)=u(-(t+2))=u(2-t)$."
+      }
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "If $x(t)=u(t+2)-u(t-2)$, the width of $x(2t)$ is:"
+      },
+      "type": "mcq",
+      "options": [
+        "1",
+        "2",
+        "4",
+        "8"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "2"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Original width = 4. Time scaling by 2 compresses the signal, giving width = 2."
+      }
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "Which of the following is an even signal?"
+      },
+      "type": "mcq",
+      "options": [
+        "$t$",
+        "$\\sin t$",
+        "$\\cos t$",
+        "$\\operatorname{sgn}(t)$"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "$\\cos t$"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "$\\cos(-t)=\\cos(t)$."
+      }
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "For $t\\neq0$, $\\operatorname{sgn}(t)$ can be written as:"
+      },
+      "type": "mcq",
+      "options": [
+        "$2u(t)-1$",
+        "$u(t)-u(-t)$",
+        "$1-2u(-t)$",
+        "All of these"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "All of these"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "All three expressions are equivalent for $t\\neq0$."
+      }
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "The signal $e^{-2t}u(t)$ is classified as:"
+      },
+      "type": "mcq",
+      "options": [
+        "Energy signal",
+        "Power signal",
+        "Both",
+        "Neither"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Energy signal"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Its energy is finite and average power is zero."
+      }
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "The signal $\\sin(10t)$ is:"
+      },
+      "type": "mcq",
+      "options": [
+        "Energy signal",
+        "Power signal",
+        "Both",
+        "Neither"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Power signal"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Periodic sinusoids have finite average power and infinite energy."
+      }
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "Which of the following is a deterministic signal?"
+      },
+      "type": "mcq",
+      "options": [
+        "Thermal noise",
+        "Dice outcome sequence",
+        "$\\cos(5t)$",
+        "Random binary sequence"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "$\\cos(5t)$"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "A deterministic signal is completely specified for all time."
+      }
+    },
+    {
+  "q": {
+    "type": "text",
+    "value": "Determine the fundamental period of $x[n]=\\cos\\left(\\frac{\\pi n}{4}\\right)+\\sin\\left(\\frac{\\pi n}{6}\\right)$."
+  },
+  "type": "mcq",
+  "options": [
+    "12",
+    "24",
+    "48",
+    "Non-periodic"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "24"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "For $\\cos\\left(\\frac{\\pi n}{4}\\right)$, the fundamental period is $N_1=8$. For $\\sin\\left(\\frac{\\pi n}{6}\\right)$, the fundamental period is $N_2=12$. The sum is periodic with fundamental period equal to $\\mathrm{LCM}(8,12)=24$."
+  },
+  "youtube": null
+},
+    {
+      "q": {
+        "type": "text",
+        "value": "Determine the fundamental period of $x[n]=\\cos\\left(\\frac{\\pi n}{4}\\right)$."
+      },
+      "type": "mcq",
+      "options": [
+        "4",
+        "6",
+        "8",
+        "16"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "8"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "For DT signals, $\\Omega_0N=2\\pi k$. Smallest integer $N=8$."
+      }
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "The signal $x[n]=\\cos(\\sqrt{2}\\,n)$ is:"
+      },
+      "type": "mcq",
+      "options": [
+        "Periodic",
+        "Periodic with period 8",
+        "Periodic with period 16",
+        "Non-periodic"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Non-periodic"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "$\\frac{\\sqrt2}{2\\pi}$ is irrational, so no integer period exists."
+      }
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "If $x(t)$ is odd, then $x(0)$ must be:"
+      },
+      "type": "mcq",
+      "options": [
+        "1",
+        "-1",
+        "0",
+        "Cannot be determined"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "0"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "For an odd signal, $x(0)=-x(0)\\Rightarrow x(0)=0$."
+      }
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "Time shifting a signal affects its:"
+      },
+      "type": "mcq",
+      "options": [
+        "Energy only",
+        "Power only",
+        "Neither energy nor power",
+        "Both energy and power"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Neither energy nor power"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Time shift changes location on the time axis but does not change energy or average power."
+      }
+    }
+  ]
+}
