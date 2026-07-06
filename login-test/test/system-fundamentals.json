@@ -1,0 +1,253 @@
+{
+  "time": 900,
+  "instructions": [
+    "<b>Attempt all questions</b>",
+    "There are <b>10 questions</b> in total, each worth <b>1 mark</b>.",
+    "A wrong answer will incur a penalty of <b>0.33 marks</b>.",
+    "Scientific calculator is not required.",
+    "Time allotted: <b>15 minutes</b>.",
+    "Submit the test after completion."
+  ],
+  "questions": [
+    {
+      "q": {
+        "type": "text",
+        "value": "Evaluate $\\displaystyle \\int_{-\\infty}^{\\infty}(t^2-3t+5)\\,\\delta(2t-4)\\,dt$."
+      },
+      "type": "mcq",
+      "options": [
+        "$\\frac{3}{2}$",
+        "$3$",
+        "$6$",
+        "$12$"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "$\\frac{3}{2}$"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Using $\\delta(at-b)=\\frac{1}{|a|}\\delta\\left(t-\\frac{b}{a}\\right)$, we obtain $\\delta(2t-4)=\\frac{1}{2}\\delta(t-2)$. Hence the integral equals $\\frac12(2^2-3\\times2+5)=\\frac12(3)=\\frac32$."
+      },
+      "youtube": null
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "An LTI system has step response $s(t)=\\left(1-e^{-2t}\\right)u(t)$. Its output for input $x(t)=\\delta(t)+2\\delta(t-1)$ is:"
+      },
+      "type": "mcq",
+      "options": [
+        "$2e^{-2t}u(t)+4e^{-2(t-1)}u(t-1)$",
+        "$2e^{-2t}u(t)+2e^{-2(t-1)}u(t-1)$",
+        "$2e^{-2t}u(t)+4e^{-2(t-1)}u(t-1)-2\\delta(t)-4\\delta(t-1)$",
+        "$2e^{-2t}u(t)+4e^{-2(t-1)}u(t-1)+\\delta(t)+2\\delta(t-1)$"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "$2e^{-2t}u(t)+4e^{-2(t-1)}u(t-1)$"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Impulse response is $h(t)=\\dfrac{d}{dt}s(t)=2e^{-2t}u(t)$. Since $y=x*h$, we obtain $y(t)=h(t)+2h(t-1)=2e^{-2t}u(t)+4e^{-2(t-1)}u(t-1)$."
+      },
+      "youtube": null
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "Let $x(t)=e^{-t}u(t)$ and $h(t)=u(t)-u(t-2)$. Which property allows $(x*h)*\\delta(t-1)$ to be evaluated directly as $(x*\\delta(t-1))*h(t)$ without first computing $x*h$?"
+      },
+      "type": "mcq",
+      "options": [
+        "Commutative property only",
+        "Associative property",
+        "Distributive property",
+        "Time invariance"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Associative property"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Convolution satisfies $(x*h)*g=x*(h*g)$. Hence the impulse can first be convolved with $x$, producing a delayed signal, and then convolved with $h$."
+      },
+      "youtube": null
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "Let $x(t)=u(t)-u(t-2)$ and $h(t)=u(t)-u(t-5)$. The maximum value of $y(t)=x(t)*h(t)$ is:"
+      },
+      "type": "mcq",
+      "options": [
+        "2",
+        "3",
+        "5",
+        "10"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "2"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "The convolution equals the overlap length of the two rectangular pulses. Since the shorter pulse has width 2 and the longer has width 5, the maximum overlap is 2. Hence the peak value of the convolution is 2."
+      },
+      "youtube": null
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "For an LTI system, $x_1(t)*h(t)=y_1(t)$ and $x_2(t)*h(t)=y_2(t)$. The output corresponding to $x(t)=3x_1(t)-2x_2(t)$ is:"
+      },
+      "type": "mcq",
+      "options": [
+        "$3y_1(t)-2y_2(t)$",
+        "$3y_1(t)+2y_2(t)$",
+        "$y_1(t)-y_2(t)$",
+        "$3y_1(t)*2y_2(t)$"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "$3y_1(t)-2y_2(t)$"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Using the distributive (linearity) property of convolution, $(3x_1-2x_2)*h=3(x_1*h)-2(x_2*h)=3y_1-2y_2$."
+      },
+      "youtube": null
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "An LTI system has impulse response $h(t)=\\delta(t)+e^{-t}u(t)$. The corresponding step response is:"
+      },
+      "type": "mcq",
+      "options": [
+        "$\\left(2-e^{-t}\\right)u(t)$",
+        "$\\left(1-e^{-t}\\right)u(t)$",
+        "$\\delta(t)+\\left(1-e^{-t}\\right)u(t)$",
+        "$e^{-t}u(t)$"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "$\\left(2-e^{-t}\\right)u(t)$"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "The step response is $s(t)=u(t)*h(t)$. Since $u*\\delta=u$ and $u*e^{-t}u=(1-e^{-t})u$, we get $s(t)=u(t)+(1-e^{-t})u(t)=(2-e^{-t})u(t)$."
+      },
+      "youtube": null
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "Evaluate $\\displaystyle y(t)=\\left[\\delta(t-1)+2\\delta(t+2)\\right]*\\left[e^{-t}u(t)\\right]$."
+      },
+      "type": "mcq",
+      "options": [
+        "$e^{-(t-1)}u(t-1)+2e^{-(t+2)}u(t+2)$",
+        "$e^{-t}u(t)+2e^{-t}u(t)$",
+        "$e^{-(t+1)}u(t+1)+2e^{-(t-2)}u(t-2)$",
+        "$3e^{-t}u(t)$"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "$e^{-(t-1)}u(t-1)+2e^{-(t+2)}u(t+2)$"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Using $\\delta(t-a)*x(t)=x(t-a)$, each impulse shifts the signal. Hence $y(t)=e^{-(t-1)}u(t-1)+2e^{-(t+2)}u(t+2)$."
+      },
+      "youtube": null
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "For any three absolutely integrable signals $x(t)$, $h(t)$ and $g(t)$, which of the following is always TRUE?"
+      },
+      "type": "mcq",
+      "options": [
+        "$x*(h+g)=(x*h)+(x*g)$",
+        "$(x*h)*g=x*(h*g)$",
+        "$x*h=h*x$",
+        "All of the above"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "All of the above"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Convolution satisfies distributive, associative and commutative properties. Therefore all three identities are valid."
+      },
+      "youtube": null
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "Let $x(t)=u(t)-u(t-3)$ and $h(t)=u(t)-u(t-1)$. The value of $y(2)$, where $y(t)=x(t)*h(t)$, is:"
+      },
+      "type": "mcq",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "1"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "The convolution equals the overlap length between intervals [0,3] and [t-1,t]. At t=2, the shifted interval is [1,2], whose overlap with [0,3] is 1. Hence y(2)=1."
+      },
+      "youtube": null
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "An LTI system has step response $s(t)=4u(t)-4e^{-2t}u(t)$. The impulse response is:"
+      },
+      "type": "mcq",
+      "options": [
+        "$8e^{-2t}u(t)$",
+        "$4\\delta(t)+8e^{-2t}u(t)$",
+        "$4\\delta(t)-8e^{-2t}u(t)$",
+        "$2e^{-2t}u(t)$"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "$4\\delta(t)+8e^{-2t}u(t)$"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Since $h(t)=\\dfrac{ds(t)}{dt}$, differentiate term-wise: $\\dfrac{d}{dt}[4u(t)]=4\\delta(t)$ and $\\dfrac{d}{dt}[-4e^{-2t}u(t)]=8e^{-2t}u(t)-4\\delta(t)$. The delta terms cancel except the one from the constant step, giving $h(t)=4\\delta(t)+8e^{-2t}u(t)$."
+      },
+      "youtube": null
+    }
+  ]
+}
