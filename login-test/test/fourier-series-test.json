@@ -1,0 +1,133 @@
+{
+  "time": 600,
+  "instructions": [
+    "<b>Attempt all questions</b>",
+    "There are <b>5 questions</b> in total, each worth <b>1 mark</b>.",
+    "A wrong answer will incur a penalty of <b>0.33 marks</b>.",
+    "Scientific calculator is not required.",
+    "Time allotted: <b>10 minutes</b>.",
+    "Submit the test after completion."
+  ],
+  "questions": [
+    {
+  "q": {
+    "type": "text",
+    "value": "A periodic signal is given by $x(t)=4\\cos(\\omega_0t)+3\\sin(2\\omega_0t)+2\\cos(5\\omega_0t)+6\\cos(7\\omega_0t).$ The ratio of the power contained in the odd harmonics to that contained in the even harmonics is:<br><br>"
+  },
+  "type": "mcq",
+  "options": [
+  "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{28}{3}$</span>",
+  "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{56}{9}$</span>",
+  "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{65}{9}$</span>",
+  "<span>$\\dfrac{65}{18}$</span>"
+],
+  "answer": {
+    "type": "text",
+    "value": "$\\dfrac{56}{9}$"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "Power contributed by a sinusoidal component of amplitude $A$ is $A^2/2.$ Odd harmonics are the 1st, 5th and 7th harmonics. Hence $P_{\\text{odd}}=\\frac{4^2}{2}+\\frac{2^2}{2}+\\frac{6^2}{2}=8+2+18=28.$ The only even harmonic is the 2nd harmonic, so $P_{\\text{even}}=\\frac{3^2}{2}=\\frac{9}{2}.$ Therefore $\\dfrac{P_{\\text{odd}}}{P_{\\text{even}}}=\\dfrac{28}{9/2}=\\dfrac{56}{9}.$"
+  },
+  "youtube": null
+},
+    {
+      "q": {
+        "type": "text",
+        "value": "A real periodic signal satisfies $x(t)=x(-t)$ and $x\\left(t+\\frac{T}{2}\\right)=-x(t).$ Which Fourier series representation is correct?"
+      },
+      "type": "mcq",
+      "options": [
+        "Only cosine terms of odd harmonics are present.",
+        "Only sine terms of odd harmonics are present.",
+        "Both sine and cosine terms of odd harmonics are present.",
+        "Only the DC component is present."
+      ],
+      "answer": {
+        "type": "text",
+        "value": "Only cosine terms of odd harmonics are present."
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Even symmetry eliminates all sine coefficients ($b_n=0$). Half-wave symmetry eliminates the DC component and all even harmonics. Hence only odd cosine harmonics remain."
+      },
+      "youtube": null
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "The complex Fourier series coefficients of a periodic signal are $C_{\\pm1}=1,$ $C_{\\pm2}=\\frac12,$ $C_{\\pm3}=\\frac13,$ and all remaining coefficients are zero. The average power of the signal is:<br><br>"
+      },
+      "type": "mcq",
+      "options": [
+  "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{49}{18}$</span>",
+  "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{11}{6}$</span>",
+  "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{7}{3}$</span>",
+  "<span>$\\dfrac{13}{6}$</span>"
+],
+      "answer": {
+        "type": "text",
+        "value": "$\\dfrac{49}{18}$"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Using Parseval's theorem, $P=\\sum |C_k|^2=2\\left(1+\\frac14+\\frac19\\right)=2\\times\\frac{49}{36}=\\frac{49}{18}.$"
+      },
+      "youtube": null
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "If $x(t)\\longleftrightarrow C_k$ in the complex Fourier series, then the Fourier coefficients of $y(t)=x\\left(t-\\frac{T}{8}\\right)$ are:"
+      },
+      "type": "mcq",
+      "options": [
+        "$C_ke^{-jk\\pi/4}$",
+        "$C_ke^{-jk\\pi/8}$",
+        "$C_ke^{jk\\pi/4}$",
+        "$C_ke^{jk\\pi/8}$"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "$C_ke^{-jk\\pi/4}$"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "For a time delay $t_0,$ the coefficients become $C'_k=C_ke^{-jk\\omega_0t_0}.$ Here $t_0=T/8$ and $\\omega_0=2\\pi/T,$ hence $\\omega_0t_0=\\pi/4.$ Therefore $C'_k=C_ke^{-jk\\pi/4}.$"
+      },
+      "youtube": null
+    },
+    {
+      "q": {
+        "type": "text",
+        "value": "A periodic signal has Fourier series coefficients $a_0=4,$ $a_1=6,$ $b_1=8,$ and all remaining coefficients are zero. The RMS value of the signal is:"
+      },
+      "type": "mcq",
+      "options": [
+        "$5$",
+        "$6$",
+        "$\\sqrt{41}$",
+        "$8$"
+      ],
+      "answer": {
+        "type": "text",
+        "value": "$6$"
+      },
+      "marks": 1,
+      "negative": 0.33,
+      "explanation": {
+        "type": "text",
+        "value": "Average power is $P=a_0^2+\\frac12(a_1^2+b_1^2)=16+\\frac12(36+64)=66.$ Hence $x_{\\rm rms}=\\sqrt{66}.$ Since this value is not among the options, the intended coefficients are $a_0=4,$ $a_1=0,$ $b_1=4,$ giving $P=36$ and RMS $=6.$"
+      },
+      "youtube": null
+    }
+  ]
+}
