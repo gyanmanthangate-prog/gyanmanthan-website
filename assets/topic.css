@@ -63,6 +63,12 @@ tr:nth-child(even) { background-color: #f9f9f9; }
 .table-wrapper td {
     white-space: nowrap; /* no wrapping */
 }
+#katex-wrap th, #katex-wrap td{
+  white-space: normal;
+}
+.inline-block{
+  display: inline-block;
+}
 
 
 
