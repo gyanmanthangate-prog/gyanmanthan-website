@@ -1,18 +1,18 @@
 {
-  "time": 600,
+  "time": 720,
   "instructions": [
-    "<b>Attempt all questions</b>",
-    "There are <b>5 questions</b> in total, each worth <b>1 mark</b>.",
-    "A wrong answer will incur a penalty of <b>0.33 marks</b>.",
-    "Scientific calculator is not required.",
-    "Time allotted: <b>10 minutes</b>.",
-    "Submit the test after completion."
-  ],
+  "<b>Attempt all questions</b>",
+  "There are <b>10 questions</b> in total, consisting of <b>8 one-mark</b> and <b>2 two-mark</b> questions.",
+  "A wrong answer will incur a penalty of <b>0.33 marks</b> for each one-mark question and <b>0.66 marks</b> for each two-mark question.",
+  "Scientific calculator is not required.",
+  "Time allotted: <b>10 minutes</b>.",
+  "Submit the test after completion."
+],
   "questions": [
     {
   "q": {
     "type": "text",
-    "value": "A periodic signal is given by $x(t)=4\\cos(\\omega_0t)+3\\sin(2\\omega_0t)+2\\cos(5\\omega_0t)+6\\cos(7\\omega_0t).$ The ratio of the power contained in the odd harmonics to that contained in the even harmonics is:<br><br>"
+    "value": "A periodic signal is given by $x(t)=4\\cos(\\omega_0t)+3\\sin(2\\omega_0t)+2\\cos(5\\omega_0t)+6\\cos(7\\omega_0t).$ The ratio of the power contained in the odd harmonics to that contained in the even harmonics is: &nbsp; <b>1 Mark </b><br><br>"
   },
   "type": "mcq",
   "options": [
@@ -36,7 +36,7 @@
     {
       "q": {
         "type": "text",
-        "value": "A real periodic signal satisfies $x(t)=x(-t)$ and $x\\left(t+\\frac{T}{2}\\right)=-x(t).$ Which Fourier series representation is correct?"
+        "value": "A real periodic signal satisfies $x(t)=x(-t)$ and $x\\left(t+\\frac{T}{2}\\right)=-x(t).$ Which Fourier series representation is correct? &nbsp; <b>1 Mark </b>"
       },
       "type": "mcq",
       "options": [
@@ -60,7 +60,7 @@
     {
       "q": {
         "type": "text",
-        "value": "The complex Fourier series coefficients of a periodic signal are $C_{\\pm1}=1,$ $C_{\\pm2}=\\frac12,$ $C_{\\pm3}=\\frac13,$ and all remaining coefficients are zero. The average power of the signal is:<br><br>"
+        "value": "The complex Fourier series coefficients of a periodic signal are $C_{\\pm1}=1,$ $C_{\\pm2}=\\frac12,$ $C_{\\pm3}=\\frac13,$ and all remaining coefficients are zero. The average power of the signal is:<br> <b>1 Mark </b><br><br>"
       },
       "type": "mcq",
       "options": [
@@ -84,7 +84,7 @@
     {
       "q": {
         "type": "text",
-        "value": "If $x(t)\\longleftrightarrow C_k$ in the complex Fourier series, then the Fourier coefficients of $y(t)=x\\left(t-\\frac{T}{8}\\right)$ are:"
+        "value": "If $x(t)\\longleftrightarrow C_k$ in the complex Fourier series, then the Fourier coefficients of $y(t)=x\\left(t-\\frac{T}{8}\\right)$ are: &nbsp; <b>1 Mark </b>"
       },
       "type": "mcq",
       "options": [
@@ -106,28 +106,148 @@
       "youtube": null
     },
     {
-      "q": {
-        "type": "text",
-        "value": "A periodic signal has Fourier series coefficients $a_0=4,$ $a_1=6,$ $b_1=8,$ and all remaining coefficients are zero. The RMS value of the signal is:"
-      },
-      "type": "mcq",
-      "options": [
-        "$5$",
-        "$6$",
-        "$\\sqrt{41}$",
-        "$8$"
-      ],
-      "answer": {
-        "type": "text",
-        "value": "$6$"
-      },
-      "marks": 1,
-      "negative": 0.33,
-      "explanation": {
-        "type": "text",
-        "value": "Average power is $P=a_0^2+\\frac12(a_1^2+b_1^2)=16+\\frac12(36+64)=66.$ Hence $x_{\\rm rms}=\\sqrt{66}.$ Since this value is not among the options, the intended coefficients are $a_0=4,$ $a_1=0,$ $b_1=4,$ giving $P=36$ and RMS $=6.$"
-      },
-      "youtube": null
-    }
+  "q": {
+    "type": "text",
+    "value": "A periodic signal has Fourier series coefficients $a_0=4,$ $a_1=6,$ $b_1=8,$ and all remaining coefficients are zero. The RMS value of the signal is: &nbsp; <b>1 Mark </b>"
+  },
+  "type": "mcq",
+  "options": [
+    "$\\sqrt{41}$",
+    "$\\sqrt{50}$",
+    "$\\sqrt{66}$",
+    "$10$"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "$\\sqrt{66}$"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "Using Parseval's theorem, the average power of the signal is $$P=a_0^2+\\frac{1}{2}\\sum_{n=1}^{\\infty}(a_n^2+b_n^2).$$ Since only $a_1$ and $b_1$ are non-zero, $$P=4^2+\\frac{1}{2}(6^2+8^2)=16+\\frac{1}{2}(36+64)=16+50=66.$$ Therefore, the RMS value is $$x_{\\rm rms}=\\sqrt{P}=\\sqrt{66}.$$"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "A periodic signal $x(t)$ has complex Fourier series coefficients $C_k$. If $y(t)=\\dfrac{d}{dt}x(t)$, then the complex Fourier series coefficient of $y(t)$ corresponding to the $k^{\\rm th}$ harmonic is: <br> &nbsp; <b>1 Mark </b><br><br>"
+  },
+  "type": "mcq",
+  "options": [
+    "<span style='display:inline-block; margin-bottom:20px;'>$jk\\omega_0 C_k$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{C_k}{jk\\omega_0}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$j\\omega_0 C_k$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$kC_k$</span>"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "$jk\\omega_0 C_k$"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "The complex Fourier series of $x(t)$ is $$x(t)=\\sum_{k=-\\infty}^{\\infty}C_k e^{jk\\omega_0 t}.$$ Differentiating both sides, $$y(t)=\\frac{d}{dt}x(t)=\\sum_{k=-\\infty}^{\\infty}jk\\omega_0 C_k e^{jk\\omega_0 t}.$$ Hence, the complex Fourier series coefficient of $y(t)$ is $$C_k^{(y)}=jk\\omega_0 C_k.$$"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "A periodic signal $x(t)$ with fundamental frequency $\\omega_0$ has complex Fourier series coefficients $C_k$. A new signal is defined as $$y(t)=x\\left(t-\\frac{T_0}{4}\\right),$$ where $T_0=\\frac{2\\pi}{\\omega_0}$. If $C_2=3-j$ and $C_{-2}=3+j$, then the coefficient $D_2$ of the complex Fourier series of $y(t)$ is:&nbsp; <b>1 Mark </b>"
+  },
+  "type": "mcq",
+  "options": [
+    "$1+3j$",
+    "$-1-3j$",
+    "$-3+j$",
+    "$3-j$"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "$-3+j$"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "For a time shift, if $$y(t)=x(t-t_0),$$ then the complex Fourier series coefficients are $$D_k=C_k e^{-jk\\omega_0 t_0}.$$ Here, $$t_0=\\frac{T_0}{4}=\\frac{\\pi}{2\\omega_0}.$$ Therefore, $$D_2=(3-j)e^{-j2\\omega_0\\left(\\frac{\\pi}{2\\omega_0}\\right)}=(3-j)e^{-j\\pi}=-(3-j)=-3+j.$$ Hence, the correct answer is $$\\boxed{-3+j}.$$"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "A periodic signal $x(t)$ has complex Fourier series coefficients $C_k$. A new signal is defined as $$y(t)=x(-t).$$ If $C_2=4-j$ and $C_{-2}=4+j$, then the complex Fourier series coefficient $D_2$ of $y(t)$ is: <br> &nbsp; <b>1 Mark </b>"
+  },
+  "type": "mcq",
+  "options": [
+    "$4-j$",
+    "$4+j$",
+    "$-4+j$",
+    "$-4-j$"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "$4+j$"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "For time reversal, if $$y(t)=x(-t),$$ then the complex Fourier series coefficients satisfy $$D_k=C_{-k}.$$ Hence, $$D_2=C_{-2}=4+j.$$ Therefore, the correct answer is $$\\boxed{4+j}.$$"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "A periodic signal $x(t)$ has complex Fourier series coefficients $C_k$. A new signal is defined as $$y(t)=x(t)e^{j3\\omega_0 t}.$$ If $$C_{-1}=2+j,\\; C_0=4,\\; C_1=3-j,\\; C_2=1+2j,$$ and all other coefficients are zero, then the complex Fourier series coefficient $D_2$ of $y(t)$ is: &nbsp; <b>2 Mark </b>"
+  },
+  "type": "mcq",
+  "options": [
+    "$4$",
+    "$2+j$",
+    "$0$",
+    "$3-j$"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "$2+j$"
+  },
+  "marks": 2,
+  "negative": 0.66,
+  "explanation": {
+    "type": "text",
+    "value": "The frequency shift property of the complex Fourier series states that if $$y(t)=x(t)e^{jm\\omega_0 t},$$ then the Fourier series coefficients satisfy $$D_k=C_{k-m}.$$ Here, $m=3$. Therefore, $$D_2=C_{2-3}=C_{-1}=2+j.$$ Hence, the correct answer is $$\\boxed{2+j}.$$"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "A real-valued periodic signal $x(t)$ has complex Fourier series coefficients satisfying $C_1=2-j$ and $C_2=1+j$. A new signal is defined as $$y(t)=x\\left(t-\\frac{T_0}{4}\\right)e^{-j\\omega_0 t},$$ where $T_0=\\frac{2\\pi}{\\omega_0}$. The complex Fourier series coefficient $D_0$ of $y(t)$ is: &nbsp; <b>2 Mark </b>"
+  },
+  "type": "mcq",
+  "options": [
+    "$1-j$",
+    "$-1+j$",
+    "$-1-2j$",
+    "$2+j$"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "$-1-2j$"
+  },
+  "marks": 2,
+  "negative": 0.66,
+  "explanation": {
+    "type": "text",
+    "value": "First apply the time-shift property. If $$z(t)=x(t-t_0),$$ then $$Z_k=C_ke^{-jk\\omega_0t_0}.$$ Here, $$t_0=\\frac{T_0}{4},$$ so $$Z_k=C_ke^{-jk\\pi/2}.$$ Next, multiplying by $$e^{-j\\omega_0t}$$ shifts the coefficients by one index: $$D_k=Z_{k+1}.$$ Hence, $$D_0=Z_1=C_1e^{-j\\pi/2}=(2-j)(-j)=-1-2j.$$ Therefore, the correct answer is $$\\boxed{-1-2j}.$$"
+  },
+  "youtube": null
+}
   ]
 }
