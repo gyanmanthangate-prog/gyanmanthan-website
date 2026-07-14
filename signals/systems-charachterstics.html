@@ -291,51 +291,89 @@
   </div>
 </div>
 <div class="media-block">
- <div class="table-wrapper" id="katex-wrap">
-  <table>
-    <tr>
-      <th>Property</th>
-      <th>Continuous-Time LTI Condition</th>
-      <th>Discrete-Time LTI Condition</th>
-    </tr>
+ <h3>Continuous-Time LTI System Conditions</h3>
 
-    <tr>
-      <td><strong>Memoryless</strong></td>
-      <td>$h(t)=A\delta(t)$</td>
-      <td>$h[n]=A\delta[n]$</td>
-    </tr>
+<div class="table-wrapper">
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Condition</th>
+  </tr>
 
-    <tr>
-      <td><strong>Causal</strong></td>
-      <td>$h(t)=0,\;t<0$</td>
-      <td>$h[n]=0,\;n<0$</td>
-    </tr>
+  <tr>
+    <td><strong>Memoryless</strong></td>
+    <td>$h=A\delta(t)$</td>
+  </tr>
 
-    <tr>
-      <td><strong>Stable (BIBO)</strong></td>
-      <td>$\displaystyle\int_{-\infty}^{\infty}|h(t)|\,dt<\infty$</td>
-      <td>$\displaystyle\sum_{n=-\infty}^{\infty}|h[n]|<\infty$</td>
-    </tr>
+  <tr>
+    <td><strong>Causal</strong></td>
+    <td>$h(t)=0,\;t<0$</td>
+  </tr>
 
-    <tr>
-      <td><strong>Invertible</strong></td>
-      <td>$h(t)*h^{-1}(t)=\delta(t)$</td>
-      <td>$h[n]*h^{-1}[n]=\delta[n]$</td>
-    </tr>
+  <tr>
+    <td><strong>Stable (BIBO)</strong></td>
+    <td>$\int |h(t)|dt<\infty$</td>
+  </tr>
 
-    <tr>
-      <td><strong>Linear</strong></td>
-      <td>Satisfies the Superposition Principle</td>
-      <td>Satisfies the Superposition Principle</td>
-    </tr>
+  <tr>
+    <td><strong>Invertible</strong></td>
+    <td>$h*h^{-1}=\delta(t)$</td>
+  </tr>
 
-    <tr>
-      <td><strong>Time Invariant</strong></td>
-      <td>Impulse response depends only on $(t-\tau)$</td>
-      <td>Impulse response depends only on $(n-k)$</td>
-    </tr>
-  </table>   
-  </div>
+  <tr>
+    <td><strong>Linear</strong></td>
+    <td>Superposition holds</td>
+  </tr>
+
+  <tr>
+    <td><strong>Time Invariant</strong></td>
+    <td>Depends only on $t-\tau$</td>
+  </tr>
+</table>
+</div>
+
+<br>
+
+<h3>Discrete-Time LTI System Conditions</h3>
+
+<div class="table-wrapper">
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Condition</th>
+  </tr>
+
+  <tr>
+    <td><strong>Memoryless</strong></td>
+    <td>$h=A\delta[n]$</td>
+  </tr>
+
+  <tr>
+    <td><strong>Causal</strong></td>
+    <td>$h[n]=0,\;n<0$</td>
+  </tr>
+
+  <tr>
+    <td><strong>Stable (BIBO)</strong></td>
+    <td>$\sum |h[n]|<\infty$</td>
+  </tr>
+
+  <tr>
+    <td><strong>Invertible</strong></td>
+    <td>$h*h^{-1}=\delta[n]$</td>
+  </tr>
+
+  <tr>
+    <td><strong>Linear</strong></td>
+    <td>Superposition holds</td>
+  </tr>
+
+  <tr>
+    <td><strong>Time Invariant</strong></td>
+    <td>Depends only on $n-k$</td>
+  </tr>
+</table>
+</div>
   </div>
     
 
