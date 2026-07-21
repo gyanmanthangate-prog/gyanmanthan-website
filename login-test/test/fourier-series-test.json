@@ -23,7 +23,7 @@
 ],
   "answer": {
     "type": "text",
-    "value": "$\\dfrac{56}{9}$"
+    "value": "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{56}{9}$</span>"
   },
   "marks": 1,
   "negative": 0.33,
@@ -71,7 +71,7 @@
 ],
       "answer": {
         "type": "text",
-        "value": "$\\dfrac{49}{18}$"
+        "value": "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{49}{18}$</span>"
       },
       "marks": 1,
       "negative": 0.33,
@@ -143,7 +143,7 @@
   ],
   "answer": {
     "type": "text",
-    "value": "$jk\\omega_0 C_k$"
+    "value": "<span style='display:inline-block; margin-bottom:20px;'>$jk\\omega_0 C_k$</span>"
   },
   "marks": 1,
   "negative": 0.33,

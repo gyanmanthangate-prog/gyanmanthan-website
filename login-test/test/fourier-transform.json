@@ -1,0 +1,253 @@
+{
+  "time": 720,
+  "instructions": [
+  "<b>Attempt all questions</b>",
+  "There are <b>10 questions</b> in total, consisting of <b>8 one-mark</b> and <b>2 two-mark</b> questions.",
+  "A wrong answer will incur a penalty of <b>0.33 marks</b> for each one-mark question and <b>0.66 marks</b> for each two-mark question.",
+  "Scientific calculator is not required.",
+  "Time allotted: <b>12 minutes</b>.",
+  "Submit the test after completion."
+  ],
+  "questions": [
+    {
+  "q": {
+    "type": "text",
+    "value": "The Fourier Transform of $e^{-at}u(t)$, where $a>0$, is &nbsp; <b>1 Mark </b><br><br />"
+  },
+  "type": "mcq",
+  "options": [
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{1}{a+j\\omega}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{1}{a-j\\omega}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{a}{a^2-\\omega^2}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{1}{j\\omega-a}$</span>"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{1}{a+j\\omega}$</span>"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "Using the standard Fourier Transform pair, $e^{-at}u(t) \\xleftrightarrow{FT} \\dfrac{1}{a+j\\omega}$ for $a>0$."
+  },
+  "youtube": null
+},
+    {
+  "q": {
+    "type": "text",
+    "value": "The Fourier Transform of $\\displaystyle \\frac{\\sin(at)}{t}$, where $a>0$, is $X(\\omega)$. Using the duality property of the Fourier Transform, the Fourier Transform of $X(t)$ is &nbsp; <b>1 Mark </b><br><br />"
+  },
+  "type": "mcq",
+  "options": [
+  "<span style='display:inline-block; margin-bottom:20px;'>$2\\pi\\dfrac{\\sin(a\\omega)}{\\omega}$</span>",
+  "<span style='display:inline-block; margin-bottom:20px;'>$2\\pi\\dfrac{\\sin(a\\omega)}{a\\omega}$</span>",
+  "<span style='display:inline-block; margin-bottom:20px;'>$\\pi\\dfrac{\\sin(a\\omega)}{\\omega}$</span>",
+  "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{\\sin(a\\omega)}{\\omega}$</span>"
+],
+  "answer": {
+    "type": "text",
+    "value": "<span style='display:inline-block; margin-bottom:20px;'>$2\\pi\\dfrac{\\sin(a\\omega)}{\\omega}$</span>"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+  "type": "text",
+  "value": "Using the Fourier Transform pair $\\dfrac{\\sin(at)}{t} \\xleftrightarrow{FT} \\pi\\,\\operatorname{rect}\\left(\\dfrac{\\omega}{2a}\\right)$, we have $x(t)=\\dfrac{\\sin(at)}{t}$ and $X(\\omega)=\\pi\\,\\operatorname{rect}\\left(\\dfrac{\\omega}{2a}\\right)$. By the duality property, $x(t) \\xleftrightarrow{FT} X(\\omega) \\Rightarrow X(t) \\xleftrightarrow{FT} 2\\pi x(-\\omega)$. Therefore, $\\mathcal{F}\\{X(t)\\}=2\\pi\\dfrac{\\sin(-a\\omega)}{-\\omega}=2\\pi\\dfrac{\\sin(a\\omega)}{\\omega}$."
+},
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "Suppose $x(t) \\xleftrightarrow{FT} X(\\omega)$. The Fourier Transform of $t\\,x(t)$ is &nbsp; <b>1 Mark </b><br><br /><br>"
+  },
+  "type": "mcq",
+  "options": [
+    "<span style='display:inline-block; margin-bottom:20px;'>$j\\dfrac{dX(\\omega)}{d\\omega}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$-j\\dfrac{dX(\\omega)}{d\\omega}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\omega X(\\omega)$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$j\\omega X(\\omega)</span>"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "<span style='display:inline-block; margin-bottom:20px;'>$j\\dfrac{dX(\\omega)}{d\\omega}$</span>"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "Using the differentiation property of Fourier Transform, $t\\,x(t) \\xleftrightarrow{FT} j\\dfrac{dX(\\omega)}{d\\omega}$."
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "If $x(t)=2\\delta(t-1)-2\\delta(t+1)$, then its Fourier Transform is &nbsp; <b>1 Mark </b><br><br />"
+  },
+  "type": "mcq",
+  "options": [
+    "<span style='display:inline-block; margin-bottom:20px;'>$4j\\sin(\\omega)$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$-4j\\sin(\\omega)$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$4\\cos(\\omega)$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$-4\\cos(\\omega)$</span>"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "<span style='display:inline-block; margin-bottom:20px;'>$-4j\\sin(\\omega)$</span>"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "Using $\\delta(t-t_0) \\xleftrightarrow{FT} e^{-j\\omega t_0}$, we get $X(\\omega)=2e^{-j\\omega}-2e^{j\\omega}=2(e^{-j\\omega}-e^{j\\omega})$. Since $e^{-j\\omega}-e^{j\\omega}=-2j\\sin(\\omega)$, therefore $X(\\omega)=-4j\\sin(\\omega)$."
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "If $x(t)$ is a real and even signal, then its Fourier Transform $X(\\omega)$ is &nbsp; <b>1 Mark </b><br><br />"
+  },
+  "type": "mcq",
+  "options": [
+    "Real and even",
+    "Imaginary and odd",
+    "Real and odd",
+    "Complex and neither even nor odd"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "Real and even"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "A real even time-domain signal has a Fourier Transform that is purely real and even. This is a standard symmetry property frequently tested in GATE."
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "If $x(t) \\xleftrightarrow{FT} X(\\omega)$, then the Fourier Transform of $t\\dfrac{dx(t)}{dt}$ is &nbsp; <b>1 Mark </b><br><br />"
+  },
+  "type": "mcq",
+  "options": [
+    "<span style='display:inline-block; margin-bottom:20px;'>$-\\dfrac{d}{d\\omega}[\\omega X(\\omega)]$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{d}{d\\omega}[\\omega X(\\omega)]$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$-j\\dfrac{d}{d\\omega}[\\omega X(\\omega)]$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$j\\dfrac{d}{d\\omega}[\\omega X(\\omega)]$</span>"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "<span style='display:inline-block; margin-bottom:20px;'>$-\\dfrac{d}{d\\omega}[\\omega X(\\omega)]$</span>"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "First, $\\dfrac{dx(t)}{dt} \\xleftrightarrow{FT} j\\omega X(\\omega)$. Using the property $t\\,x(t) \\xleftrightarrow{FT} j\\dfrac{dX(\\omega)}{d\\omega}$, we obtain $t\\dfrac{dx(t)}{dt} \\xleftrightarrow{FT} j\\dfrac{d}{d\\omega}[j\\omega X(\\omega)] = -\\dfrac{d}{d\\omega}[\\omega X(\\omega)]$."
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "If $x(t)=\\cos(\\omega_0t)$, then its Fourier Transform is &nbsp; <b>1 Mark </b><br><br />"
+  },
+  "type": "mcq",
+  "options": [
+    "$\\pi\\left[\\delta(\\omega-\\omega_0)+\\delta(\\omega+\\omega_0)\\right]$",
+    "$2\\pi\\left[\\delta(\\omega-\\omega_0)+\\delta(\\omega+\\omega_0)\\right]$",
+    "$\\delta(\\omega-\\omega_0)+\\delta(\\omega+\\omega_0)$",
+    "$\\pi\\left[\\delta(\\omega-\\omega_0)-\\delta(\\omega+\\omega_0)\\right]$"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "$\\pi\\left[\\delta(\\omega-\\omega_0)+\\delta(\\omega+\\omega_0)\\right]$"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "Using the standard Fourier Transform pair, $\\cos(\\omega_0t) \\xleftrightarrow{FT} \\pi\\left[\\delta(\\omega-\\omega_0)+\\delta(\\omega+\\omega_0)\\right]$."
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "If $x(t) \\xleftrightarrow{FT} X(\\omega)$ and $h(t) \\xleftrightarrow{FT} H(\\omega)$, then the Fourier Transform of $x(t)*h(t)$ is &nbsp; <br /><b>1 Mark </b><br><br />"
+  },
+  "type": "mcq",
+  "options": [
+    "<span style='display:inline-block; margin-bottom:20px;'>$X(\\omega)H(\\omega)$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$X(\\omega)+H(\\omega)$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{1}{2\\pi}X(\\omega)H(\\omega)</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$X(\\omega)*H(\\omega)$</span>"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "<span style='display:inline-block; margin-bottom:20px;'>$X(\\omega)H(\\omega)$</span>"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "The convolution property states that convolution in the time domain corresponds to multiplication in the frequency domain: $x(t)*h(t) \\xleftrightarrow{FT} X(\\omega)H(\\omega)$."
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "A signal has Fourier Transform $$X(\\omega)=\\frac{4}{4+\\omega^2}.$$ The value of $$\\int_{-\\infty}^{\\infty}x(t)\\,dt$$ is &nbsp; <b>2 Mark </b><br><br />"
+  },
+  "type": "mcq",
+  "options": [
+    "1",
+    "2",
+    "$\\pi$",
+    "$2\\pi$"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "1"
+  },
+  "marks": 2,
+  "negative": 0.66,
+  "explanation": {
+    "type": "text",
+    "value": "Using the Fourier Transform property $$X(0)=\\int_{-\\infty}^{\\infty}x(t)dt.$$ Here, $$X(0)=\\frac{4}{4+0}=1.$$ Therefore, $$\\int_{-\\infty}^{\\infty}x(t)dt=1.$$"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "Let $\\operatorname{sinc}(t)=\\dfrac{\\sin(\\pi t)}{\\pi t}$ and $x(t)=\\operatorname{sinc}^2(t)$. The energy of $x(t)$ is &nbsp; &nbsp;  &nbsp; <b>2 Mark </b><br><br />"
+  },
+  "type": "mcq",
+  "options": [
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{1}{3}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{2}{3}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$1$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{4}{3}$</span>"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{2}{3}$</span>"
+  },
+  "marks": 2,
+  "negative": 0.66,
+  "explanation": {
+  "type": "text",
+  "value": "Using the Fourier Transform pair $\\operatorname{sinc}(t) \\xleftrightarrow{FT} \\operatorname{rect}\\left(\\dfrac{\\omega}{2\\pi}\\right)$ and the multiplication-convolution property, $x(t)=\\operatorname{sinc}^2(t)$ has the Fourier Transform $X(\\omega)=\\Lambda\\left(\\dfrac{\\omega}{2\\pi}\\right)$, where $\\Lambda(u)=1-|u|$ for $|u|\\leq1$ and $0$ otherwise. Thus, $X(\\omega)=1-\\dfrac{|\\omega|}{2\\pi}$ for $|\\omega|\\leq2\\pi$ and $X(\\omega)=0$ otherwise. Applying Parseval's theorem, $$E=\\frac{1}{2\\pi}\\int_{-\\infty}^{\\infty}|X(\\omega)|^2d\\omega=\\frac{1}{2\\pi}\\int_{-2\\pi}^{2\\pi}\\left(1-\\frac{|\\omega|}{2\\pi}\\right)^2d\\omega=\\frac{2}{3}.$$"
+},
+  "youtube": null
+}
+  ]
+}
