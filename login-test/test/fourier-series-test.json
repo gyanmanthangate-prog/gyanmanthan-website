@@ -204,7 +204,7 @@
 {
   "q": {
     "type": "text",
-    "value": "A periodic signal $x(t)$ has complex Fourier series coefficients $C_k$. A new signal is defined as $$y(t)=x(t)e^{j3\\omega_0 t}.$$ If $$C_{-1}=2+j,\\; C_0=4$$,$$\\; C_1=3-j,\\; C_2=1+2j,$$ and all other coefficients are zero, then the complex Fourier series coefficient $D_2$ of $y(t)$ is: &nbsp; <b>2 Mark </b>"
+    "value": "A periodic signal $x(t)$ has complex Fourier series coefficients $C_k$. A new signal is defined as $$y(t)=x(t)e^{j3\\omega_0 t}.$$ If, $$C_{-1}=2+j,\\; C_0=4,$$ $$\\; C_1=3-j,\\; C_2=1+2j,$$ and all other coefficients are zero, then the complex Fourier series coefficient $D_2$ of $y(t)$ is: &nbsp; <b>2 Mark </b>"
   },
   "type": "mcq",
   "options": [
