@@ -185,7 +185,16 @@ localStorage.removeItem("current");
 localStorage.removeItem("timeLeft");
 localStorage.removeItem("testStarted");
   let html = `
-<h2>Result</h2>
+<h2 style="
+  text-align:center;
+  margin:20px auto;
+  padding:14px;
+  color:#0b1a33;
+  border-bottom:3px solid #0b1a33;
+  max-width:600px;
+">
+  Result
+</h2>
 
 <table border="1" style="width: 60%;border-collapse:collapse;text-align:center;margin: 10px auto 0px auto;">
   <tr style="background:#0b1a33;color:#fff;">
@@ -196,6 +205,10 @@ localStorage.removeItem("testStarted");
 `;
 
 let correct = 0, wrong = 0, left = 0, total = 0;
+
+let maxMarks = data.questions.reduce((sum, q) => {
+  return sum + (q.marks || 0);
+}, 0);
 
 data.questions.forEach((q,i)=>{
 
@@ -249,7 +262,7 @@ if(user === null || user === "" || user === undefined){
 
 html += `
 <div style="text-align:center;margin-top:15px;font-size:18px;font-weight:600;">
-  Total Score: ${total} / ${data.questions.length}
+  Total Score: ${total} / ${maxMarks}
 </div>
 `;
 
