@@ -125,7 +125,7 @@
   "negative": 0.33,
   "explanation": {
     "type": "text",
-    "value": "Using Parseval's theorem, the average power of the signal is $$P=a_0^2+\\frac{1}{2}\\sum_{n=1}^{\\infty}(a_n^2+b_n^2).$$ Since only $a_1$ and $b_1$ are non-zero, $$P=4^2+\\frac{1}{2}(6^2+8^2)=16+\\frac{1}{2}(36+64)=16+50=66.$$ Therefore, the RMS value is $$x_{\\rm rms}=\\sqrt{P}=\\sqrt{66}.$$"
+    "value": "Using Parseval's theorem, the average power of the signal is $$P=a_0^2+\\frac{1}{2}\\sum_{n=1}^{\\infty}(a_n^2+b_n^2).$$ Since only $a_1$ and $b_1$ are non-zero, $$P=4^2+\\frac{1}{2}(6^2+8^2)$$=$$16+\\frac{1}{2}(36+64)=16+50=66.$$ Therefore, the RMS value is $$x_{\\rm rms}=\\sqrt{P}=\\sqrt{66}.$$"
   },
   "youtube": null
 },
@@ -173,7 +173,7 @@
   "negative": 0.33,
   "explanation": {
     "type": "text",
-    "value": "For a time shift, if $$y(t)=x(t-t_0),$$ then the complex Fourier series coefficients are $$D_k=C_k e^{-jk\\omega_0 t_0}.$$ Here, $$t_0=\\frac{T_0}{4}=\\frac{\\pi}{2\\omega_0}.$$ Therefore, $$D_2=(3-j)e^{-j2\\omega_0\\left(\\frac{\\pi}{2\\omega_0}\\right)}=(3-j)e^{-j\\pi}=-(3-j)=-3+j.$$ Hence, the correct answer is $$\\boxed{-3+j}.$$"
+    "value": "For a time shift, if $$y(t)=x(t-t_0),$$ then the complex Fourier series coefficients are $$D_k=C_k e^{-jk\\omega_0 t_0}.$$ Here, $$t_0=\\frac{T_0}{4}=\\frac{\\pi}{2\\omega_0}.$$ Therefore, $$D_2=(3-j)e^{-j2\\omega_0\\left(\\frac{\\pi}{2\\omega_0}\\right)}$$=$$(3-j)e^{-j\\pi}=-(3-j)=-3+j.$$ Hence, the correct answer is $$\\boxed{-3+j}.$$"
   },
   "youtube": null
 },
@@ -204,7 +204,7 @@
 {
   "q": {
     "type": "text",
-    "value": "A periodic signal $x(t)$ has complex Fourier series coefficients $C_k$. A new signal is defined as $$y(t)=x(t)e^{j3\\omega_0 t}.$$ If $$C_{-1}=2+j,\\; C_0=4,\\; C_1=3-j,\\; C_2=1+2j,$$ and all other coefficients are zero, then the complex Fourier series coefficient $D_2$ of $y(t)$ is: &nbsp; <b>2 Mark </b>"
+    "value": "A periodic signal $x(t)$ has complex Fourier series coefficients $C_k$. A new signal is defined as $$y(t)=x(t)e^{j3\\omega_0 t}.$$ If $$C_{-1}=2+j,\\; C_0=4$$,$$\\; C_1=3-j,\\; C_2=1+2j,$$ and all other coefficients are zero, then the complex Fourier series coefficient $D_2$ of $y(t)$ is: &nbsp; <b>2 Mark </b>"
   },
   "type": "mcq",
   "options": [
@@ -245,7 +245,7 @@
   "negative": 0.66,
   "explanation": {
     "type": "text",
-    "value": "First apply the time-shift property. If $$z(t)=x(t-t_0),$$ then $$Z_k=C_ke^{-jk\\omega_0t_0}.$$ Here, $$t_0=\\frac{T_0}{4},$$ so $$Z_k=C_ke^{-jk\\pi/2}.$$ Next, multiplying by $$e^{-j\\omega_0t}$$ shifts the coefficients by one index: $$D_k=Z_{k+1}.$$ Hence, $$D_0=Z_1=C_1e^{-j\\pi/2}=(2-j)(-j)=-1-2j.$$ Therefore, the correct answer is $$\\boxed{-1-2j}.$$"
+    "value": "First apply the time-shift property. If $$z(t)=x(t-t_0),$$ then $$Z_k=C_ke^{-jk\\omega_0t_0}.$$ Here, $$t_0=\\frac{T_0}{4},$$ so $$Z_k=C_ke^{-jk\\pi/2}.$$ Next, multiplying by $$e^{-j\\omega_0t}$$ shifts the coefficients by one index: $$D_k=Z_{k+1}.$$ Hence, $$D_0=Z_1=C_1e^{-j\\pi/2}$$=$$(2-j)(-j)=-1-2j.$$ Therefore, the correct answer is $$\\boxed{-1-2j}.$$"
   },
   "youtube": null
 }

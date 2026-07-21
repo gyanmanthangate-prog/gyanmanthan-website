@@ -67,7 +67,7 @@
     "<span style='display:inline-block; margin-bottom:20px;'>$j\\dfrac{dX(\\omega)}{d\\omega}$</span>",
     "<span style='display:inline-block; margin-bottom:20px;'>$-j\\dfrac{dX(\\omega)}{d\\omega}$</span>",
     "<span style='display:inline-block; margin-bottom:20px;'>$\\omega X(\\omega)$</span>",
-    "<span style='display:inline-block; margin-bottom:20px;'>$j\\omega X(\\omega)</span>"
+    "<span style='display:inline-block; margin-bottom:20px;'>$j\\omega X(\\omega)$</span>"
   ],
   "answer": {
     "type": "text",
@@ -186,7 +186,7 @@
   "options": [
     "<span style='display:inline-block; margin-bottom:20px;'>$X(\\omega)H(\\omega)$</span>",
     "<span style='display:inline-block; margin-bottom:20px;'>$X(\\omega)+H(\\omega)$</span>",
-    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{1}{2\\pi}X(\\omega)H(\\omega)</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{1}{2\\pi}X(\\omega)H(\\omega)$</span>",
     "<span style='display:inline-block; margin-bottom:20px;'>$X(\\omega)*H(\\omega)$</span>"
   ],
   "answer": {
@@ -245,7 +245,7 @@
   "negative": 0.66,
   "explanation": {
   "type": "text",
-  "value": "Using the Fourier Transform pair $\\operatorname{sinc}(t) \\xleftrightarrow{FT} \\operatorname{rect}\\left(\\dfrac{\\omega}{2\\pi}\\right)$ and the multiplication-convolution property, $x(t)=\\operatorname{sinc}^2(t)$ has the Fourier Transform $X(\\omega)=\\Lambda\\left(\\dfrac{\\omega}{2\\pi}\\right)$, where $\\Lambda(u)=1-|u|$ for $|u|\\leq1$ and $0$ otherwise. Thus, $X(\\omega)=1-\\dfrac{|\\omega|}{2\\pi}$ for $|\\omega|\\leq2\\pi$ and $X(\\omega)=0$ otherwise. Applying Parseval's theorem, $$E=\\frac{1}{2\\pi}\\int_{-\\infty}^{\\infty}|X(\\omega)|^2d\\omega=\\frac{1}{2\\pi}\\int_{-2\\pi}^{2\\pi}\\left(1-\\frac{|\\omega|}{2\\pi}\\right)^2d\\omega=\\frac{2}{3}.$$"
+  "value": "Using the Fourier Transform pair $\\operatorname{sinc}(t) \\xleftrightarrow{FT} \\operatorname{rect}\\left(\\dfrac{\\omega}{2\\pi}\\right)$ and the multiplication-convolution property, $x(t)=\\operatorname{sinc}^2(t)$ has the Fourier Transform $X(\\omega)=\\Lambda\\left(\\dfrac{\\omega}{2\\pi}\\right)$, where $\\Lambda(u)=1-|u|$ for $|u|\\leq1$ and $0$ otherwise. Thus, $X(\\omega)=1-\\dfrac{|\\omega|}{2\\pi}$ for $|\\omega|\\leq2\\pi$ and $X(\\omega)=0$ otherwise. Applying Parseval's theorem, $$E=\\frac{1}{2\\pi}\\int_{-\\infty}^{\\infty}|X(\\omega)|^2d\\omega$$=$$\\frac{1}{2\\pi}\\int_{-2\\pi}^{2\\pi}\\left(1-\\frac{|\\omega|}{2\\pi}\\right)^2d\\omega=\\frac{2}{3}.$$"
 },
   "youtube": null
 }
