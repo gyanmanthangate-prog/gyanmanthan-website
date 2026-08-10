@@ -131,7 +131,7 @@
 {
   "q": {
     "type": "text",
-    "value": "For a causal discrete-time signal, the Z-transform is $$X(z)=\\dfrac{z}{(z-1)(z-\\frac{1}{2})}.$$ The value of $$x[0]+x[\\infty]$$ is: &nbsp; <b>2 Marks</b><br><br>"
+    "value": "For a causal discrete-time signal, the Z-transform is $$X(z)=\\dfrac{z}{(z-1)(z-\\frac{1}{2})}.$$ The value of $$x[0]+x[\\infty]$$ is: &nbsp; <b>1 Marks</b><br><br>"
   },
   "type": "mcq",
   "options": [
@@ -144,7 +144,7 @@
     "type": "text",
     "value": "<span style='display:inline-block; margin-bottom:20px;'>$2$</span>"
   },
-  "marks": 2,
+  "marks": 1,
   "negative": 0.66,
   "explanation": {
     "type": "text",
@@ -155,7 +155,7 @@
 {
   "q": {
     "type": "text",
-    "value": "The Z-transform of a discrete-time signal is $$X(z)=\\dfrac{1}{(1-\\frac{1}{2}z^{-1})(1-2z^{-1})}.$$ For which ROC does the corresponding signal have a DTFT? &nbsp; <b>2 Marks</b><br><br>"
+    "value": "The Z-transform of a discrete-time signal is $$X(z)=\\dfrac{1}{(1-\\frac{1}{2}z^{-1})(1-2z^{-1})}.$$ For which ROC does the corresponding signal have a DTFT? &nbsp; <b>1 Marks</b><br><br>"
   },
   "type": "mcq",
   "options": [
@@ -168,7 +168,7 @@
     "type": "text",
     "value": "<span style='display:inline-block; margin-bottom:20px;'>$\\frac{1}{2}<|z|<2$</span>"
   },
-  "marks": 2,
+  "marks": 1,
   "negative": 0.66,
   "explanation": {
     "type": "text",
@@ -179,7 +179,7 @@
 {
   "q": {
     "type": "text",
-    "value": "Match List-I with List-II. &nbsp; <b>2 Marks</b><br><br><b>List-I: Signal</b><br>(P) Continuous-time periodic signal<br>(Q) Continuous-time non-periodic signal<br>(R) Discrete-time periodic signal<br>(S) Discrete-time non-periodic signal<br><br><b>List-II: Spectrum</b><br>(1) Discrete and periodic<br>(2) Continuous and non-periodic<br>(3) Discrete and non-periodic<br>(4) Continuous and periodic<br><br>"
+    "value": "Match List-I with List-II. &nbsp; <b>1 Marks</b><br><br><b>List-I: Signal</b><br>(P) Continuous-time periodic signal<br>(Q) Continuous-time non-periodic signal<br>(R) Discrete-time periodic signal<br>(S) Discrete-time non-periodic signal<br><br><b>List-II: Spectrum</b><br>(1) Discrete and periodic<br>(2) Continuous and non-periodic<br>(3) Discrete and non-periodic<br>(4) Continuous and periodic<br><br>"
   },
   "type": "mcq",
   "options": [
@@ -192,7 +192,7 @@
     "type": "text",
     "value": "<span style='display:inline-block; margin-bottom:20px;'>(P)–(3), (Q)–(2), (R)–(1), (S)–(4)</span>"
   },
-  "marks": 2,
+  "marks": 1,
   "negative": 0.66,
   "explanation": {
     "type": "text",
@@ -216,7 +216,7 @@
     "type": "text",
     "value": "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{\\sin\\left(\\frac{9\\omega}{2}\\right)}{\\sin\\left(\\frac{\\omega}{2}\\right)}$</span>"
   },
-  "marks": 1,
+  "marks": 2,
   "negative": 0.33,
   "explanation": {
     "type": "text",
