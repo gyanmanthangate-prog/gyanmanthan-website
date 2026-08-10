@@ -1,0 +1,252 @@
+{
+  "time": 720,
+  "instructions": [
+  "<b>Attempt all questions</b>",
+  "There are <b>10 questions</b> in total, consisting of <b>8 one-mark</b> and <b>2 two-mark</b> questions.",
+  "A wrong answer will incur a penalty of <b>0.33 marks</b> for each one-mark question and <b>0.66 marks</b> for each two-mark question.",
+  "Scientific calculator is not required.",
+  "Time allotted: <b>12 minutes</b>.",
+  "Submit the test after completion."
+],
+  "questions": [
+    {
+  "q": {
+    "type": "text",
+    "value": "If $$\\mathcal{L}\\{e^{-t}u(t)\\}=\\dfrac{1}{s+1},$$ then $$\\mathcal{L}\\{e^{-2t}u(2t)\\}$$ is: &nbsp; <b>1 Mark</b><br><br>"
+  },
+  "type": "mcq",
+  "options": [
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{1}{2(s+1)}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{1}{s+2}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{1}{2(s+2)}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{2}{s+2}$</span>"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{1}{s+2}$</span>"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "Since $$u(2t)=u(t)$$ for positive scaling, let $$x(t)=e^{-t}u(t).$$ Then $$x(2t)=e^{-2t}u(2t).$$ Using the time-scaling property, $$\\mathcal{L}\\{x(at)\\}=\\dfrac{1}{a}X\\left(\\dfrac{s}{a}\\right),\\;a>0.$$ Hence $$\\mathcal{L}\\{e^{-2t}u(2t)\\}=\\dfrac{1}{2}\\cdot\\dfrac{1}{\\frac{s}{2}+1}=\\boxed{\\dfrac{1}{s+2}}.$$"
+    }
+},
+    {
+  "q": {
+    "type": "text",
+    "value": "The unilateral Laplace transform of a signal is $$X(s)=\\dfrac{s+6}{s(s+2)(s+3)}.$$ The value of $$x(0^+)+x(\\infty)$$ is: &nbsp; <b>1 Mark</b><br><br>"
+  },
+  "type": "mcq",
+  "options": [
+    "<span style='display:inline-block; margin-bottom:20px;'>$1$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$2$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$3$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$4$</span>"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "<span style='display:inline-block; margin-bottom:20px;'>$1$</span>"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "Using the Initial Value Theorem, $$x(0^+)=\\lim_{s\\to\\infty}sX(s)$$=$$\\lim_{s\\to\\infty}\\frac{s(s+6)}{s(s+2)(s+3)}=0.$$ Using the Final Value Theorem, since all poles of $$sX(s)=\\dfrac{s+6}{(s+2)(s+3)}$$ lie in the left-half plane, $$x(\\infty)=\\lim_{s\\to0}sX(s)=\\frac{6}{(2)(3)}=1.$$ Therefore, $$x(0^+)+x(\\infty)=0+1=\\boxed{1}.$$"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "If $$\\mathcal{L}\\{e^{-2t}u(t)\\}=\\frac{1}{s+2},$$ then $$\\mathcal{L}\\{te^{-2t}u(t)\\}$$ is: &nbsp; <b>1 Mark</b><br><br>"
+  },
+  "type": "mcq",
+  "options": [
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{1}{(s+2)^2}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{2}{(s+2)^2}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{s+2}{(s+2)^2}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{1}{s^2+2}$</span>"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{1}{(s+2)^2}$</span>"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "Using the property $$\\mathcal{L}\\{tx(t)\\}=-\\dfrac{dX(s)}{ds}.$$ Here $$X(s)=\\dfrac{1}{s+2}.$$ Hence $$-\\dfrac{d}{ds}\\left(\\dfrac{1}{s+2}\\right)=\\dfrac{1}{(s+2)^2}.$$"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "If $$\\mathcal{Z}\\{x[n]\\}=\\dfrac{1}{1-\\frac{1}{2}z^{-1}},$$ then $$\\mathcal{Z}\\{n x[n]\\}$$ is: &nbsp; <b>1 Mark</b><br><br>"
+  },
+  "type": "mcq",
+  "options": [
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{\\frac{1}{2}z^{-1}}{\\left(1-\\frac{1}{2}z^{-1}\\right)^2}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{z^{-1}}{\\left(1-\\frac{1}{2}z^{-1}\\right)^2}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{1}{\\left(1-\\frac{1}{2}z^{-1}\\right)^2}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$-\\dfrac{\\frac{1}{2}z^{-1}}{\\left(1-\\frac{1}{2}z^{-1}\\right)^2}$</span>"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{\\frac{1}{2}z^{-1}}{\\left(1-\\frac{1}{2}z^{-1}\\right)^2}$</span>"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "Using the multiplication-by-$n$ property, $$\\mathcal{Z}\\{n x[n]\\}=-z\\dfrac{dX(z)}{dz}.$$ Here $$X(z)=\\dfrac{1}{1-\\frac{1}{2}z^{-1}}.$$ Differentiating, $$\\dfrac{dX(z)}{dz}=-\\dfrac{\\frac{1}{2}z^{-2}}{\\left(1-\\frac{1}{2}z^{-1}\\right)^2}.$$ Hence, $$\\mathcal{Z}\\{n x[n]\\}=\\dfrac{\\frac{1}{2}z^{-1}}{\\left(1-\\frac{1}{2}z^{-1}\\right)^2}.$$ Therefore, the correct answer is $$\\boxed{\\dfrac{\\frac{1}{2}z^{-1}}{\\left(1-\\frac{1}{2}z^{-1}\\right)^2}}.$$"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "If bilateral Z-transform $$\\mathcal{Z}\\{x[n]\\}=\\dfrac{1}{1-\\frac{1}{2}z^{-1}},$$ then $$\\mathcal{Z}\\{x[n-2]\\}$$ is: &nbsp; <b>1 Mark</b><br><br>"
+  },
+  "type": "mcq",
+  "options": [
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{z^{-2}}{1-\\frac{1}{2}z^{-1}}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{z^{2}}{1-\\frac{1}{2}z^{-1}}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{z^{-2}}{1-\\frac{1}{2}z^{-1}}+x[-1]z^{-1}+x[-2]$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{z^{-2}}{1-\\frac{1}{2}z^{-1}}-x[-1]z^{-1}-x[-2]$</span>"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{z^{-2}}{1-\\frac{1}{2}z^{-1}}$</span>"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "Using the time-shifting property for the bilateral Z-transform, $$x[n-k]\\Longleftrightarrow z^{-k}X(z).$$ For $$k=2,$$ we get $$\\mathcal{Z}\\{x[n-2]\\}=z^{-2}X(z).$$ Hence, $$\\mathcal{Z}\\{x[n-2]\\}=\\dfrac{z^{-2}}{1-\\frac{1}{2}z^{-1}}.$$ Therefore, the correct answer is $$\\boxed{\\dfrac{z^{-2}}{1-\\frac{1}{2}z^{-1}}}.$$"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "For a causal discrete-time signal, the Z-transform is $$X(z)=\\dfrac{z}{(z-1)(z-\\frac{1}{2})}.$$ The value of $$x[0]+x[\\infty]$$ is: &nbsp; <b>1 Marks</b><br><br>"
+  },
+  "type": "mcq",
+  "options": [
+    "<span style='display:inline-block; margin-bottom:20px;'>$1$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$2$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{5}{2}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$3$</span>"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "<span style='display:inline-block; margin-bottom:20px;'>$2$</span>"
+  },
+  "marks": 1,
+  "negative": 0.66,
+  "explanation": {
+    "type": "text",
+    "value": "Using the Initial Value Theorem, $$x[0]=\\lim_{z\\to\\infty}X(z)$$$$=\\lim_{z\\to\\infty}\\dfrac{z}{(z-1)(z-\\frac{1}{2})}=0.$$ For the Final Value Theorem, $$x[\\infty]=\\lim_{z\\to1}(1-z^{-1})X(z).$$ The pole at z=1 is removed by the factor $(1-z^{-1})$, and the remaining pole at $$z=\\frac{1}{2}$$ lies inside the unit circle. Therefore, the Final Value Theorem is applicable. Hence, $x[\\infty]=\\lim_{z\\to1}\\left(1-z^{-1}\\right)\\dfrac{z}{(z-1)(z-\\frac{1}{2})}$=$\\lim_{z\\to1}\\dfrac{1}{z-\\frac{1}{2}}=2.$ Therefore, $$x[0]+x[\\infty]=0+2=\\boxed{2}.$$"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "The Z-transform of a discrete-time signal is $$X(z)=\\dfrac{1}{(1-\\frac{1}{2}z^{-1})(1-2z^{-1})}.$$ For which ROC does the corresponding signal have a DTFT? &nbsp; <b>1 Marks</b><br><br>"
+  },
+  "type": "mcq",
+  "options": [
+    "<span style='display:inline-block; margin-bottom:20px;'>$|z|>2$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$|z|<\\frac{1}{2}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\frac{1}{2}<|z|<2$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\text{None of the above}$</span>"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "<span style='display:inline-block; margin-bottom:20px;'>$\\frac{1}{2}<|z|<2$</span>"
+  },
+  "marks": 1,
+  "negative": 0.66,
+  "explanation": {
+    "type": "text",
+    "value": "The DTFT exists if the unit circle $$|z|=1$$ lies within the ROC of the Z-transform. The poles are at $$z=\\frac{1}{2}$$ and $$z=2.$$ Therefore, the possible ROCs are $$|z|>2,$$ $$|z|<\\frac{1}{2},$$ and $$\\frac{1}{2}<|z|<2.$$ Only $$\\frac{1}{2}<|z|<2$$ contains the unit circle $$|z|=1$$. Hence, the corresponding signal has a DTFT only for $$\\boxed{\\frac{1}{2}<|z|<2}.$$"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "Match List-I with List-II. &nbsp; <b>1 Marks</b><br><br><b>List-I: Signal</b><br>(P) Continuous-time periodic signal<br>(Q) Continuous-time non-periodic signal<br>(R) Discrete-time periodic signal<br>(S) Discrete-time non-periodic signal<br><br><b>List-II: Spectrum</b><br>(1) Discrete and periodic<br>(2) Continuous and non-periodic<br>(3) Discrete and non-periodic<br>(4) Continuous and periodic<br><br>"
+  },
+  "type": "mcq",
+  "options": [
+    "<span style='display:inline-block; margin-bottom:20px;'>(P)–(3), (Q)–(2), (R)–(1), (S)–(4)</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>(P)–(3), (Q)–(4), (R)–(1), (S)–(2)</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>(P)–(1), (Q)–(2), (R)–(3), (S)–(4)</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>(P)–(4), (Q)–(2), (R)–(1), (S)–(3)</span>"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "<span style='display:inline-block; margin-bottom:20px;'>(P)–(3), (Q)–(2), (R)–(1), (S)–(4)</span>"
+  },
+  "marks": 1,
+  "negative": 0.66,
+  "explanation": {
+    "type": "text",
+    "value": "For a continuous-time periodic signal, the Fourier series representation gives a discrete spectrum, which is generally non-periodic. A continuous-time non-periodic signal has a continuous and non-periodic spectrum. A discrete-time periodic signal has a discrete and periodic spectrum. For a discrete-time non-periodic signal, the DTFT is continuous and periodic. Therefore, the correct matching is $$\\boxed{(P)\\text{–}(3),\\ (Q)\\text{–}(2),\\ (R)\\text{–}(1),\\ (S)\\text{–}(4)}.$$"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "Consider the discrete-time signal $$x[n]=1,\\quad -4\\le n\\le4,$$ and $$x[n]=0,otherwise.$$ The DTFT $$X(e^{j\\omega})$$ of this signal is: &nbsp; <b>2 Mark</b><br><br>"
+  },
+  "type": "mcq",
+  "options": [
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{\\sin\\left(\\frac{9\\omega}{2}\\right)}{\\sin\\left(\\frac{\\omega}{2}\\right)}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{\\sin\\left(4\\omega\\right)}{\\sin\\left(\\frac{\\omega}{2}\\right)}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{\\sin\\left(\\frac{9\\omega}{2}\\right)}{\\sin\\left(\\omega\\right)}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{\\sin\\left(\\frac{7\\omega}{2}\\right)}{\\sin\\left(\\frac{\\omega}{2}\\right)}$</span>"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{\\sin\\left(\\frac{9\\omega}{2}\\right)}{\\sin\\left(\\frac{\\omega}{2}\\right)}$</span>"
+  },
+  "marks": 2,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "The DTFT is $$X(e^{j\\omega})=\\sum_{n=-4}^{4}e^{-j\\omega n}.$$ Since the signal is symmetric about $$n=0$$, $$X(e^{j\\omega})=1+2\\sum_{n=1}^{4}\\cos(n\\omega).$$ Using the standard finite-sum result, $$1+2\\sum_{n=1}^{4}\\cos(n\\omega)=\\dfrac{\\sin\\left(\\frac{9\\omega}{2}\\right)}{\\sin\\left(\\frac{\\omega}{2}\\right)}.$$ Hence, $$\\boxed{X(e^{j\\omega})=\\dfrac{\\sin\\left(\\frac{9\\omega}{2}\\right)}{\\sin\\left(\\frac{\\omega}{2}\\right)}}.$$"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "A periodic half-wave rectified cosine signal is defined as $$x(t)=\\begin{cases}\\cos t,&0\\le t\\le\\dfrac{\\pi}{2}\\\\0,&\\dfrac{\\pi}{2}&lt;t\\le\\pi\\end{cases}$$ and is repeated with period $$T=\\pi.$$ The Laplace transform $$X(s)$$ is: &nbsp; <b>2 Mark</b><br><br>"
+  },
+  "type": "mcq",
+  "options": [
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{s+e^{-\\pi s/2}}{(s^2+1)(1-e^{-\\pi s})}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{s+e^{-\\pi s/2}}{s^2+1}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{s-e^{-\\pi s/2}}{(s^2+1)(1-e^{-\\pi s})}$</span>",
+    "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{s+e^{-\\pi s/2}}{(s^2-1)(1-e^{-\\pi s})}$</span>"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{s+e^{-\\pi s/2}}{(s^2+1)(1-e^{-\\pi s})}$</span>"
+  },
+  "marks": 2,
+  "negative": 0.66,
+  "explanation": {
+    "type": "text",
+    "value": "Using the Laplace transform property for periodic signals, $$X(s)=\\dfrac{F_1(s)}{1-e^{-sT}},$$ where $T=\\pi$ and $$F_1(s)=\\mathcal{L}\\left\\{\\cos t\\left[u(t)-u\\left(t-\\dfrac{\\pi}{2}\\right)\\right]\\right\\}.$$ Now, $$F_1(s)=\\int_0^{\\pi/2}e^{-st}\\cos t\\,dt=\\dfrac{s+e^{-\\pi s/2}}{s^2+1}.$$ Hence, $$X(s)=\\dfrac{s+e^{-\\pi s/2}}{(s^2+1)(1-e^{-\\pi s})}.$$"
+  },
+  "youtube": null
+}
+  ]
+}
