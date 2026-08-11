@@ -224,3 +224,19 @@ tr:nth-child(even) { background-color: #f9f9f9; }
 .toc a:hover {
   color: #ff7a00;
 }
+
+.media-block {
+  opacity: 0;
+  transform: translateY(35px);
+  filter: blur(3px);
+  transition:
+    opacity 0.9s ease-out,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.9s ease-out;
+}
+
+.media-block.show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}

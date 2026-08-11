@@ -91,236 +91,237 @@
   <div id="sidebar-component"></div>
 
   <!-- Right Content -->
-  <div class="blog-right reveal" id="rightContent">
+   <div class="blog-right reveal" id="rightContent">
     <!-- body Content -->
-<section class="generic-content-section">
+    <section class="generic-content-section">
 
-  <h1>Periodic Signals (Continuous-Time) – Concepts, Conditions & GATE Tricks</h1>
+      <h1>Continuous-Time Transforms – Fourier Transform & Laplace Transform | GATE ECE</h1>
 
-<p>
-Periodic signals are fundamental in signal processing and are frequently tested in GATE ECE. A continuous-time signal is called periodic if it repeats itself after a fixed time interval. Understanding periodicity is important for analyzing continuous-time signals using the <strong>Fourier Transform and Laplace Transform</strong>.
-</p>
+        <p> Continuous-time transforms provide powerful methods for analyzing signals and systems. Among them, the <strong>Fourier Transform</strong> and <strong>Laplace Transform</strong> are closely related and are important topics in GATE ECE. </p>
 
-<p>
-In this article, we cover the conditions for periodicity of continuous-time signals, fundamental period, periodicity of complex exponentials, and important GATE shortcuts. These concepts also help in understanding the frequency-domain representation of periodic signals and their relationship with <strong>Fourier Transform and Laplace Transform</strong>.
-</p>
+        <p> The <strong>Laplace Transform</strong> gives a more general representation of a continuous-time signal in the complex-frequency domain. The <strong>Fourier Transform</strong> can be obtained from the Laplace Transform by putting $s=j\omega$, provided that the <strong>Region of Convergence (ROC)</strong> includes the imaginary axis. </p>
 
-<p class="keywords">
-  <strong>Keywords:</strong> periodic signals, continuous-time periodic signals, fundamental period, periodic vs aperiodic signals, continuous-time periodicity condition, complex exponential periodicity, Fourier Transform, CTFT, Laplace Transform, GATE ECE signals and systems, periodic signals GATE questions
-</p>
+        <p> This relationship makes it easier to understand why the Laplace Transform is useful for a wider range of problems, while the Fourier Transform is mainly used for frequency-domain analysis. In this article, we develop both transforms together so that their connection, properties, and applications become easier to understand and remember. </p>
+
+        <p class="keywords"> <strong>Keywords:</strong> continuous-time transforms, Fourier Transform, CTFT, Laplace Transform, Fourier Transform properties, Laplace Transform properties, inverse Fourier Transform, inverse Laplace Transform, Region of Convergence, ROC, poles and zeros, frequency-domain analysis, GATE ECE signals and systems </p>
 
  <!-- 1st details -->
- <div class="media-block">
-  <h2>Fourier Transform and Laplace Transform</h2>
-<p>The Fourier Transform represents a continuous-time signal in the frequency domain, while the Laplace Transform provides a more general representation in the complex-frequency domain. Depending on the properties and nature of the signal, these transforms can simplify signal and system analysis and make GATE-level problems easier and faster to solve.</p>
-</div>
-<br/>
-<div class="media-block">
-  <h2><u>Fourier Transform</u></h2>
-<p>
-The Fourier Transform is a powerful mathematical tool used to represent a continuous-time signal in the frequency domain. It decomposes a signal into its frequency components, allowing us to analyze the magnitude, phase, bandwidth, and spectral characteristics of the signal. The Fourier Transform is widely used in signal processing and is an important topic for GATE ECE.
-</p>
-<div class="media-text">
-<h3>Fourier Transform Forms</h3>
-<div class="inner-box">
-  <div style="flex:1">
-<p><strong>Fourier Transform:</strong></p>
-<p>
-  $X(\omega)=\int_{-\infty}^{\infty}x(t)e^{-j\omega t}\,dt$
-</p>
-<br>
-</div>
-<div style="flex: 1;">
-<p><strong>Inverse Fourier Transform:</strong></p>
+    <div class="media-block">
+        <p> The Fourier Transform and Laplace Transform are two closely related tools for continuous-time signal analysis. The key idea is that the <strong>Laplace Transform is more general</strong>, while the Fourier Transform corresponds to the Laplace Transform evaluated along the imaginary axis. </p>
 
-<p>
-  $x(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}X(\omega)e^{j\omega t}\,d\omega$
-</p>
-</div></div>
+        <p> For the Fourier Transform to exist as the corresponding Laplace-domain representation, the <strong>ROC must include the $j\omega$-axis</strong>. This connection is especially useful when studying convergence, stability, frequency response, and system behavior. </p>
+    </div>
+          <br/>
 
-<h3>Key Characteristics</h3>
+    <div class="media-block">
+      <h2><u>Fourier Transform</u></h2>
+        <p> The <strong>Fourier Transform</strong> converts a continuous-time signal from the time domain into the frequency domain. It shows how different frequency components are present in the signal and is useful for studying its spectrum, magnitude, phase, and bandwidth. </p>
+          <br />
+      <div class="media-text">
+        <h3>Fourier Transform Forms of $x(t)$</h4>
+        <p><strong>Fourier Transform:</strong></p>
+        <p>$X(\omega)=\int_{-\infty}^{\infty}x(t)e^{-j\omega t}\,dt$</p>
+            <br>
+        <p><strong>Inverse Fourier Transform:</strong></p>
+        <p>$x(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}X(\omega)e^{j\omega t}\,d\omega$</p>
+            <br>
+        <p><strong>Note:</strong> <u>The Hilbert Transform </u>of x(t) is obtained by multiplying its Fourier Transform by $-j\,\mathrm{sgn}(\omega)$:</p>
+        <p>$\mathcal{F}\{\hat{x}(t)\}=-j\,\mathrm{sgn}(\omega)\,X(\omega)$</p>
+      </div>
+      <div class="media-content">
+          Click to zoom-in the image
+            <img src="/images/formula-sheet-ctft.png" alt="Standard continuous-time signals and their Fourier Transform pairs" title="Standard Continuous-Time Fourier Transform Pairs" class="zoomable" loading="lazy">
+      </div>
+    </div>
+    <div class="media-block">
+      <h3>Key Characteristics</h3>
+      <ul>
+        <li>The Fourier Transform converts a continuous-time signal from the time domain to the frequency domain.</li>
 
-<ul>
-  <li>The Fourier Transform represents a continuous-time signal in the frequency domain.</li>
-  <li>The transform $X(\omega)$ describes the frequency components present in the signal $x(t)$.</li>
-  <li>The inverse Fourier Transform reconstructs the original time-domain signal from its frequency-domain representation.</li>
-  <li>Fourier Transform properties such as linearity, time shifting, frequency shifting, scaling, differentiation, and convolution simplify GATE-level problems.</li>
-  <li>For periodic signals, the Fourier Transform is represented using impulses at the harmonic frequencies.</li>
-  <li>Choosing the appropriate Fourier Transform property can significantly reduce the calculation required in GATE problems.</li>
-</ul>
+        <li>$X(\omega)$ represents the frequency components present in the signal $x(t)$.</li>
 
-</div>
+        <li>The inverse Fourier Transform reconstructs $x(t)$ from $X(\omega)$.</li>
 
-<!-- <div class="media-content">
-  Click to zoom-in the image
-  <img src="/images/trigonometric-vs-exponential-continous-time-transform.png"
-       alt="Comparison of trigonometric and exponential Fourier Series representations"
-       class="zoomable"
-       loading="lazy"> -->
-</div>
+        <li>For a periodic signal, the Fourier Transform consists of impulses located at the harmonic frequencies.</li>
 
-<div class="media-block">
-  <h2><u>Laplace Transform</u></h2>
-<p>
-The Laplace Transform is a powerful mathematical tool used to represent continuous-time signals in the complex-frequency domain. It is widely used for analyzing signals and systems, solving differential equations, and studying system behavior, stability, poles, zeros, and transient and steady-state responses. The Laplace Transform is an important topic for GATE ECE.
-</p>
-<div class="media-text">
-<h3>Laplace Transform:</h3>
-<div class="inner-box">
-  <div style="flex:1">
-    <p><strong>Laplace Transform:</strong></p>
-    <p>
-      $X(s)=\int_{-\infty}^{\infty}x(t)e^{-st}\,dt$
-    </p>
-    <br>
-  </div>
+        <li>Signal properties such as linearity, time shifting, scaling, differentiation, and convolution can be used to simplify Fourier Transform calculations.</li>
 
-  <div style="flex: 1;">
-    <p><strong>Inverse Laplace Transform:</strong></p>
-    <p>
-      $x(t)=\frac{1}{2\pi j}\int_{\gamma-j\infty}^{\gamma+j\infty}X(s)e^{st}\,ds$
-    </p>
-  </div>
-</div>
-<br />
-<h3>Key Characteristics</h3>
+        <li>For a Laplace Transform with an ROC that includes the imaginary axis, the Fourier Transform is obtained by setting $s=j\omega$.</li>
 
-<ul>
-  <li>The Laplace Transform represents a continuous-time signal in the complex-frequency domain.</li>
-  <li>The transform $X(s)$ describes the signal in terms of the complex variable $s=\sigma+j\omega$.</li>
-  <li>The inverse Laplace Transform reconstructs the original time-domain signal from its Laplace-domain representation.</li>
-  <li>The Region of Convergence (ROC) specifies the values of $s$ for which the Laplace Transform exists.</li>
-  <li>Poles and zeros provide important information about the behavior and stability of continuous-time systems.</li>
-  <li>Properties such as linearity, time shifting, differentiation, integration, and convolution simplify GATE-level problems.</li>
-  <li>Choosing the appropriate Laplace Transform property can significantly reduce the calculation required in GATE problems.</li>
-</ul>
+        <li>Standard Fourier Transform pairs such as $\delta(t)$, $u(t)$, rectangular and triangular pulses are frequently useful in GATE problems.</li>
 
-</div>
-</div>
-<br />
-<div class="media-block">
- <h3>Fourier Transform Properties:</h3>
+        <li>Using the appropriate transform property or standard pair can significantly reduce the calculation required in GATE problems.</li>
+      </ul>
+    </div>
 
-<div class="table-wrapper" id="katex-wrap">
-<table>
-  <tr>
-    <th>Property</th>
-    <th>Time Domain</th>
-    <th>Frequency Domain</th>
-  </tr>
+    <div class="media-block">
+      <h2><u>Laplace Transform</u></h2>
+      <p> The <strong>Laplace Transform</strong> extends the idea of frequency-domain analysis to the complex-frequency domain. It is particularly useful for analyzing differential equations, transient behavior, system stability, poles, zeros, and system response. </p>
+        <div class="media-text">
+          <h3>Laplace Transform of x(t):</h3>
+          <p><strong>Laplace Transform:</strong></p>
+          <p>$X(s)=\int_{-\infty}^{\infty}x(t)e^{-st}\,dt$</p>
+            <br />
+          <p><strong>Inverse Laplace Transform:</strong></p>
+          <p>$x(t)=\frac{1}{2\pi j}\int_{\gamma-j\infty}^{\gamma+j\infty}X(s)e^{st}\,ds$</p>
+        </div>
+        <div class="media-content">
+          Click to zoom-in the image
+            <img src="/images/formula-sheet-lt.png" alt="Standard continuous-time signals and their Laplace Transform pairs" title="Standard Continuous-Time Laplace Transform Pairs" class="zoomable" loading="lazy">
+        </div>
+      </div>
+        <br />
+    <div class="media-block">
+      <h3>Important Properties of ROC</h3>
+        <ul>
+          <li>The Region of Convergence (ROC) is the set of values of $s$ for which the Laplace Transform converges.</li>
+          <li>For a rational Laplace Transform, the ROC is a vertical half-plane or vertical strip in the $s$-plane.</li>
+          <li>The ROC never contains any pole of $X(s)$.</li>
+          <li>For a right-sided signal, the ROC lies to the right of the rightmost pole.</li>
+          <li>For a left-sided signal, the ROC lies to the left of the leftmost pole.</li>
+          <li>For a two-sided signal, the ROC lies between two poles and forms a vertical strip.</li>
+          <li>For a combination of right-sided components, the ROC extends to the right of the rightmost pole.</li>
+          <li>For a combination of left-sided components, the ROC extends to the left of the leftmost pole.</li>
+          <li>For a combination of right-sided and left-sided signals, the ROC exists only if the rightmost pole of the right-sided component lies to the left of the leftmost pole of the left-sided component.</li>
+          <li>If the individual ROCs have no common region, the Laplace Transform does not exist.</li>
+          <li>A signal is stable if its ROC includes the imaginary axis ($s=j\omega$).</li>
+          <li>If the ROC includes the imaginary axis, the Fourier Transform exists under the usual convergence conditions.</li>
+          <li>For a causal rational system, the ROC lies to the right of the rightmost pole.</li>
+          <li>For a causal and stable rational system, all poles lie in the left half of the $s$-plane.</li>
+          <li>The ROC together with $X(s)$ uniquely determines the corresponding time-domain signal.</li>
+        </ul>
+    </div>
+    <div class="media-block">
+        <h3>Relation Between Laplace and Fourier Transform</h3>
+        <p>The Laplace Transform is defined using $s=\sigma+j\omega$. When $\sigma=0$, we have $s=j\omega$, which corresponds to the imaginary axis. Therefore, the Fourier Transform is obtained from the Laplace Transform by evaluating it on the imaginary axis:</p>
+        <p>$X(\omega)=X(s)\big|_{s=j\omega}$</p>
+        <p>For the Fourier Transform to exist, the <strong>imaginary axis must lie within the ROC</strong> of the Laplace Transform. Since the ROC never contains poles, there must be no pole on the imaginary axis.</p>
+    </div>
 
-  <tr>
-    <td><strong>Linearity</strong></td>
-    <td>$ax_1+bx_2$</td>
-    <td>$aX_1+bX_2$</td>
-  </tr>
+        <br />
+    <div class="media-block">
+      <h3>Fourier Transform Properties:</h3>
 
-  <tr>
-    <td><strong>Time Shifting</strong></td>
-    <td>$x(t-t_0)$</td>
-    <td>$e^{-j\omega t_0}X(\omega)$</td>
-  </tr>
+        <div class="table-wrapper" id="katex-wrap">
+          <table>
+            <tr>
+              <th>Property</th>
+              <th>Time Domain</th>
+              <th>Frequency Domain</th>
+            </tr>
 
-  <tr>
-    <td><strong>Frequency Shifting</strong></td>
-    <td>$x(t)e^{j\omega_0t}$</td>
-    <td>$X(\omega-\omega_0)$</td>
-  </tr>
+            <tr>
+              <td><strong>Linearity</strong></td>
+              <td>$ax_1+bx_2$</td>
+              <td>$aX_1+bX_2$</td>
+            </tr>
 
-  <tr>
-    <td><strong>Time Scaling</strong></td>
-    <td>$x(at)$</td>
-    <td>$\frac{1}{|a|}X(\frac{\omega}{a})$</td>
-  </tr>
+             <tr>
+              <td><strong>Time Shifting</strong></td>
+              <td>$x(t-t_0)$</td>
+              <td>$e^{-j\omega t_0}X(\omega)$</td>
+             </tr>
 
-  <tr>
-    <td><strong>Time Differentiation</strong></td>
-    <td>$\frac{dx(t)}{dt}$</td>
-    <td>$j\omega X(\omega)$</td>
-  </tr>
+              <tr>
+                <td><strong>Frequency Shifting</strong></td>
+                <td>$x(t)e^{j\omega_0t}$</td>
+                <td>$X(\omega-\omega_0)$</td>
+              </tr>
 
-  <tr>
-    <td><strong>Convolution</strong></td>
-    <td>$x(t)*h(t)$</td>
-    <td>$X(\omega)H(\omega)$</td>
-  </tr>
+              <tr>
+                <td><strong>Time Scaling</strong></td>
+                <td>$x(at)$</td>
+                <td>$\frac{1}{|a|}X(\frac{\omega}{a})$</td>
+              </tr>
 
-  <tr>
-    <td><strong>Multiplication</strong></td>
-    <td>$x(t)h(t)$</td>
-    <td>$\frac{1}{2\pi}X(\omega)*H(\omega)$</td>
-  </tr>
+              <tr>
+                <td><strong>Time Differentiation</strong></td>
+                <td>$\frac{dx(t)}{dt}$</td>
+                <td>$j\omega X(\omega)$</td>
+              </tr>
 
-  <tr>
-    <td><strong>Parseval</strong></td>
-    <td>$\int|x(t)|^2dt$</td>
-    <td>$\frac{1}{2\pi}\int|X(\omega)|^2d\omega$</td>
-  </tr>
-</table>
-</div>
-<h3>Laplace Transform Properties:</h3>
+              <tr>
+                <td><strong>Convolution</strong></td>
+                <td>$x(t)*h(t)$</td>
+                <td>$X(\omega)H(\omega)$</td>
+              </tr>
 
-<div class="table-wrapper" id="katex-wrap">
-<table>
-  <tr>
-    <th>Property</th>
-    <th>Time Domain</th>
-    <th>Laplace Domain</th>
-  </tr>
+              <tr>
+                <td><strong>Multiplication</strong></td>
+                <td>$x(t)h(t)$</td>
+                <td>$\frac{1}{2\pi}X(\omega)*H(\omega)$</td>
+              </tr>
 
-  <tr>
-    <td><strong>Linearity</strong></td>
-    <td>$ax_1+bx_2$</td>
-    <td>$aX_1+bX_2$</td>
-  </tr>
+              <tr>
+                <td><strong>Parseval</strong></td>
+                <td>$\int|x(t)|^2dt$</td>
+                <td>$\frac{1}{2\pi}\int|X(\omega)|^2d\omega$</td>
+              </tr>
+          </table>
+        </div>
 
-  <tr>
-    <td><strong>Time Shifting</strong></td>
-    <td>$x(t-t_0)$</td>
-    <td>$e^{-st_0}X(s)$</td>
-  </tr>
+      <h3>Laplace Transform Properties:</h3>
+        <div class="table-wrapper" id="katex-wrap">
+          <table>
+            <tr>
+              <th>Property</th>
+              <th>Time Domain</th>
+              <th>Laplace Domain</th>
+            </tr>
 
-  <tr>
-    <td><strong>Time Differentiation</strong></td>
-    <td>$\frac{dx(t)}{dt}$</td>
-    <td>$sX(s)-x(0^-)$</td>
-  </tr>
+            <tr>
+              <td><strong>Linearity</strong></td>
+              <td>$ax_1+bx_2$</td>
+              <td>$aX_1+bX_2$</td>
+            </tr>
 
-  <tr>
-    <td><strong>Time Integration</strong></td>
-    <td>$\int_{-\infty}^{t}x(\tau)d\tau$</td>
-    <td>$\frac{X(s)}{s}$</td>
-  </tr>
+            <tr>
+              <td><strong>Time Shifting</strong></td>
+              <td>$x(t-t_0)$</td>
+              <td>$e^{-st_0}X(s)$</td>
+            </tr>
 
-  <tr>
-    <td><strong>Convolution</strong></td>
-    <td>$x(t)*h(t)$</td>
-    <td>$X(s)H(s)$</td>
-  </tr>
+            <tr>
+              <td><strong>Time Differentiation</strong></td>
+              <td>$\frac{dx(t)}{dt}$</td>
+              <td>$sX(s)-x(0^-)$</td>
+            </tr>
 
-  <tr>
-    <td><strong>Multiplication by $t$</strong></td>
-    <td>$tx(t)$</td>
-    <td>$-\frac{dX(s)}{ds}$</td>
-  </tr>
+            <tr>
+              <td><strong>Time Integration</strong></td>
+              <td>$\int_{-\infty}^{t}x(\tau)d\tau$</td>
+              <td>$\frac{X(s)}{s}$</td>
+            </tr>
 
-  <tr>
-    <td><strong>Initial Value</strong></td>
-    <td colspan="2">$\lim_{t\to0^+}x(t)=\lim_{s\to\infty}sX(s)$</td>
-  </tr>
+            <tr>
+              <td><strong>Convolution</strong></td>
+              <td>$x(t)*h(t)$</td>
+              <td>$X(s)H(s)$</td>
+            </tr>
 
-  <tr>
-    <td><strong>Final Value</strong></td>
-    <td colspan="2">$\lim_{t\to\infty}x(t)=\lim_{s\to0}sX(s)$</td>
-  </tr>
+            <tr>
+              <td><strong>Multiplication by $t$</strong></td>
+              <td>$tx(t)$</td>
+              <td>$-\frac{dX(s)}{ds}$</td>
+            </tr>
 
-  <tr>
-    <td><strong>ROC</strong></td>
-    <td colspan="2">Determines convergence</td>
-  </tr>
-</table>
-</div>
-</div>
+            <tr>
+              <td><strong>Initial Value</strong></td>
+              <td colspan="2">$\lim_{t\to0^+}x(t)=\lim_{s\to\infty}sX(s)$</td>
+            </tr>
+
+            <tr>
+              <td><strong>Final Value</strong></td>
+              <td colspan="2">$\lim_{t\to\infty}x(t)=\lim_{s\to0}sX(s)$</td>
+            </tr>
+
+            <tr>
+              <td><strong>ROC</strong></td>
+              <td colspan="2">Determines convergence</td>
+            </tr>
+          </table> 
+        </div>
+    </div>
 
 
 <br />
@@ -364,7 +365,7 @@ The Laplace Transform is a powerful mathematical tool used to represent continuo
 </section>
 <br />
 <p>
- <a href="/signals/discrete-time-transform" title="Discrete-Time Transforms | DTFT & Z-Transform | GATE ECE">
+ <a href="/signals/discrete-time-transform.html" title="Discrete-Time Transforms | DTFT & Z-Transform | GATE ECE">
   Next: Discrete-Time Transforms
 </a>
 

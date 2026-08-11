@@ -159,3 +159,18 @@ if(countdownEl){
 
   }, 1000);
 }
+
+const mediaBlocks = document.querySelectorAll('.media-block');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.15
+});
+
+mediaBlocks.forEach(block => observer.observe(block));
