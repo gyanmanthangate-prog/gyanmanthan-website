@@ -1,0 +1,303 @@
+{
+  "time": 1200,
+  "instructions": [
+    "<b>Attempt all questions</b>",
+"There are <b>12 questions</b> in total, carrying <b>15 marks</b>.",
+"Questions may carry <b>1 mark or 2 marks</b>; the marks for each question are mentioned against it.",
+"A wrong answer to a <b>1-mark question</b> will incur a penalty of <b>0.33 marks</b>.",
+"A wrong answer to a <b>2-mark question</b> will incur a penalty of <b>0.66 marks</b>.",
+"Time allotted: <b>20 minutes</b>.",
+"Submit the test after completion."
+
+  ],
+  "questions": [
+    {
+  "q": {
+    "type": "text",
+    "value": "Kirchhoff's Current Law is applicable to only:  <b>1 Mark</b>"
+  },
+  "type": "mcq",
+  "options": [
+    "Closed-loop networks",
+    "Electronic circuits",
+    "Electrical circuits",
+    "Junction in a network"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "Junction in a network"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "Kirchhoff's Current Law (KCL) is based on the conservation of charge. It states that the algebraic sum of currents at any junction (node) in a circuit is zero.<br><br>$$\\sum I=0$$<br><br>Therefore, KCL is applicable to a <b>junction in a network</b>.<br><br>Hence, (D) is correct."
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "If four branches meet at a node with currents of $2\\,\\mathrm{A}$ in, $3\\,\\mathrm{A}$ in, and $1\\,\\mathrm{A}$ out, what is the value and direction of the fourth branch current? <b>1 Mark</b>"
+  },
+  "type": "mcq",
+  "options": [
+    "1.5 A in",
+    "2 A in",
+    "4 A out",
+    "2 A out"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "4 A out"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "Applying Kirchhoff's Current Law (KCL), the total current entering a node must equal the total current leaving the node.<br><br>$$\\sum I_{in}=\\sum I_{out}$$<br><br>$$2+3=1+I$$<br><br>Therefore,<br><br>$$I=4\\,\\mathrm{A}$$<br><br>Hence, the fourth branch current is $4\\,\\mathrm{A}$ out of the node.<br><br>Therefore, (C) is correct."
+  },
+  "youtube": null
+},
+    {
+  "q": {
+    "type": "text",
+    "value": "For the circuit shown in the fig, voltage $v_2$ is: -  <b>(1 Mark)</b><br /><br /><img src=\"/images/net-basic-1.png\" alt=\"Circuit figure\" id=\"drawhand-fig\">"
+  },
+  "type": "mcq",
+  "options": [
+    "0.5",
+    "1",
+    "1.5",
+    "2"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "2"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+   "type": "image",
+   "value": "/images/net-basic-1-solve.png"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "For the circuit shown in the fig, current i is: -  <b>(1 Mark)</b><br /><br /><img src=\"/images/net-basic-2.png\" alt=\"Circuit figure\" id=\"drawhand-fig\">"
+  },
+  "type": "mcq",
+  "options": [
+    "1A",
+    "2A",
+    "3A",
+    "4A"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "1A"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "image",
+    "value": "/images/net-basic-2-solve.png"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "Both the capacitors shown in the figure are initially uncharged. At $t=2\\,\\mathrm{ms}$, the current $i_C$ is: -  <b>(1 Mark)</b><br><br><img src=\"/images/net-basic-3.png\" alt=\"Circuit figure\" id=\"drawhand-fig\"><br><br>"
+  },
+  "type": "mcq",
+  "options": [
+    "0.25mA",
+    "1mA",
+    "0.75mA",
+    "3mA"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "0.75mA"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "image",
+    "value": "/images/net-basic-3-solve.png"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "For the circuit shown in the figure, the dependent source is: -  <b>(1 Mark)</b><br><br><img src=\"/images/net-basic-4.png\" alt=\"Circuit figure\" id=\"drawhand-fig\"><br><br>"
+  },
+  "type": "mcq",
+  "options": [
+    "Supplies 16W",
+    "Absorbs 16W",
+    "Supplies 32W",
+    "Absorbs 32W"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "Absorbs 32W"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "image",
+    "value": "/images/net-basic-3-solve.png"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "A capacitor is charged by a constant current of $2\\,\\mathrm{mA}$ and results in a voltage increase of $12\\,\\mathrm{V}$ in a $10\\,\\mathrm{s}$ interval. The value of capacitance is: -  <b>(2 Mark)</b>"
+  },
+  "type": "mcq",
+  "options": [
+    "0.75 mF",
+    "1.33 mF",
+    "0.6 mF",
+    "1.67 mF"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "1.67 mF"
+  },
+  "marks": 2,
+  "negative": 0.66,
+  "explanation": {
+    "type": "text",
+    "value": "For a capacitor, $i_C = C\\dfrac{dv_C}{dt}$.<br><br>Therefore,<br><br>$$C = \\frac{i_C\\,\\Delta t}{\\Delta v_C}$$<br><br>$$C = \\frac{(2\\times10^{-3})(10)}{12} = 1.667\\times10^{-3}\\,\\mathrm{F}$$<br><br>Hence, $C = 1.67\\,\\mathrm{mF}$.<br><br>Therefore, (D) is correct."
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "The current in a $50\\,\\mathrm{mH}$ inductor is given in the figure. The inductor voltage is: <br/><b> (2 Mark)</b><br><br><img src=\"/images/net-basic-6.png\" alt=\"Circuit figure\" id=\"drawhand-fig\"><br><br>"
+  },
+  "type": "mcq",
+  "options": [
+    "<img src=\"/images/net-basic-6-a.png\" alt=\"Option A\" id=\"drawhand-fig\">",
+    "<img src=\"/images/net-basic-6-b.png\" alt=\"Option B\" id=\"drawhand-fig\">",
+    "<img src=\"/images/net-basic-6-c.png\" alt=\"Option C\" id=\"drawhand-fig\">",
+    "<img src=\"/images/net-basic-6-d.png\" alt=\"Option D\" id=\"drawhand-fig\">"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "<img src=\"/images/net-basic-6-d.png\" alt=\"Option D\" id=\"drawhand-fig\">"
+  },
+  "marks": 2,
+  "negative": 0.66,
+  "explanation": {
+  "type": "text",
+  "value": "At $t=4\\,\\mathrm{ms}$, the slope changes from $-50$ to $+50$.<br><br>Therefore, the change in slope is $50-(-50)=100$.<br><br>For an inductor, $v_L=L\\dfrac{di_L}{dt}$. Hence, the step change in voltage is<br><br>$$\\Delta v_L=L\\,\\Delta\\left(\\frac{di_L}{dt}\\right)=50\\times10^{-3}\\times100=5\\,\\mathrm{V}$$<br><br>Therefore, the step size is $5\\,\\mathrm{V}$."
+},
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "The current in an inductor changes from $0$ to $200\\,\\mathrm{mA}$ in $4\\,\\mathrm{ms}$ and induces a voltage of $100\\,\\mathrm{mV}$. The value of the inductor is -  <b>(1 Mark)</b>"
+  },
+  "type": "mcq",
+  "options": [
+    "2 mH",
+    "0.5 mH",
+    "8 mH",
+    "4 mH"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "2 mH"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "For an inductor, $v_L=L\\dfrac{di_L}{dt}$.<br><br>Therefore,<br><br>$$L=\\frac{v_L\\,\\Delta t}{\\Delta i_L}$$<br><br>$$L=\\frac{(100\\times10^{-3})(4\\times10^{-3})}{200\\times10^{-3}}=2\\times10^{-3}\\,\\mathrm{H}$$<br><br>Hence, $L=2\\,\\mathrm{mH}$.<br><br>Therefore, (A) is correct."
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "The equivalent resistance between the points A and B is (R is the resistance of each side of the smaller square):-  <b>(2 Mark)</b><br><br><img src=\"/images/net-basic-7.png\" alt=\"Circuit figure\" id=\"drawhand-fig\"><br><br>"
+  },
+  "type": "mcq",
+  "options": [
+    "R",
+    "3R/2",
+    "2R",
+    "R/2"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "3R/2"
+  },
+  "marks": 2,
+  "negative": 0.66,
+  "explanation": {
+    "type": "text",
+    "value": "The network is symmetric about the diagonal AB. Therefore, the points symmetric about AB are at the same potential, and no current flows through the resistors connecting such equipotential points.<br><br>The network can then be reduced to two identical branches, each having an equivalent resistance of $3R$. These two branches are in parallel.<br><br>$$R_{eq}=3R\\parallel3R=\\frac{3R\\times3R}{3R+3R}=\\frac{3R}{2}$$<br><br>Hence, the equivalent resistance between A and B is $\\frac{3R}{2}$.<br><br><br><br><img src=\"/images/net-basic-7-solve.png\" alt=\"Circuit figure\"> <br /> <br />Therefore, (B) is correct."
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "In the single-loop circuit shown, a voltage-controlled voltage source of value $3V_R$ drives a $5\\,\\Omega$ resistor, a $4\\,\\mathrm{V}$ source, and a $2\\,\\Omega$ resistor, where $V_R$ is the voltage across the $2\\,\\Omega$ resistor. Find the loop current $I$ -  <b>(1 Mark)</b><br><br><img src=\"/images/net-basic-8.png\" alt=\"Circuit figure\" id=\"drawhand-fig\"><br><br>"
+  },
+  "type": "mcq",
+ "options": [
+  "13 A",
+  "−13 A",
+  "4/13 A",
+  "−4/13 A"
+],
+  "answer": {
+    "type": "text",
+    "value": "−4/13 A"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+  "type": "image",
+  "value": "/images/net-basic-8-solve.png"
+},
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "During the charging of an initially uncharged capacitor in a DC circuit, which of the following statements is correct?"
+  },
+  "type": "mcq",
+  "options": [
+    "The capacitor behaves as a short circuit at all times",
+    "The capacitor voltage is always equal to the source voltage",
+    "The capacitor stores electrical energy as charge accumulates on its plates",
+    "The capacitor does not allow any current to flow during charging"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "The capacitor stores electrical energy as charge accumulates on its plates"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "When a capacitor is connected to a DC source, charge accumulates on its plates and electrical energy is stored in the electric field between the plates.<br><br>The energy stored in a capacitor is: $W=\\frac{1}{2}CV^2$<br><br>Hence, (C) is correct."
+  },
+  "youtube": null
+}    
+  ]
+}
