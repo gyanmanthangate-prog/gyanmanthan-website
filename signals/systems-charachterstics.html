@@ -58,7 +58,10 @@
 </script>
 </head>
 <body>
-  
+     <!-- Article Reading Progress -->
+<div id="article-progress">
+    <div id="article-progress-bar"></div>
+</div>
 <!-- Header -->
 <div id="header"></div>
 
@@ -81,7 +84,9 @@
 <section class="generic-content-section">
 
   <h1>System Characteristics in Signals and Systems</h1>
-
+<div class="reading-meta">
+  <span id="reading-time">⏱ Calculating reading time...</span>
+</div>
 <p>Every system possesses certain properties that describe how it responds to an input signal. These properties help us classify systems, predict their behavior, and determine the mathematical techniques that can be applied for analysis. In GATE ECE, questions frequently test whether a given system is <strong>memoryless or dynamic, linear or nonlinear, time invariant or time variant, causal or non-causal, stable or unstable, invertible or non-invertible, and deterministic or random</strong>.</p>
 
 <p>Understanding these characteristics is essential because only systems satisfying specific properties—most importantly <strong>linearity</strong> and <strong>time invariance</strong>—can be analyzed using <strong>impulse response</strong> and <strong>convolution</strong>. Therefore, before studying LTI systems, one must first learn how to identify these properties from a given system equation.</p>

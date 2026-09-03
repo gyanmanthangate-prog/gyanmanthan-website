@@ -22,6 +22,41 @@ accordions.forEach(acc => {
     acc.classList.toggle('active');
   });
 });
+// ================================
+// Article Reading Time
+// ================================
+
+function updateReadingTime() {
+
+  const article = document.querySelector('.generic-content-section');
+
+  if (!article) return;
+
+  const heading = article.querySelector('h1');
+
+  if (!heading) return;
+
+  // Remove existing reading time
+  const oldMeta = article.querySelector('.reading-meta');
+  if (oldMeta) oldMeta.remove();
+
+  // Count article words
+  const text = article.innerText.trim();
+  const words = text.split(/\s+/).filter(Boolean).length;
+
+  // Average reading speed
+  const wordsPerMinute = 200;
+
+  const minutes = Math.max(1, Math.ceil(words / wordsPerMinute));
+
+  // Create reading-time element
+  const meta = document.createElement('div');
+  meta.className = 'reading-meta';
+  meta.textContent = `⏱ ${minutes} min read`;
+
+  // Insert below article H1
+  heading.insertAdjacentElement('afterend', meta);
+}
 initNestedAccordions();
 
 // Subtopic click loader
@@ -46,6 +81,7 @@ subtopicLinks.forEach(link => {
           ${html}
         </div>
       `;
+      updateReadingTime();
     }
 
     else if(id){
@@ -64,6 +100,7 @@ subtopicLinks.forEach(link => {
           ${content}
         </div>
       `;
+        updateReadingTime();
     }
 
     const revealEl = rightContent.querySelector('.reveal');
@@ -133,4 +170,8 @@ initNestedAccordions(sidebar);
 
   }
 
+});
+// Calculate reading time when article loads initially
+document.addEventListener("DOMContentLoaded", () => {
+  updateReadingTime();
 });

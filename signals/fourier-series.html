@@ -58,7 +58,10 @@
 </script>
 </head>
 <body>
-  
+  <!-- Article Reading Progress -->
+<div id="article-progress">
+    <div id="article-progress-bar"></div>
+</div>
 <!-- Header -->
 <div id="header"></div>
 
@@ -81,7 +84,9 @@
 <section class="generic-content-section">
 
   <h1>Fourier Series for Signals and Systems</h1>
-
+<div class="reading-meta">
+  <span id="reading-time">⏱ Calculating reading time...</span>
+</div>
 <p>Fourier Series is a fundamental tool for representing a periodic signal as a sum of sinusoids. In GATE ECE, questions frequently test <strong>Fourier coefficients, trigonometric and exponential forms, symmetry properties, Parseval's theorem, convergence, and signal reconstruction</strong>.</p>
 
 <p>Understanding Fourier Series is essential because it provides a powerful way to analyze periodic signals in the frequency domain. By identifying signal symmetry and applying the right Fourier Series properties, many GATE problems can be solved quickly with minimal calculation.</p>
@@ -139,7 +144,7 @@
     <li>Choosing the appropriate form is important for solving GATE problems efficiently.</li>
   </ul>
 
-</div>
+</div> <!--media-text-->
 
 <div class="media-content">
   Click to zoom-in the image
@@ -147,8 +152,8 @@
        alt="Comparison of trigonometric and exponential Fourier Series representations"
        class="zoomable"
        loading="lazy">
+</div> <!--media content-->
 </div>
-
 <div class="media-block">
  <h3>Fourier Series Quick Reference</h3>
 
@@ -246,14 +251,11 @@
     <div id="comments-list"></div>
     <button id="logout-btn">Logout</button>
   </section>
-
 </section>
 <br />
 <p>
  <a href="/signals/continous-time-transform.html" title="Continuous-Time Transforms | Fourier Transform & Laplace Transform | GATE ECE">
   Next: Continuous-Time Transforms
-</a>
-
 </a>
 </p>
   </div><!-- </div> blog-right ends-->
