@@ -127,6 +127,9 @@ button:hover {
   display: block;
   margin: 10px auto;
 }
+ #drawhand-fig{
+    width: 400px !important;
+  }
 @media print {
 
   @page {
