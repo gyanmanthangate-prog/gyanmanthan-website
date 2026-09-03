@@ -174,3 +174,39 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 mediaBlocks.forEach(block => observer.observe(block));
+document.addEventListener("DOMContentLoaded", function () {
+
+    const progressBar = document.getElementById("article-progress-bar");
+    const article = document.getElementById("rightContent");
+
+    if (!progressBar || !article) return;
+
+    function updateArticleProgress() {
+
+        const scrollTop = article.scrollTop;
+
+        const scrollableHeight =
+            article.scrollHeight - article.clientHeight;
+
+        if (scrollableHeight <= 0) {
+            progressBar.style.width = "0%";
+            return;
+        }
+
+        const progress =
+            (scrollTop / scrollableHeight) * 100;
+
+        progressBar.style.width =
+            Math.min(100, Math.max(0, progress)) + "%";
+    }
+
+    // IMPORTANT: article itself is the scroll container
+    article.addEventListener("scroll", updateArticleProgress, {
+        passive: true
+    });
+
+    window.addEventListener("resize", updateArticleProgress);
+
+    updateArticleProgress();
+
+});

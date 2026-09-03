@@ -342,3 +342,9 @@
 .toc a:hover {
   color: #ff7a00;
 }
+.reading-meta {
+  font-size: 13px;
+  color: #777;
+  margin: -4px 0 20px;
+  font-weight: 500;
+}
