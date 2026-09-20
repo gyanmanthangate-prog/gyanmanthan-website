@@ -99,7 +99,12 @@ if(current < data.questions.length - 1){
 }
 
 btns += `<button onclick="mark()">Mark</button>`;
-btns += `<button onclick="submitTest()" style="background:#28a745;">Submit</button>`;
+btns += `<button 
+  onclick="confirmSubmitTest()" 
+  title="Submit the test only after completing all questions. You will not be able to change your answers after submission."
+  style="background:#28a745;">
+  Submit Test
+</button>`;
 
 html += `<div style="margin-top:10px;">${btns}</div>`;
 
@@ -176,6 +181,122 @@ function renderPalette(){
 }
 
 /* ---------------- SUBMIT ---------------- */
+/* ---------------- SUBMIT CONFIRMATION ---------------- */
+
+function confirmSubmitTest(){
+
+  const modal = document.createElement("div");
+
+  modal.innerHTML = `
+    <div id="submitModalOverlay" style="
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.55);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+      padding:20px;
+    ">
+
+      <div style="
+        background:#fff;
+        width:100%;
+        max-width:420px;
+        border-radius:14px;
+        padding:25px;
+        box-shadow:0 10px 35px rgba(0,0,0,0.25);
+        text-align:center;
+        animation:submitModalIn 0.2s ease-out;
+      ">
+
+        <div style="
+          font-size:42px;
+          margin-bottom:10px;
+        ">⚠️</div>
+
+        <h3 style="
+          margin:0 0 10px;
+          color:#0b1a33;
+          font-size:22px;
+        ">
+          Submit Test?
+        </h3>
+
+        <p style="
+          margin:0;
+          color:#555;
+          line-height:1.6;
+          font-size:15px;
+        ">
+          Are you sure you want to submit the test?
+          <br>
+          <b>You will not be able to change your answers afterwards.</b>
+        </p>
+
+        <div style="
+          display:flex;
+          gap:10px;
+          justify-content:center;
+          margin-top:22px;
+        ">
+
+          <button id="cancelSubmitBtn" style="
+            padding:10px 20px;
+            border:1px solid #ccc;
+            background:#fff;
+            color:#333;
+            border-radius:7px;
+            cursor:pointer;
+            font-size:15px;
+          ">
+            Cancel
+          </button>
+
+          <button id="confirmSubmitBtn" style="
+            padding:10px 20px;
+            border:none;
+            background:#28a745;
+            color:#fff;
+            border-radius:7px;
+            cursor:pointer;
+            font-size:15px;
+            font-weight:600;
+          ">
+            Submit Test
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <style>
+      @keyframes submitModalIn {
+        from {
+          opacity:0;
+          transform:scale(0.95);
+        }
+        to {
+          opacity:1;
+          transform:scale(1);
+        }
+      }
+    </style>
+  `;
+
+  document.body.appendChild(modal);
+
+  document.getElementById("cancelSubmitBtn").onclick = function(){
+    modal.remove();
+  };
+
+  document.getElementById("confirmSubmitBtn").onclick = function(){
+    modal.remove();
+    submitTest();
+  };
+
+}
 
 function submitTest(){
 clearInterval(timerInterval);
