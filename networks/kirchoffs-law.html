@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ohm's Law, KVL & KCL | Circuit Laws | GATE ECE</title>
+<meta name="description" content="Master Ohm's Law, Kirchhoff's Voltage Law (KVL) and Kirchhoff's Current Law (KCL) for GATE ECE. Learn circuit equations, sign conventions, voltage and current calculations, and solve GATE-level problems with clear concepts and solved examples.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="GyanManthan Classes">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.gyanmanthanclasses.com/networks/kirchoffs-law.html">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta property="og:title" content="Ohm's Law, KVL & KCL | Circuit Laws | GATE ECE">
+<meta property="og:description" content="Master Ohm's Law, Kirchhoff's Voltage Law (KVL) and Kirchhoff's Current Law (KCL) for GATE ECE. Learn circuit equations, sign conventions, voltage and current calculations, and solve GATE-level problems with clear concepts and solved examples.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.gyanmanthanclasses.com/networks/kirchoffs-law.html">
+<meta property="og:image" content="https://www.gyanmanthanclasses.com/images/kirchoffs-law-og.png"> 
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/blog.css">
+<link rel="stylesheet" href="../assets/topic.css">
+<link rel="stylesheet" href="/assets/katex/katex.min.css">
+<script defer src="/assets/katex/katex.min.js"></script>
+<script defer src="/assets/katex/auto-render.min.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+
+  "headline": "Ohm's Law, KVL & KCL | Circuit Laws | GATE ECE",
+
+  "description": "Master Ohm's Law, Kirchhoff's Voltage Law (KVL) and Kirchhoff's Current Law (KCL) for GATE ECE. Learn circuit equations, sign conventions, voltage and current calculations, and solve GATE-level problems with clear concepts and solved examples.",
+
+  "author": {
+    "@type": "Organization",
+    "name": "GyanManthan Classes"
+  },
+
+  "publisher": {
+    "@type": "Organization",
+    "name": "GyanManthan Classes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.gyanmanthanclasses.com/images/gmc-logo.png"
+    }
+  },
+
+  "datePublished": "2026-07-09",
+  "dateModified": "2026-07-09",
+
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.gyanmanthanclasses.com/networks/kirchoffs-law.html"
+  },
+
+  "image": "https://www.gyanmanthanclasses.com/images/kirchoffs-law-og.png",
+
+  "keywords": "Ohm's Law, KVL, KCL, Kirchhoff's Voltage Law, Kirchhoff's Current Law, Kirchhoff's Laws, Circuit Laws, Sign Convention, Electrical Circuits GATE ECE, Network Theory GATE ECE, KVL and KCL GATE",
+
+  "articleSection": "Network Theory",
+
+  "inLanguage": "en"
+}
+</script>
+</head>
+<body>
+  <!-- Article Reading Progress -->
+<div id="article-progress">
+    <div id="article-progress-bar"></div>
+</div>
+<!-- Header -->
+<div id="header"></div>
+
+<!-- Main Blog Area -->
+<div class="blog-container">
+
+  <!-- Hamburger for mobile -->
+  <div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar-component"></div>
+
+  <!-- Right Content -->
+   <div class="blog-right reveal" id="rightContent">
+    <!-- body Content -->
+    <section class="generic-content-section">
+
+     <h1>Kirchhoff's Laws | KVL & KCL for GATE ECE</h1>
+
+<div class="reading-meta">
+  <span id="reading-time">⏱ Calculating reading time...</span>
+</div>
+
+<p> Kirchhoff's Laws are fundamental tools for circuit analysis and are important topics in GATE ECE. <strong>Kirchhoff's Current Law (KCL)</strong> and <strong>Kirchhoff's Voltage Law (KVL)</strong> help us determine unknown currents and voltages and form the foundation of systematic electrical circuit analysis. </p>
+
+<p> In this article, we study <strong>KCL at junctions and KVL around closed loops</strong>, along with the required sign conventions and methods for writing circuit equations. These laws provide a simple and powerful approach to analyzing electrical networks of different configurations. </p>
+
+<p> The article develops an intuitive understanding of Kirchhoff's Laws and shows how to apply them correctly to solve circuit problems. The concepts, examples, and problem-solving techniques are designed specifically for <strong>GATE-level circuit and network analysis</strong>. </p>
+
+<p class="keywords"> <strong>Keywords:</strong> Kirchhoff's Laws, Kirchhoff's Law, KVL, KCL, Kirchhoff's Voltage Law, Kirchhoff's Current Law, circuit analysis, loop analysis, junction analysis, node analysis, mesh analysis, sign convention, circuit equations, electrical networks, GATE ECE network theory </p>
+
+ <!-- 1st details -->
+
+<div class="media-block">
+  <div class="media-text">
+
+<h2><u>Ohm's Law and the V-I Relationship</u></h2>
+
+<p>Ohm's Law describes the relationship between <strong>voltage, current, and resistance</strong> for an ohmic element. Under constant physical conditions, the current is directly proportional to the voltage across the element.</p>
+
+<p style="text-align:center;">$V=IR$</p>
+
+<p>Therefore,</p>
+
+<p style="text-align:center;">$I=\frac{V}{R}$</p>
+
+<p>where $V$ is the voltage, $I$ is the current, and $R$ is the constant resistance.</p>
+
+<h3>When Does Ohm's Law Apply?</h3>
+
+<p>Ohm's Law applies when the <strong>V-I relationship is linear and passes through the origin</strong>. For an ideal resistor, the V-I characteristic is therefore a straight line.</p>
+
+<p style="text-align:center;">$\frac{V}{I}=R=\text{constant}$</p>
+
+<p>Thus, if the voltage is doubled, the current also doubles, provided the physical conditions remain unchanged.</p>
+
+<h3>Important Points for GATE</h3>
+
+<ul>
+
+  <li><strong>Ohmic element:</strong> $V\propto I$ and $R=\frac{V}{I}$ remains constant.</li>
+
+  <li><strong>V-I characteristic:</strong> For an ideal ohmic resistor, it is a straight line passing through the origin.</li>
+
+  <li><strong>Physical conditions:</strong> The resistance may change with temperature or other conditions, so Ohm's Law is considered under constant physical conditions.</li>
+
+  <li><strong>Non-ohmic elements:</strong> Elements such as diodes have a nonlinear V-I characteristic and do not obey Ohm's Law over their complete operating range.</li>
+
+  <li><strong>Time-domain relation:</strong> For a resistor, Ohm's Law is directly written as $v(t)=Ri(t)$. Capacitors and inductors have their own time-domain relationships: $i(t)=C\frac{dv(t)}{dt}$ and $v(t)=L\frac{di(t)}{dt}$.</li>
+
+  <li><strong>s-domain relation:</strong> With <strong>zero initial conditions</strong>, the voltage-current relationship of R, L and C can be written in the impedance form $V(s)=Z(s)I(s)$, where $Z_R=R$, $Z_L=sL$, and $Z_C=\frac{1}{sC}$.</li>
+
+  <li><strong>Non-zero initial conditions:</strong> When a capacitor or inductor has stored energy initially, additional initial-condition terms appear in its s-domain voltage-current equation. Therefore, $V(s)=Z(s)I(s)$ alone is valid only under the zero-initial-condition assumption.</li>
+
+  <li><strong>Initial condition is not a restriction on the resistor:</strong> A resistor can obey $v(t)=Ri(t)$ regardless of whether its initial voltage or current is zero or non-zero.</li>
+
+</ul>
+
+</div>
+</div>
+<br/>
+
+<div class="media-block">
+    <div class="media-text">
+    <h2><u>Kirchhoff's Laws: KCL and KVL</u></h2>
+
+<p><strong>Kirchhoff's Laws</strong> are fundamental laws used to analyze electrical circuits. They are especially useful when a circuit contains multiple branches, junctions, or loops and cannot be solved directly using Ohm's law alone.</p>
+
+<p>There are two Kirchhoff's Laws:</p>
+
+<ul>
+  <li><strong>Kirchhoff's Current Law (KCL)</strong> — based on conservation of charge.</li>
+  <li><strong>Kirchhoff's Voltage Law (KVL)</strong> — based on conservation of energy.</li>
+</ul>
+</div></div>
+<div class="media-block">
+  <div class="media-text">
+
+<h3>Kirchhoff's Current Law (KCL)</h3>
+
+<p>KCL states that the <strong>algebraic sum of currents at any junction is zero</strong>. Equivalently, the total current entering a junction must be equal to the total current leaving it.</p>
+
+<p style="text-align:center;">$\sum i=0$</p>
+
+<p>For example, if $i_1$ and $i_2$ enter a junction while $i_3$ and $i_4$ leave it:</p>
+
+<p style="text-align:center;">$i_1+i_2=i_3+i_4$</p>
+
+<p>KCL follows from the <strong>conservation of electric charge</strong>. Charge cannot continuously accumulate at an ideal circuit junction.</p>
+<br />
+<h3>Kirchhoff's Voltage Law (KVL)</h3>
+<p>KVL states that the <strong>algebraic sum of all voltages around any closed loop is zero</strong>.</p>
+
+<p style="text-align:center;">$\sum v=0$</p>
+
+<p>In other words, the total voltage rises around a closed loop must be equal to the total voltage drops.</p>
+
+<p>For example, if a source voltage $V$ supplies two voltage drops $V_1$ and $V_2$:</p>
+
+<p style="text-align:center;">$V-V_1-V_2=0$</p>
+
+<p>KVL follows from the <strong>conservation of energy</strong>. A charge returning to its starting point in a closed loop must have zero net change in energy.</p>
+
+<h3>Sign Convention</h3>
+
+<p>While applying KCL and KVL, currents and voltage changes must be assigned consistent signs. The actual direction of an unknown current does not need to be known beforehand; an assumed direction can be chosen.</p>
+
+<p>If the calculated value of a current or voltage is negative, it simply means that the actual direction or polarity is opposite to the assumed one.</p>
+</div></div>
+<div class="media-block">
+    <div class="media-text">
+<h3>Key Points for GATE</h3>
+
+<ul>
+  <li><strong>KCL</strong> is based on conservation of charge.</li>
+  <li><strong>KVL</strong> is based on conservation of energy.</li>
+  <li>KCL is applied primarily at a <strong>junction or node</strong>.</li>
+  <li>KVL is applied around a <strong>closed loop</strong>.</li>
+  <li>For KCL, $\sum i=0$.</li>
+  <li>For KVL, $\sum v=0$.</li>
+  <li>Current directions and voltage polarities may be assumed initially.</li>
+  <li>A negative calculated value indicates that the actual direction or polarity is opposite to the assumed one.</li>
+</ul>
+
+  </div>
+
+  <div class="media-content">
+    <figcaption>Click to zoom-in the image</figcaption>
+    <img src="/images/kirchhoffs-laws.png"
+         class="zoomable"
+         loading="lazy"
+         alt="Kirchhoff's Current Law and Kirchhoff's Voltage Law circuit diagram">
+  </div>
+</div>
+<div class="media-block">
+  <div class="media-text">
+   <h2><u>Where Do Ohm's Law, KCL and KVL Apply?</u></h2>
+
+<p>The three fundamental circuit laws have different roles in circuit analysis. This table summarizes their applicability in common GATE ECE circuit conditions.</p>
+
+<div class="table-wrapper">
+  <table>
+    <tr>
+      <th>Law</th>
+      <th>Lumped</th>
+      <th>Distributed</th>
+      <th>Planar</th>
+      <th>Non-Planar</th>
+    </tr>
+
+    <tr>
+      <td><strong>Ohm's Law</strong></td>
+      <td>✓</td>
+      <td>✓ Local relation</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+
+    <tr>
+      <td><strong>KCL</strong></td>
+      <td>✓</td>
+      <td>⚠ Not simple lumped form</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+
+    <tr>
+      <td><strong>KVL</strong></td>
+      <td>✓</td>
+      <td>⚠ Not simple lumped form</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+  </table>
+</div>
+<br />
+<p><strong>GATE Note:</strong> KVL is valid for both planar and non-planar lumped circuits. However, <strong>mesh analysis</strong> is directly formulated for planar circuits.</p>
+<br />
+<p><strong>GATE takeaway:</strong> Ohm's Law describes an <strong>element relationship</strong>, while KCL and KVL describe <strong>circuit relationships</strong>. KCL follows conservation of charge, and KVL follows conservation of energy.</p>
+
+  </div>
+</div>
+
+<br />
+  <!-- Social Share -->
+<div class="social-share">
+  <span>Share this page:</span>
+
+  <div class="social-share-items">
+    <a href="#" data-share="whatsapp" target="_blank" rel="noopener" title="Share on WhatsApp">
+      <img src="/images/whatsapp-color-svgrepo-com.svg" alt="WhatsApp" />
+    </a>
+
+    <a href="#" data-share="facebook" target="_blank" rel="noopener" title="Share on Fb">
+      <img src="/images/facebook-svgrepo-com.svg" alt="Facebook" />
+    </a>
+
+    <a href="#" data-share="twitter" target="_blank" rel="noopener" title="Share on X">
+      <img src="/images/Twitter-X-Streamline-Bootstrap.svg" alt="Twitter" />
+    </a>
+
+    <a href="#" data-share="linkedin" target="_blank" rel="noopener" title="Share on X">
+      <img src="/images/linkedin-svgrepo-com.svg" alt="LinkedIn" />
+    </a>
+  </div>
+</div><!-- template copy till here-->
+
+  <!-- Comment Section -->
+  <section class="comment-section">
+    <h2>Discussion / Comments</h2>
+    <div id="login-buttons">
+      <button id="google-login">Login with Google</button>
+    </div>
+    <div id="comment-form" style="display:none;">
+      <textarea id="comment-input" placeholder="Write your comment..."></textarea>
+      <button id="post-comment">Post Comment</button>
+    </div>
+    <div id="comments-list"></div>
+    <button id="logout-btn">Logout</button>
+  </section>
+
+</section>
+<br />
+<p>
+<a href="/networks/nodal-mesh-analysis.html" title="Nodal & Mesh Analysis | GATE ECE | Network Theory">
+  Next: Nodal & Mesh Analysis
+</a>
+
+</a>
+</p>
+  </div><!-- </div> blog-right ends-->
+
+</div> <!-- blog-container -->
+
+<!-- Footer -->
+<div id="footer"></div>
+
+<!-- Script -->
+ <script src="../assets/signals.js" type="module"></script>
+<script src="/script.js" defer></script>
+ <script src="/blog.js"></script>
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof renderMathInElement !== "undefined") {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ]
+    });
+  }
+});
+</script>
+</body>
+</html>

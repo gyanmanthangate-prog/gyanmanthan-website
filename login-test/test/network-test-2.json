@@ -1,0 +1,397 @@
+{
+  "time": 1500,
+  "instructions": [
+    "<b>Attempt all questions</b>",
+"There are <b>16 questions</b> in total, carrying <b>19 marks</b>.",
+"Questions may carry <b>1 mark or 2 marks</b>; the marks for each question are mentioned against it.",
+"A wrong answer to a <b>1-mark question</b> will incur a penalty of <b>0.33 marks</b>.",
+"A wrong answer to a <b>2-mark question</b> will incur a penalty of <b>0.66 marks</b>.",
+"Time allotted: <b>25 minutes</b>.",
+"Submit the test after completion."
+
+  ],
+  "questions": [
+    {
+  "q": {
+    "type": "text",
+    "value": "For the circuit shown in the fig, voltage $v_0$ is: -  <b>(1 Mark)</b><br /><br /><img src=\"/images/net-test-2-1.png\" alt=\"Circuit figure\" id=\"drawhand-fig\">"
+  },
+  "type": "mcq",
+  "options": [
+    "1",
+    "5",
+    "9",
+    "None of the above"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "None of the above"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+   "type": "text",
+   "value": "it is not possible to find the voltage across 1A source."
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "An electronic test circuit produced a resonant curve with half-power points at 434 Hz and 456 Hz. If Q = 20, the resonant frequency of the circuit is: <b>1 Mark</b>"
+  },
+  "type": "mcq",
+  "options": [
+    "22 Hz",
+    "440 Hz",
+    "220 Hz",
+    "445 Hz"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "440 Hz"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "For a resonant circuit, the resonant frequency is the geometric mean of the half-power frequencies: $f_0 = \\sqrt{f_1f_2} = \\sqrt{434 \\times 456} \\approx 445\\,\\text{Hz}$. Therefore, the correct answer is 445 Hz."
+  }
+},
+{
+  "q": {
+    "type": "text",
+    "value": "For the circuit shown in the fig, the dependent source: -  <b>(1 Mark)</b><br /><br /><img src=\"/images/net-test-2-2.png\" alt=\"Circuit figure\" id=\"drawhand-fig\">"
+  },
+  "type": "mcq",
+  "options": [
+    "Delivers 80W",
+    "Delivers 40W",
+    "Absorbs 40W",
+    "Absorbs 80W"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "Delivers 80W"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "image",
+    "value": "/images/net-test-2-2-sol.png"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "The switch S is the circuit shown in figure is ideal. If the switch is repeatedly closed for 1 ms and opened for 1 ms, the average value of i(t): -  <b>(1 Mark)</b><br /><br /><img src=\"/images/net-test-2-3.png\" alt=\"Circuit figure\" id=\"drawhand-fig\">"
+  },
+  "type": "mcq",
+  "options": [
+    "1mA",
+    "0.35mA",
+    "0.5mA",
+    "0.25mA"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "0.25mA"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "Since $i=\\frac{5}{10k}=0.5\\text{ mA}$.<br>$i(t)$ will be a square wave.<br>So, average value is<br$$I_{avg}=\\frac{0.5}{2}=0.25\\text{ mA}$"
+},
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "In the following circuit, the voltage $v_a$ is: -  <b>(1 Mark)</b><br /><br /><img src=\"/images/net-test-2-4.png\" alt=\"Circuit figure\" id=\"drawhand-fig\">"
+  },
+  "type": "mcq",
+  "options": [
+    "-11V",
+    "11V",
+    "3",
+    "-3"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "11V"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "image",
+    "value": "/images/net-test-2-4-sol.png"
+  },
+  "youtube": null
+},
+    {
+  "q": {
+    "type": "text",
+    "value": "A relay coil is connected to a 210 V, 50 Hz supply. If it has resistance of 30 Ω and an inductance of 0.5 H, the apparent power is: <b>1 Mark</b>"
+  },
+  "type": "mcq",
+  "options": [
+    "30 VA",
+    "275.6 VA",
+    "157 VA",
+    "187 VA"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "275.6 VA"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "X<sub>L</sub> = 2πfL = 2π(50)(0.5) = 157.08 Ω. Therefore, Z = √(R² + X<sub>L</sub>²) = √(30² + 157.08²) ≈ 159.92 Ω. Current, I = V/Z = 210/159.92 ≈ 1.313 A. Hence, apparent power, S = VI = 210 × 1.313 ≈ 275.6 VA. Therefore, the correct answer is 275.6 VA."
+  }
+},
+{
+  "q": {
+    "type": "text",
+    "value": "For the circuit shown in the fig, voltage $v_0$ is: -  <b>(1 Mark)</b><br /><br /><img src=\"/images/net-test-2-5.png\" alt=\"Circuit figure\" id=\"drawhand-fig\">"
+  },
+  "type": "mcq",
+  "options": [
+  "$5.642\\angle -75^\\circ\\,\\text{V}$",
+  "$2.34\\angle 245^\\circ\\,\\text{V}$",
+  "$2.34\\angle -45^\\circ\\,\\text{V}$",
+  "$6.48\\angle 75^\\circ\\,\\text{V}$"
+],
+  "answer": {
+    "type": "text",
+    "value": "$5.642\\angle -75^\\circ\\,\\text{V}$"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "image",
+    "value": "/images/net-test-2-5-sol.png"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "In a two element series circuit, the applied voltage and the resulting current are $v(t) = 60 + 66\\sin(10t)\\,\\text{V}$ and $i(t) = 2.3\\sin(10t + 68.3^\\circ)\\,\\text{A}$. The nature of the elements would be: - <b>(1 Mark)</b>"
+  },
+  "type": "mcq",
+  "options": [
+    "$R-C$",
+    "$L-C$",
+    "$R-L$",
+    "$R-R$"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "$R-C$"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "Since $i(t)$ leads the AC component of $v(t)$ by $68.3^\\circ$, the circuit is capacitive. Also, the DC component of voltage produces no steady-state current through a capacitor. Hence, the elements are $R-C$.<br /><br /><b>Correct Answer: (A) $R-C$</b>"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "For the circuit in the previous question, the value of the capacitor is: - <b>(1 Mark)</b>"
+  },
+  "type": "mcq",
+  "options": [
+    "$10.8\\,\\mu\\text{F}$",
+    "$21.6\\,\\mu\\text{F}$",
+    "$43.2\\,\\mu\\text{F}$",
+    "$86.4\\,\\mu\\text{F}$"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "$21.6\\,\\mu\\text{F}$"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "For the AC part, $V=66\\,\\text{V}$ and $I=2.3\\,\\text{A}$. Hence, $|Z|=\\frac{66}{2.3}=28.7\\,\\Omega$.<br /><br />The phase angle is $68.3^\\circ$, so $X_C=|Z|\\sin(68.3^\\circ)\\approx26.7\\,\\Omega$. Since $X_C=\\frac{1}{\\omega C}$ and $\\omega=10\\,\\text{rad/s}$,<br /><br />$C=\\frac{1}{10\\times26.7}\\approx3.75\\,\\text{mF}$.<br /><br /><b>Correct Answer: $3.75\\,\\text{mF}$</b>"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "The reactive power drawn from the source in the network shown below is: - <b>(1 Mark)</b><br /><br /><img src=\"/images/net-test-2-6.png\" alt=\"Circuit figure\" id=\"drawhand-fig\">"
+  },
+  "type": "mcq",
+  "options": [
+    "278 W",
+    "556 W",
+    "167 W",
+    "0 W"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "0 W"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "Here net reactance X = $X_L + X_C = 0$. So reactive power drawn from the source is zero. Hence (d) is correct option."
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "Determine the complex power for the given values: $P = 269\\,\\text{W}$ and $Q = 150\\,\\text{VAR}$ (capacitive). - <b>(1 Mark)</b>"
+  },
+  "type": "mcq",
+  "options": [
+    "$150-j269\\,\\text{VA}$",
+    "$150+j269\\,\\text{VA}$",
+    "$269-j150\\,\\text{VA}$",
+    "$269+j150\\,\\text{VA}$"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "$269-j150\\,\\text{VA}$"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "Complex power is $S=P+jQ$. For a capacitive load, $Q<0$. Hence, $S=269-j150\\,\\text{VA}$.<br /><br /><b>Correct Answer: (C) $269-j150\\,\\text{VA}$</b>"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "Determine the complex power for the given values: $Q = 2000\\,\\text{VAR}$ and power factor $= 0.9$ (leading). - <b>(1 Mark)</b>"
+  },
+  "type": "mcq",
+  "options": [
+    "$4129.8+j2000\\,\\text{VA}$",
+    "$200+j4129.8\\,\\text{VA}$",
+    "$2000-j41.298\\,\\text{VA}$",
+    "$4129.8-j2000\\,\\text{VA}$"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "$4129.8-j2000\\,\\text{VA}$"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "For a leading power factor, $Q<0$. Since $\\text{pf}=\\cos\\phi=0.9$, $\\tan\\phi=\\frac{\\sqrt{1-0.9^2}}{0.9}$. Thus, $P=\\frac{|Q|}{\\tan\\phi}=4129.8\\,\\text{W}$. Hence, $S=P+jQ=4129.8-j2000\\,\\text{VA}$.<br /><br /><b>Correct Answer: (D) $4129.8-j2000\\,\\text{VA}$</b>"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "The power factor seen by the source in the network shown below is: - <b>(1 Mark)</b><br /><br /><img src=\"/images/net-test-2-7.png\" alt=\"Circuit figure\" id=\"drawhand-fig\">"
+  },
+  "type": "mcq",
+  "options": [
+    "0.8 (leading)",
+    "0.8 (lagging)",
+    "36.9 (leading)",
+    "39.6 (lagging)"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "0.8 (leading)"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "text",
+    "value": "<b>Step 1: Find the capacitor impedance</b><br />$\\omega=2\\,\\text{rad/s}$ and $C=\\frac{1}{3}\\,\\text{F}$. Therefore,<br />$Z_C=\\frac{1}{j\\omega C}=\\frac{1}{j(2)(1/3)}=-j1.5\\,\\Omega$.<br /><br /><b>Step 2: Find the impedance of the right-hand branch</b><br />The $1\\,\\Omega$ resistor and capacitor are in series, so<br />$Z_b=1-j1.5\\,\\Omega$.<br /><br /><b>Step 3: Apply KCL at the junction</b><br />Let the source voltage be $V_s$ and the junction voltage be $V_A$. The voltage across the $4\\,\\Omega$ resistor is $V_1=V_s-V_A$. Hence, the dependent current source is $\\frac{3}{4}V_1$.<br /><br />Applying KCL at node $A$:<br />$\\frac{V_A-V_s}{4}+\\frac{V_A}{1-j1.5}-\\frac{3}{4}(V_s-V_A)=0$.<br /><br /><b>Step 4: Find the input current</b><br />Solving the above equation gives $V_A=\\frac{17}{25}V_s-j\\frac{6}{25}V_s$. Therefore,<br />$I_s=\\frac{V_s-V_A}{4}=\\left(0.08+j0.06\\right)V_s$.<br /><br />Thus, the input impedance is<br />$Z_{in}=\\frac{V_s}{I_s}=\\frac{1}{0.08+j0.06}=8-j6\\,\\Omega$.<br /><br /><b>Step 5: Find the power factor</b><br />$\\phi=\\tan^{-1}\\left(\\frac{-6}{8}\\right)=-36.87^\\circ$. The negative angle means the input current leads the voltage. Hence,<br />$PF=\\cos(36.87^\\circ)=0.8$.<br /><br /><b>Correct Answer: (A) 0.8 (leading)</b>"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "A parallel RLC tank circuit has $R=50\\,\\Omega$, $L=100\\,\\text{mH}$ and $C=100\\,\\mu\\text{F}$. The circuit is connected to a $100\\,\\text{V}$ RMS supply. Determine the quality factor $Q$, bandwidth $BW$, and damping factor $\\alpha$ of the circuit. - <b>(2 Marks)</b>"
+  },
+  "type": "mcq",
+  "options": [
+    "$Q=0.316$, $BW=50\\,\\text{Hz}$, $\\alpha=15.81\\,\\text{rad/s}$",
+    "$Q=3.162$, $BW=50.33\\,\\text{Hz}$, $\\alpha=15.81\\,\\text{rad/s}$",
+    "$Q=3.162$, $BW=15.81\\,\\text{Hz}$, $\\alpha=50.33\\,\\text{rad/s}$",
+    "$Q=6.324$, $BW=25.17\\,\\text{Hz}$, $\\alpha=31.62\\,\\text{rad/s}$"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "$Q=3.162$, $BW=50.33\\,\\text{Hz}$, $\\alpha=15.81\\,\\text{rad/s}$"
+  },
+  "marks": 2,
+  "negative": 0.66,
+  "explanation": {
+    "type": "text",
+    "value": "For a parallel RLC circuit, the resonant angular frequency is $\\omega_0=1/\\sqrt{LC}=1/\\sqrt{(0.1)(100\\times10^{-6})}=316.23\\,\\text{rad/s}$. The damping factor is $\\alpha=1/(2RC)=1/[2(50)(100\\times10^{-6})]=100\\,\\text{rad/s}$. Hence, the quality factor is $Q=\\omega_0/(2\\alpha)=316.23/200=1.581$. Therefore, the bandwidth is $BW=\\alpha/\\pi=31.83\\,\\text{Hz}$.<br /><br /><b>Correct Answer: The calculated values are $Q=1.581$, $BW=31.83\\,\\text{Hz}$ and $\\alpha=100\\,\\text{rad/s}$.</b>"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "For the circuit shown in the fig, voltage $v_0$ is: -  <b>(2 Mark)</b><br /><br /><img src=\"/images/net-test-2-8.png\" alt=\"Circuit figure\" id=\"drawhand-fig\">"
+  },
+  "type": "mcq",
+  "options": [
+  "$7.1\\angle 32.29^\\circ\\,\\text{kV}$",
+  "$42.59\\angle 32.29^\\circ\\,\\text{kV}$",
+  "$38.49\\angle 24.39^\\circ\\,\\text{kV}$",
+  "$38.49\\angle 32.29^\\circ\\,\\text{kV}$"
+],
+  "answer": {
+    "type": "text",
+    "value": "$7.1\\angle 32.29^\\circ\\,\\text{kV}$"
+  },
+  "marks": 2,
+  "negative": 0.66,
+  "explanation": {
+    "type": "image",
+    "value": "/images/net-test-2-8-sol.png"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "When the input angular frequency is $\\omega = 100\\,\\text{rad/s}$, the values of gain and phase shift for the circuit shown below are: - <b>(2 Mark)</b><br /><br /><img src=\"/images/net-test-2-9.png\" alt=\"RC circuit for gain and phase shift\" id=\"drawhand-fig\">"
+  },
+  "type": "mcq",
+  "options": [
+    "$0.707,\\,-45^\\circ$",
+    "$0.707,\\,45^\\circ$",
+    "$1.414,\\,-45^\\circ$",
+    "$1.414,\\,45^\\circ$"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "$0.707,\\,-45^\\circ$"
+  },
+  "marks": 2,
+  "negative": 0.66,
+  "explanation": {
+    "type": "text",
+    "value": "For the RC circuit, $\\frac{V_o}{V_i}=\\frac{1}{1+j\\omega RC}$. Here, $\\omega RC=100\\times10\\times10^3\\times1\\times10^{-6}=1$. Hence, gain $=\\frac{1}{\\sqrt{2}}=0.707$ and phase shift $=-\\tan^{-1}(1)=-45^\\circ$. Therefore, the correct answer is $0.707,\\,-45^\\circ$."
+  },
+  "youtube": null
+}
+  ]
+}
