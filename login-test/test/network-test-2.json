@@ -338,7 +338,7 @@
     "value": "$Q=3.162$, $BW=50.33\\,\\text{Hz}$, $\\alpha=15.81\\,\\text{rad/s}$"
   },
   "marks": 2,
-  "negative": 0.33,
+  "negative": 0.66,
   "explanation": {
     "type": "text",
     "value": "For a parallel RLC circuit, the resonant angular frequency is $\\omega_0=1/\\sqrt{LC}=1/\\sqrt{(0.1)(100\\times10^{-6})}=316.23\\,\\text{rad/s}$. The damping factor is $\\alpha=1/(2RC)=1/[2(50)(100\\times10^{-6})]=100\\,\\text{rad/s}$. Hence, the quality factor is $Q=\\omega_0/(2\\alpha)=316.23/200=1.581$. Therefore, the bandwidth is $BW=\\alpha/\\pi=31.83\\,\\text{Hz}$.<br /><br /><b>Correct Answer: The calculated values are $Q=1.581$, $BW=31.83\\,\\text{Hz}$ and $\\alpha=100\\,\\text{rad/s}$.</b>"
@@ -362,7 +362,7 @@
     "value": "$7.1\\angle 32.29^\\circ\\,\\text{kV}$"
   },
   "marks": 2,
-  "negative": 0.33,
+  "negative": 0.66,
   "explanation": {
     "type": "image",
     "value": "/images/net-test-2-8-sol.png"
@@ -386,7 +386,7 @@
     "value": "$0.707,\\,-45^\\circ$"
   },
   "marks": 2,
-  "negative": 0.33,
+  "negative": 0.66,
   "explanation": {
     "type": "text",
     "value": "For the RC circuit, $\\frac{V_o}{V_i}=\\frac{1}{1+j\\omega RC}$. Here, $\\omega RC=100\\times10\\times10^3\\times1\\times10^{-6}=1$. Hence, gain $=\\frac{1}{\\sqrt{2}}=0.707$ and phase shift $=-\\tan^{-1}(1)=-45^\\circ$. Therefore, the correct answer is $0.707,\\,-45^\\circ$."

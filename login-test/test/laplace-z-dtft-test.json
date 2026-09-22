@@ -217,7 +217,7 @@
     "value": "<span style='display:inline-block; margin-bottom:20px;'>$\\dfrac{\\sin\\left(\\frac{9\\omega}{2}\\right)}{\\sin\\left(\\frac{\\omega}{2}\\right)}$</span>"
   },
   "marks": 2,
-  "negative": 0.33,
+  "negative": 0.66,
   "explanation": {
     "type": "text",
     "value": "The DTFT is $$X(e^{j\\omega})=\\sum_{n=-4}^{4}e^{-j\\omega n}.$$ Since the signal is symmetric about $$n=0$$, $$X(e^{j\\omega})=1+2\\sum_{n=1}^{4}\\cos(n\\omega).$$ Using the standard finite-sum result, $$1+2\\sum_{n=1}^{4}\\cos(n\\omega)=\\dfrac{\\sin\\left(\\frac{9\\omega}{2}\\right)}{\\sin\\left(\\frac{\\omega}{2}\\right)}.$$ Hence, $$\\boxed{X(e^{j\\omega})=\\dfrac{\\sin\\left(\\frac{9\\omega}{2}\\right)}{\\sin\\left(\\frac{\\omega}{2}\\right)}}.$$"
