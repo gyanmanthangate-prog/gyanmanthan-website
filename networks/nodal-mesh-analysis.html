@@ -1,101 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-<title>GyanManthan Classes | GATE ECE Online Coaching</title>
-
+<meta charset="UTF-8">
+<title>Nodal Analysis & Mesh Analysis | Circuit Analysis | GATE ECE</title>
+<meta name="description" content="Master Nodal Analysis and Mesh Analysis for GATE ECE. Learn node-voltage and mesh-current methods, circuit equations, sign conventions, supernode and supermesh concepts, and solve GATE-level circuit problems with clear concepts and solved examples.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="GyanManthan Classes provides high-quality GATE ECE preparation with focused EMFT, Signals & Systems, and core electronics subjects. Learn conceptually and crack GATE with confidence.">
-
-<meta name="keywords" content="GATE ECE coaching, GATE ECE online classes, EMFT for GATE, Signals and Systems GATE, Electronics coaching">
-
 <meta name="author" content="GyanManthan Classes">
 <meta name="robots" content="index, follow">
-
-<link rel="canonical" href="https://www.gyanmanthanclasses.com/blog1.html">
-
-<meta property="og:title" content="GATE ECE Online Coaching | GyanManthan Classes">
-<meta property="og:description" content="Concept-focused GATE ECE online coaching for serious aspirants.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://www.gyanmanthanclasses.com/blog1.html">
-<meta property="og:image" content="https://www.gyanmanthanclasses.com/images/preview.jpg">
-
+<link rel="canonical" href="https://www.gyanmanthanclasses.com/networks/nodal-mesh-analysis.html">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="shortcut icon" href="/images/favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta property="og:title" content="Nodal & Mesh Analysis | KCL, KVL & Circuit Analysis | GATE ECE">
+<meta property="og:description" content="Learn Nodal and Mesh Analysis for GATE ECE using KCL and KVL. Understand node-voltage and mesh-current methods, supernode, supermesh, sign conventions, circuit equations, and GATE-level solved problems.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.gyanmanthanclasses.com/networks/nodal-mesh-analysis.html">
+<meta property="og:image" content="https://www.gyanmanthanclasses.com/images/og-nodal-mesh.png"> 
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/blog.css">
+<link rel="stylesheet" href="../assets/topic.css">
+<link rel="stylesheet" href="/assets/katex/katex.min.css">
+<script defer src="/assets/katex/katex.min.js"></script>
+<script defer src="/assets/katex/auto-render.min.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
 
-  <style>
+  "headline": "Nodal & Mesh Analysis | KCL, KVL & Circuit Analysis | GATE ECE",
 
-body {
-  margin: 0;
-  padding: 0;
-  /* font-family: Arial, sans-serif; */
-  color: white;
-}
+  "description": "Learn Nodal and Mesh Analysis for GATE ECE using KCL and KVL. Understand node-voltage and mesh-current methods, supernode, supermesh, sign conventions, circuit equations, and GATE-level solved problems.",
 
-.coming-container {
-text-align: center;
-  padding: 120px 20px 80px 20px; /* top padding 120px = header height + 20px gap */
-  animation: fadeIn 1.5s ease forwards;
-}
+  "author": {
+    "@type": "Organization",
+    "name": "GyanManthan Classes"
+  },
 
-.coming-title {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #FF6600;
-  animation: slideDown 1s ease forwards;
-}
-
-.coming-sub {
-  margin-top: 15px;
-  font-size: 1.2rem;
-  opacity: 0;
-  animation: fadeIn 2s ease forwards;
-  animation-delay: 1s;
-  color: black;
-}
-
-.loader {
-  margin: 30px auto 0;
-  width: 50px;
-  height: 50px;
-  border: 5px solid rgba(255,255,255,0.2);
-  border-top: 5px solid #FF6600;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes slideDown {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+  "publisher": {
+    "@type": "Organization",
+    "name": "GyanManthan Classes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.gyanmanthanclasses.com/images/gmc-logo.png"
     }
+  },
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+  "datePublished": "2026-07-09",
+  "dateModified": "2026-07-09",
 
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.gyanmanthanclasses.com/networks/nodal-mesh-analysis.html"
+  },
 
-@media (max-width: 768px) {
-  .coming-title {
-    font-size: 2rem;
-  }
+  "image": "https://www.gyanmanthanclasses.com/images/og-nodal-mesh.png",
+
+  "keywords": "Nodal Analysis, Mesh Analysis, Node Voltage Analysis, Mesh Current Analysis, KCL, KVL, Supernode, Supermesh, Circuit Analysis, Network Theory GATE ECE, Electrical Circuits GATE ECE, Nodal Analysis GATE, Mesh Analysis GATE",
+
+  "articleSection": "Network Theory",
+
+  "inLanguage": "en"
 }
-
-
-  </style>
-
-  
+</script>
 </head>
 <body>
-  
-  <!-- Header include -->
-  <div id="header"></div>
+  <!-- Article Reading Progress -->
+<div id="article-progress">
+    <div id="article-progress-bar"></div>
+</div>
+<!-- Header -->
+<div id="header"></div>
 
 <!-- Main Blog Area -->
 <div class="blog-container">
@@ -112,30 +90,411 @@ text-align: center;
 
   <!-- Right Content -->
    <div class="blog-right reveal" id="rightContent">
-     <div class="coming-container">
-    <div class="coming-title">Blogs Coming Soon 🚀</div>
-    <div class="coming-sub">
-      High-quality GATE ECE articles are on the way. Stay tuned!
-    </div>
-    <div class="loader"></div>
+    <!-- body Content -->
+    <section class="generic-content-section">
+
+     <h1>Nodal & Mesh Analysis | Circuit Analysis for GATE ECE</h1>
+
+<div class="reading-meta">
+  <span id="reading-time">⏱ Calculating reading time...</span>
+</div>
+
+<p>
+  <strong>Nodal Analysis and Mesh Analysis</strong> are fundamental techniques for systematic circuit analysis and are important topics in GATE ECE. These methods use <strong>Kirchhoff's Current Law (KCL)</strong> and <strong>Kirchhoff's Voltage Law (KVL)</strong> to determine unknown node voltages and mesh currents in electrical circuits.
+</p>
+
+<p>
+  In this article, we study the <strong>Node Voltage Method and Mesh Current Method</strong>, along with the required sign conventions and steps for writing circuit equations. The concepts of <strong>supernode and supermesh</strong> are also discussed for circuits containing voltage sources between non-reference nodes or current sources between adjacent meshes.
+</p>
+
+<p>
+  The article develops an intuitive understanding of Nodal and Mesh Analysis and shows how to apply these techniques efficiently to solve circuit problems. The concepts, examples, and problem-solving techniques are designed specifically for <strong>GATE-level circuit and network analysis</strong>.
+</p>
+
+<p class="keywords">
+  <strong>Keywords:</strong> Nodal Analysis, Mesh Analysis, Node Voltage Analysis, Mesh Current Analysis, KCL, KVL, Supernode, Supermesh, node voltage method, mesh current method, circuit analysis, circuit equations, sign convention, electrical networks, GATE ECE network theory
+</p>
+
+<div class="media-block">
+  <div class="media-text">
+
+<h2><u>Basic Circuit Terminology</u></h2>
+
+<p>
+Before studying Nodal and Mesh Analysis, it is important to understand the basic terminology used to describe an electrical circuit.
+</p>
+
+<h3>Node</h3>
+
+<p>
+A <strong>node</strong> is a point or region in a circuit where two or more circuit elements are connected and therefore have the same electrical potential.
+</p>
+
+<h3>Branch</h3>
+
+<p>
+A <strong>branch</strong> is a portion of a circuit containing one or more elements connected between two nodes. The same branch current flows through all series elements within that branch.
+</p>
+
+<h3>Mesh</h3>
+
+<p>
+A <strong>mesh</strong> is a closed path in a planar circuit that does not contain any other closed path within it. Meshes are used as the basis of Mesh Analysis.
+</p>
+
+<h3>Independent Meshes</h3>
+
+<p>
+For a connected planar circuit, the number of independent meshes is related to the number of branches and nodes by:
+</p>
+
+<p style="text-align:center;">$M=B-(N+1)$</p>
+
+<p>
+where $M$ is the number of independent meshes, $B$ is the number of branches, and $N$ is the number of nodes.
+</p>
+
+</div>
+</div>
+
+
+<div class="media-block">
+  <div class="media-text">
+
+<h2><u>Nodal Analysis: Node Voltage Method</u></h2>
+
+<p>
+<strong>Nodal Analysis</strong>, also known as the <strong>Node Voltage Method</strong>, is a systematic technique used to determine unknown node voltages in an electrical circuit.
+</p>
+
+<p>
+The method is based on <strong>Kirchhoff's Current Law (KCL)</strong>. The branch currents are expressed in terms of node voltages using <strong>Ohm's Law</strong>.
+</p>
+
+<p style="text-align:center;">$\sum I=0$</p>
+
+<p>
+For a resistor $R$ connected between two nodes having voltages $V_1$ and $V_2$, the branch current can be written as:
+</p>
+
+<p style="text-align:center;">$I=\frac{V_1-V_2}{R}$</p>
+
+<p>
+Thus, the basic steps of Nodal Analysis involve:
+</p>
+
+<ul>
+  <li>Selecting a <strong>reference node</strong> and assigning it $0\,V$.</li>
+  <li>Assigning voltage variables to the remaining non-reference nodes.</li>
+  <li>Applying <strong>KCL</strong> at the required nodes.</li>
+  <li>Using <strong>Ohm's Law</strong> to express branch currents in terms of node voltages.</li>
+  <li>Solving the resulting simultaneous equations.</li>
+</ul>
+
+<h3>Number of Nodal Equations</h3>
+
+<p>
+If a circuit has $N$ nodes and one node is selected as the reference node, the number of independent nodal equations is generally:
+</p>
+
+<p style="text-align:center;">$N-1$</p>
+
+</div>
+</div>
+
+
+<div class="media-block">
+  <div class="media-text">
+
+<h3>Supernode</h3>
+
+<p>
+A <strong>supernode</strong> is formed when a voltage source is connected between two non-reference nodes.
+</p>
+
+<p>
+In a supernode, KCL is applied around the outer boundary of the supernode. The voltage source provides an additional voltage constraint between the two node voltages.
+</p>
+
+<p>
+Therefore, Supernode Analysis involves:
+</p>
+
+<ul>
+  <li><strong>KCL</strong> for the supernode.</li>
+  <li><strong>Ohm's Law</strong> for resistive branches connected to the supernode.</li>
+  <li>A <strong>voltage constraint</strong> provided by the voltage source.</li>
+</ul>
+
+<p>
+For example, if a voltage source $V_s$ is connected between nodes having voltages $V_1$ and $V_2$, the constraint may be written as:
+</p>
+
+<p style="text-align:center;">$V_1-V_2=V_s$</p>
+
+</div>
+</div>
+
+
+<div class="media-block">
+  <div class="media-text">
+
+<h2><u>Mesh Analysis: Mesh Current Method</u></h2>
+
+<p>
+<strong>Mesh Analysis</strong>, also known as the <strong>Mesh Current Method</strong>, is a systematic technique used to determine unknown mesh currents in a <strong>planar circuit</strong>.
+</p>
+
+<p>
+The method is based on <strong>Kirchhoff's Voltage Law (KVL)</strong>. The voltage drops across resistive elements are expressed using <strong>Ohm's Law</strong>.
+</p>
+
+<p style="text-align:center;">$\sum V=0$</p>
+
+<p>
+For a simple mesh containing a voltage source $V$ and resistors $R_1$ and $R_2$, if the assumed mesh current is $I_1$, applying KVL gives:
+</p>
+
+<p style="text-align:center;">$V-I_1R_1-I_1R_2=0$</p>
+
+<p>
+Thus, the basic steps of Mesh Analysis involve:
+</p>
+
+<ul>
+  <li>Assigning a mesh current to each independent mesh.</li>
+  <li>Applying <strong>KVL</strong> around each independent mesh.</li>
+  <li>Using <strong>Ohm's Law</strong> to express resistor voltage drops in terms of mesh currents.</li>
+  <li>Solving the resulting simultaneous equations.</li>
+</ul>
+
+<h3>Number of Mesh Equations</h3>
+
+<p>
+For a connected planar circuit, if there are $B$ branches and $N$ nodes, the number of independent meshes is:
+</p>
+
+<p style="text-align:center;">$M=B-(N+1)$</p>
+
+<p>
+Therefore, Mesh Analysis generally requires <strong>$M$ independent mesh equations</strong>.
+</p>
+
+</div>
+</div>
+
+
+<div class="media-block">
+  <div class="media-text">
+
+<h3>Shared Elements in Mesh Analysis</h3>
+
+<p>
+When two adjacent meshes share a common resistor, the current through that resistor is determined by the difference between the corresponding mesh currents.
+</p>
+
+<p style="text-align:center;">$I_R=I_1-I_2$</p>
+
+<p>
+Using Ohm's Law, the voltage drop across the shared resistor is:
+</p>
+
+<p style="text-align:center;">$V_R=R(I_1-I_2)$</p>
+
+<p>
+The sign depends on the assumed directions of the mesh currents and the direction in which KVL is written.
+</p>
+
+</div>
+</div>
+
+
+<div class="media-block">
+  <div class="media-text">
+
+<h3>Supermesh</h3>
+
+<p>
+A <strong>supermesh</strong> is formed when a current source lies in the common branch between two adjacent meshes.
+</p>
+
+<p>
+Since the voltage across an ideal current source is not directly known, KVL is applied around the <strong>outer boundary of the supermesh</strong>, excluding the current-source branch.
+</p>
+
+<p>
+The voltage drops across the resistive elements are determined using <strong>Ohm's Law</strong>, while the current source provides an additional constraint relating the mesh currents.
+</p>
+
+<p>
+Therefore, Supermesh Analysis involves:
+</p>
+
+<ul>
+  <li><strong>KVL</strong> around the outer boundary of the supermesh.</li>
+  <li><strong>Ohm's Law</strong> for the resistive elements.</li>
+  <li>A <strong>current constraint</strong> provided by the current source.</li>
+</ul>
+
+<p>
+For example, depending on the assumed mesh-current directions, the current-source constraint may be:
+</p>
+
+<p style="text-align:center;">$I_1-I_2=I_s$</p>
+
+</div>
+</div>
+
+
+<div class="media-block">
+  <div class="media-text">
+
+<h2><u>Key Points for GATE</u></h2>
+
+<ul>
+
+  <li><strong>Node:</strong> A point or region where two or more circuit elements are connected and have the same electrical potential.</li>
+
+  <li><strong>Branch:</strong> A portion of a circuit connected between two nodes.</li>
+
+  <li><strong>Mesh:</strong> A closed path in a planar circuit that contains no other closed path within it.</li>
+
+  <li><strong>Nodal Analysis:</strong> Uses <strong>KCL + Ohm's Law</strong> to determine unknown node voltages.</li>
+
+  <li><strong>Supernode:</strong> Uses <strong>KCL + Ohm's Law + voltage-source constraint</strong>.</li>
+
+  <li><strong>Mesh Analysis:</strong> Uses <strong>KVL + Ohm's Law</strong> to determine unknown mesh currents.</li>
+
+  <li><strong>Supermesh:</strong> Uses <strong>KVL + Ohm's Law + current-source constraint</strong>.</li>
+
+  <li><strong>Reference node:</strong> In Nodal Analysis, one node is selected as the reference and assigned $0\,V$.</li>
+
+  <li><strong>Mesh Analysis limitation:</strong> Mesh Analysis is directly applicable to <strong>planar circuits</strong>.</li>
+
+  <li><strong>Nodal Analysis:</strong> Can be applied to both <strong>planar and non-planar circuits</strong>.</li>
+
+  <li><strong>Number of independent nodal equations:</strong> For $N$ nodes, one reference node leaves generally $N-1$ independent nodal equations.</li>
+
+  <li><strong>Number of independent mesh equations:</strong> For a connected planar circuit with $B$ branches and $N$ nodes, $M=B-N+1$ independent meshes exist, so $M$ independent mesh equations are generally required.</li>
+
+</ul>
+
+</div>
+</div>
+
+
+<div class="media-block">
+  <div class="media-text">
+
+<h2><u>Where Do Nodal Analysis and Mesh Analysis Apply?</u></h2>
+
+<p>
+Nodal Analysis and Mesh Analysis have different requirements when applied to electrical circuits. The following table summarizes their applicability under common GATE ECE circuit conditions.
+</p>
+
+<div class="table-wrapper">
+  <table>
+    <tr>
+      <th>Method</th>
+      <th>Lumped</th>
+      <th>Distributed</th>
+      <th>Planar</th>
+      <th>Non-Planar</th>
+    </tr>
+
+    <tr>
+      <td><strong>Nodal Analysis</strong></td>
+      <td>✓</td>
+      <td>⚠ Not in standard lumped form</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+
+    <tr>
+      <td><strong>Mesh Analysis</strong></td>
+      <td>✓</td>
+      <td>⚠ Not in standard lumped form</td>
+      <td>✓</td>
+      <td>✗</td>
+    </tr>
+  </table>
+</div>
+
+</div>
+</div>
+
+<br />
+  <!-- Social Share -->
+<div class="social-share">
+  <span>Share this page:</span>
+
+  <div class="social-share-items">
+    <a href="#" data-share="whatsapp" target="_blank" rel="noopener" title="Share on WhatsApp">
+      <img src="/images/whatsapp-color-svgrepo-com.svg" alt="WhatsApp" />
+    </a>
+
+    <a href="#" data-share="facebook" target="_blank" rel="noopener" title="Share on Fb">
+      <img src="/images/facebook-svgrepo-com.svg" alt="Facebook" />
+    </a>
+
+    <a href="#" data-share="twitter" target="_blank" rel="noopener" title="Share on X">
+      <img src="/images/Twitter-X-Streamline-Bootstrap.svg" alt="Twitter" />
+    </a>
+
+    <a href="#" data-share="linkedin" target="_blank" rel="noopener" title="Share on X">
+      <img src="/images/linkedin-svgrepo-com.svg" alt="LinkedIn" />
+    </a>
   </div>
+</div><!-- template copy till here-->
 
-</div>
-</div>
+  <!-- Comment Section -->
+  <section class="comment-section">
+    <h2>Discussion / Comments</h2>
+    <div id="login-buttons">
+      <button id="google-login">Login with Google</button>
+    </div>
+    <div id="comment-form" style="display:none;">
+      <textarea id="comment-input" placeholder="Write your comment..."></textarea>
+      <button id="post-comment">Post Comment</button>
+    </div>
+    <div id="comments-list"></div>
+    <button id="logout-btn">Logout</button>
+  </section>
 
+</section>
+<br />
+<p>
+<a href="/networks/ac-analysis-r-l-c.html"
+   title="AC Analysis of R, L & C | GATE ECE">
+  Next: AC Analysis of R, L & C
+</a>
 
+</a>
+</p>
+  </div><!-- </div> blog-right ends-->
 
+</div> <!-- blog-container -->
 
+<!-- Footer -->
+<div id="footer"></div>
 
-  <!-- Main Content -->
-  
-
-
-
-  <!-- Footer include -->
-  <div id="footer"></div>
-
-    <script src="/blog.js"></script>
-<script src="/script.js" defer></script> <!-- existing JS -->
+<!-- Script -->
+ <script src="../assets/signals.js" type="module"></script>
+<script src="/script.js" defer></script>
+ <script src="/blog.js"></script>
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof renderMathInElement !== "undefined") {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ]
+    });
+  }
+});
+</script>
 </body>
 </html>
