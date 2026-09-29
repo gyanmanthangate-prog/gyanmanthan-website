@@ -5,139 +5,218 @@
   <title>Login - gyanmanthanclasses Test</title>
   <meta name="description" content="Practice GATE-level questions under real exam-like time constraints with multiple question types, detailed performance analysis, and a smart test environment designed for effective preparation.">
   <meta property="og:title" content="GATE Test Practice Platform | Mock Tests, Timed Questions & Performance Analysis">
-<meta property="og:description" content="Practice GATE-level questions in a real exam-like environment with timed tests, multiple question types, and detailed performance analysis for effective preparation.">
-<meta property="og:image" content="https://www.gyanmanthanclasses.com/images/test-application.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+  <meta property="og:description" content="Practice GATE-level questions in a real exam-like environment with timed tests, multiple question types, and detailed performance analysis for effective preparation.">
+  <meta property="og:image" content="https://www.gyanmanthanclasses.com/images/test-application.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/style.css">
-<link rel="stylesheet" href="/blog.css">
-<link rel="stylesheet" href="/test-file/test.css">
-<style>
-  html, body {
-    height: 100%;
-    margin: 0;
-  }
+  <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/test-file/test.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
 
-  body {
-    display: flex;
-    flex-direction: column;
-    background: #f5f7fb;
-    font-family: Arial, sans-serif;
-  }
+    body {
+      display: flex;
+      flex-direction: column;
+      background: #f5f7fb;
+      font-family: Arial, sans-serif;
+    }
 
-  #content {
-     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 70vh;
-    flex: 1; /* ye main trick hai */
-    padding:140px 40px 60px 40px;
-  }
+    #content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 70vh;
+      flex: 1;
+      padding: 140px 40px 60px 40px;
+    }
 
-  .login-box {
-    background: #ffffff;
-    padding: 30px;
-    width: 320px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    text-align: center;
-  }
+    .login-box {
+      background: #ffffff;
+      padding: 30px;
+      width: 340px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
 
-  .login-box h2 {
-    margin-bottom: 20px;
-  }
+    .login-box h2 {
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
 
-  .login-box input {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    outline: none;
-  }
+    .google-btn {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background: #4285F4;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 500;
+      transition: background 0.2s ease;
+    }
 
-  .login-box input:focus {
-    border-color: #007bff;
-  }
+    .google-btn:hover {
+      background: #357ae8;
+    }
 
-  .login-box button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-  }
+    #msg {
+      margin-top: 15px;
+      font-size: 14px;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+  </style>
 
-  .login-box button:hover {
-    background: #0056b3;
-  }
-
-  #msg {
-    color: red;
-    margin-top: 10px;
-  }
-</style>
+  <!-- Firebase Compat Libraries -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
 
-  <!-- Header (your script.js will fill this) -->
-
+  <!-- Header -->
   <div id="header"></div>
 
-<div id="content">
-  <div class="login-box">
-    <h2>Login to Start Test</h2>
+  <div id="content">
+    <div class="login-box">
+      <h2>Login to Start Test</h2>
+      
+      <button class="google-btn" id="google-login-btn">
+        Sign in with Google
+      </button>
 
-    <input type="text" id="username" placeholder="Username"><br>
-    <input type="password" id="password" placeholder="Password"><br>
-
-    <button onclick="login()">Login</button>
-
-    <p id="msg"></p>
+      <p id="msg"></p>
+    </div>
   </div>
-</div>
 
+  <!-- Footer -->
   <div id="footer"></div>
 
-</body>
-
-  <!-- Your existing global script -->
+  <!-- Global script -->
   <script src="/script.js"></script>
 
-  <!-- Login logic -->
+  <!-- Firebase Authentication Logic -->
   <script>
-function login() {
-  const user = document.getElementById("username").value;
-  const pass = document.getElementById("password").value;
+    document.addEventListener("DOMContentLoaded", function () {
+      
+      const firebaseConfig = {
+        apiKey: "AIzaSyBbQ-a33eeKOjUbzn1uV829qMOmJ1hJyCg",
+        authDomain: "gyanmanthan-comments.firebaseapp.com",
+        projectId: "gyanmanthan-comments",
+        storageBucket: "gyanmanthan-comments.firebasestorage.app",
+        messagingSenderId: "962442889849",
+        appId: "1:962442889849:web:c095a81f051f8e94c062a8"
+      };
 
-  if (user === "student1" && pass === "1234") {
-    localStorage.setItem("isLoggedIn", "true");
-     localStorage.removeItem("testStarted");
-    
-    const params = new URLSearchParams(window.location.search);
-    const testId = params.get("test");
+      if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+      }
 
-    window.location.href = `test-generic.html?test=${testId}`;
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+      const loginBtn = document.getElementById('google-login-btn');
+      const msg = document.getElementById('msg');
 
-  } else {
-    document.getElementById("msg").innerText = "Invalid credentials!";
-  }
-}
-/* 👇 ADD THIS BELOW */
-document.getElementById("username").addEventListener("keydown", handleEnter);
-document.getElementById("password").addEventListener("keydown", handleEnter);
+      function enableButton() {
+        loginBtn.disabled = false;
+        loginBtn.style.opacity = "1";
+        loginBtn.style.cursor = "pointer";
+      }
 
-function handleEnter(e){
-  if(e.key === "Enter"){
-    login();
-    }
-  }
+      function disableButton() {
+        loginBtn.disabled = true;
+        loginBtn.style.opacity = "0.6";
+        loginBtn.style.cursor = "not-allowed";
+      }
+
+      // 1. Google Login Trigger
+      loginBtn.addEventListener('click', async function () {
+        disableButton();
+        msg.style.color = "#007bff";
+        msg.innerText = "Connecting to Google...";
+
+        const provider = new firebase.auth.GoogleAuthProvider();
+
+        try {
+          await auth.signInWithPopup(provider);
+        } catch (error) {
+          enableButton();
+          if (error.code === 'auth/popup-closed-by-user') {
+            msg.style.color = "#d97706";
+            msg.innerText = "Login cancelled. Popup was closed before signing in.";
+          } else {
+            msg.style.color = "red";
+            msg.innerText = "Login Failed: " + error.message;
+          }
+        }
+      });
+
+      // 2. Student Enablement / Verification Check
+      auth.onAuthStateChanged(async function (user) {
+        if (user) {
+          disableButton();
+          msg.style.color = "#007bff";
+          msg.innerText = "Verifying student access...";
+
+          try {
+            const userRef = db.collection("students").doc(user.uid);
+            const doc = await userRef.get();
+
+            if (!doc.exists) {
+              await userRef.set({
+                name: user.displayName || "Student",
+                email: user.email,
+                isEnabled: false,
+                createdAt: firebase.firestore.FieldValue.serverTimestamp()
+              });
+              msg.style.color = "orange";
+              msg.innerText = "Account verification pending. Please contact Admin for access.";
+              await auth.signOut();
+              enableButton();
+              return;
+            }
+
+            if (doc.data().isEnabled === false) {
+              msg.style.color = "red";
+              msg.innerText = "Account disabled. Please contact GyanManthan team for access.";
+              await auth.signOut();
+              enableButton();
+            } else {
+              msg.style.color = "green";
+              msg.innerText = "Access granted! Redirecting to test...";
+              localStorage.setItem("isLoggedIn", "true");
+                 <!--added -->
+              localStorage.setItem("userUid", user.uid);
+              localStorage.setItem("userName", user.displayName || user.email.split('@')[0]);
+              <!--Till here-->
+              localStorage.removeItem("testStarted");
+
+              const params = new URLSearchParams(window.location.search);
+              const testId = params.get("test");
+
+              setTimeout(function () {
+                window.location.href = "test-generic.html?test=" + (testId || "");
+              }, 1000);
+            }
+          } catch (err) {
+            msg.style.color = "red";
+            msg.innerText = "Error checking access: " + err.message;
+            enableButton();
+          }
+        } else {
+          enableButton();
+        }
+      });
+    });
   </script>
 
 </body>

@@ -1,542 +1,621 @@
-const params = new URLSearchParams(window.location.search);
-const testId = params.get("test") || "signal-1";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { 
+  getFirestore, doc, setDoc, getDoc, collection, query, where, orderBy, getDocs, serverTimestamp 
+} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+import { 
+  getAuth, onAuthStateChanged 
+} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
-let data; // ✅ sirf ek baar
+(function () {
+  "use strict";
 
-fetch(`test/${testId}.json`)
-  .then(res => res.json())
-  .then(json => {
-    data = json;
+  // 1. Firebase Configuration Object
+  const firebaseConfig = {
+    apiKey: "AIzaSyBbQ-a33eeKOjUbzn1uV829qMOmJ1hJyCg",
+    authDomain: "gyanmanthan-comments.firebaseapp.com",
+    projectId: "gyanmanthan-comments",
+    storageBucket: "gyanmanthan-comments.firebasestorage.app",
+    messagingSenderId: "962442889849",
+    appId: "1:962442889849:web:c095a81f051f8e94c062a8"
+  };
 
-    let savedTime = localStorage.getItem("timeLeft");
+  // 2. Initialize Firebase App, Firestore & Auth
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const auth = getAuth(app);
 
-    if(savedTime){
-      timeLeft = parseInt(savedTime);
-    } else {
-      timeLeft = data.time || 300;
-    }
-let instHtml = "";
+  const examApp = document.getElementById("examApp");
+  const instructionsBox = document.getElementById("instructionsBox") || document.getElementById("instructions");
+  const instructionsContent = document.getElementById("instructionsContent");
+const timerBox = document.getElementById("timer");
+const timerEl = timerBox;
 
-if(data.instructions){
-  data.instructions.forEach(line=>{
-    instHtml += `<li>${line}</li>`;
-  });
-}
+  const params = new URLSearchParams(window.location.search);
+  const testId = params.get("test") || "signal-1";
 
-document.getElementById("instructionsContent").innerHTML = `
-  <ul style="line-height:1.6;">${instHtml}</ul>
-  <div style="text-align:center;margin-top:20px;">
-    <button onclick="startTest()" style="background:#28a745;padding:10px 20px;font-size:16px;">
-      ▶ Start Test
-    </button>
-  </div>
-`;
-    render();
-  });
+  let data = { questions: [] };
+  let current = 0;
+  let answers = {};
+  let marked = {};
+  let timeLeft = 300;
+  let timerInterval = null;
+  let currentUser = null;
+  let savedAttemptData = null; // Store fetched result for review mode
+  let isReviewing = false;     // Track if user is in review mode
 
-let current = 0;
-let answers = {};
-let marked = {};
+  /* ---------------- LEADERBOARD & ATTEMPT CHECK ---------------- */
+  async function checkAttemptAndLoadLeaderboard(user) {
+    const statusBox = document.getElementById("attemptStatusBox");
+    const userUid = user ? user.uid : localStorage.getItem("userUid");
 
-/* ---------------- RENDER CONTENT ---------------- */
-function renderContent(content){
-  if(!content) return "";
+    if (userUid) {
+      const docId = `${testId}_${userUid}`;
+      try {
+        const docSnap = await getDoc(doc(db, "test_results", docId));
+        if (docSnap.exists()) {
+          savedAttemptData = docSnap.data();
 
-  if(content.type === "image"){
-    return `<img src="${content.value}" style="max-width:100%;border-radius:8px;">`;
-  }
+          // Hide timer on initial attempt match
+          if (timerEl) timerEl.style.display = "none";
 
-  return content.value;
-  
-}
-function afterRenderKaTeX(){
-  if(typeof renderMathInElement !== "undefined"){
-    renderMathInElement(document.getElementById("examApp"), {
-      delimiters: [
-        {left: "$$", right: "$$", display: true},
-        {left: "$", right: "$", display: false}
-      ]
-    });
-  }
-}
+          // Hide inner content box if present
+          if (instructionsContent) instructionsContent.style.display = "none";
 
-/* ---------------- MAIN RENDER ---------------- */
-function render(){
+          if (statusBox) {
+            statusBox.innerHTML = `
+              <div style="padding:20px; background:#e0f2fe; color:#0369a1; border:1px solid #bae6fd; border-radius:12px; margin:15px 0; text-align:center;">
+                <div style="font-size:20px; font-weight:700; margin-bottom:6px;">You have already attempted this test!</div>
+                <div style="font-size:16px; margin-bottom:15px; color:#0c4a6e;">
+                  Your Score: <b>${savedAttemptData.marks} / ${savedAttemptData.maxMarks}</b>
+                </div>
+                <button id="viewSolutionsBtn" style="background:#0b1a33; color:#fff; padding:12px 24px; font-size:15px; border:none; border-radius:8px; cursor:pointer; font-weight:600; transition:0.2s;">
+                  🔍 View Solutions & Review Paper
+                </button>
+              </div>
+            `;
 
-  let q = data.questions[current];
+            document.getElementById("viewSolutionsBtn").addEventListener("click", () => {
+              isReviewing = true;
+              
+              // Direct HIDE for main instructions container and timer
+              if (instructionsBox) instructionsBox.style.display = "none";
+              const instMain = document.getElementById("instructions") || document.getElementById("instructionsBox");
+              if (instMain) instMain.style.display = "none";
+              if (timerEl) timerEl.style.display = "none";
 
-  let html = `<h3>Q${current + 1}</h3>`;
-  html += renderContent(q.q);
+              if (examApp) examApp.style.display = "block";
+              
+              submitTest(true); 
+            });
+          }
 
-  if(q.type === "mcq"){
-    q.options.forEach((opt, index)=>{
-
-  let val = typeof opt === "object" ? opt.value : opt;
-
-  html += `
-    <div>
-      <label>
-        <input type="radio" name="opt" value="${index}" onchange="save()"
-        ${answers[current] == index ? "checked" : ""}>
-(${String.fromCharCode(97 + index)}) 
-${typeof opt === "object" ? renderContent(opt) : opt}
-        
-      </label>
-    </div>
-  `;
-});
-  } else {
-    html += `<input type="number" id="nat" value="${answers[current] || ''}" oninput="save()">`;
-  }
-  let btns = "";
-
-if(current > 0){
-  btns += `<button onclick="prev()">Prev</button>`;
-}
-
-if(current < data.questions.length - 1){
-  btns += `<button onclick="next()">Next</button>`;
-}
-
-btns += `<button onclick="mark()">Mark</button>`;
-btns += `<button 
-  onclick="confirmSubmitTest()" 
-  title="Submit the test only after completing all questions. You will not be able to change your answers after submission."
-  style="background:#28a745;">
-  Submit Test
-</button>`;
-
-html += `<div style="margin-top:10px;">${btns}</div>`;
-
-  document.getElementById("questionBox").innerHTML = html;
-
-  renderPalette();
-  afterRenderKaTeX(); 
-}
-
-/* ---------------- SAVE ANSWER ---------------- */
-function save(){
-
-  let q = data.questions[current];
-
-  if(q.type === "mcq"){
-    let sel = document.querySelector('input[name="opt"]:checked');
-    answers[current] = sel ? parseInt(sel.value) : null;
-  } else {
-    let el = document.getElementById("nat");
-    answers[current] = el ? el.value : null;
-  }
-  localStorage.setItem("answers", JSON.stringify(answers));
-localStorage.setItem("current", current);
-localStorage.setItem("timeLeft", timeLeft);
-localStorage.setItem("testStarted", "true");
-}
-
-/* ---------------- NAVIGATION ---------------- */
-function next(){
-  save();
-  if(current < data.questions.length - 1){
-    current++;
-    render();
-  }
-}
-
-function prev(){
-  save();
-  if(current > 0){
-    current--;
-    render();
-  }
-}
-
-function jump(i){
-  save();
-  current = i;
-  render();
-}
-
-/* ---------------- MARK ---------------- */
-function mark(){
-  marked[current] = true;
-  renderPalette();
-}
-
-/* ---------------- PALETTE ---------------- */
-function renderPalette(){
-
-  let html = "";
-
-  data.questions.forEach((q,i)=>{
-
-    let cls = "notvisited";
-
-    if(answers[i] != null && answers[i] !== "") cls = "answered";
-    if(marked[i]) cls = "marked";
-    if(i === current) cls += " current";
-
-    html += `<button onclick="jump(${i})" class="${cls}">${i+1}</button>`;
-  });
-
-  document.getElementById("palette").innerHTML = html;
-}
-
-/* ---------------- SUBMIT ---------------- */
-/* ---------------- SUBMIT CONFIRMATION ---------------- */
-
-function confirmSubmitTest(){
-
-  const modal = document.createElement("div");
-
-  modal.innerHTML = `
-    <div id="submitModalOverlay" style="
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,0.55);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      z-index:9999;
-      padding:20px;
-    ">
-
-      <div style="
-        background:#fff;
-        width:100%;
-        max-width:420px;
-        border-radius:14px;
-        padding:25px;
-        box-shadow:0 10px 35px rgba(0,0,0,0.25);
-        text-align:center;
-        animation:submitModalIn 0.2s ease-out;
-      ">
-
-        <div style="
-          font-size:42px;
-          margin-bottom:10px;
-        ">⚠️</div>
-
-        <h3 style="
-          margin:0 0 10px;
-          color:#0b1a33;
-          font-size:22px;
-        ">
-          Submit Test?
-        </h3>
-
-        <p style="
-          margin:0;
-          color:#555;
-          line-height:1.6;
-          font-size:15px;
-        ">
-          Are you sure you want to submit the test?
-          <br>
-          <b>You will not be able to change your answers afterwards.</b>
-        </p>
-
-        <div style="
-          display:flex;
-          gap:10px;
-          justify-content:center;
-          margin-top:22px;
-        ">
-
-          <button id="cancelSubmitBtn" style="
-            padding:10px 20px;
-            border:1px solid #ccc;
-            background:#fff;
-            color:#333;
-            border-radius:7px;
-            cursor:pointer;
-            font-size:15px;
-          ">
-            Cancel
-          </button>
-
-          <button id="confirmSubmitBtn" style="
-            padding:10px 20px;
-            border:none;
-            background:#28a745;
-            color:#fff;
-            border-radius:7px;
-            cursor:pointer;
-            font-size:15px;
-            font-weight:600;
-          ">
-            Submit Test
-          </button>
-
-        </div>
-
-      </div>
-    </div>
-
-    <style>
-      @keyframes submitModalIn {
-        from {
-          opacity:0;
-          transform:scale(0.95);
+          const startBtn = document.getElementById("startTestBtn");
+          if (startBtn) startBtn.style.display = "none";
         }
-        to {
-          opacity:1;
-          transform:scale(1);
-        }
+      } catch (e) {
+        console.error("Error checking attempt history:", e.message);
       }
-    </style>
-  `;
-
-  document.body.appendChild(modal);
-
-  document.getElementById("cancelSubmitBtn").onclick = function(){
-    modal.remove();
-  };
-
-  document.getElementById("confirmSubmitBtn").onclick = function(){
-    modal.remove();
-    submitTest();
-  };
-
-}
-
-function submitTest(){
-clearInterval(timerInterval);
-  save();
-localStorage.removeItem("answers");
-localStorage.removeItem("current");
-localStorage.removeItem("timeLeft");
-localStorage.removeItem("testStarted");
-  let html = `
-<h2 style="
-  text-align:center;
-  margin:20px auto;
-  padding:14px;
-  color:#0b1a33;
-  border-bottom:3px solid #0b1a33;
-  max-width:600px;
-">
-  Result
-</h2>
-
-<table border="1" style="width: 60%;border-collapse:collapse;text-align:center;margin: 10px auto 0px auto;">
-  <tr style="background:#0b1a33;color:#fff;">
-    <th>Q No</th>
-    <th>Status</th>
-    <th>Marks</th>
-  </tr>
-`;
-
-let correct = 0, wrong = 0, left = 0, total = 0;
-
-let maxMarks = data.questions.reduce((sum, q) => {
-  return sum + (q.marks || 0);
-}, 0);
-
-data.questions.forEach((q,i)=>{
-
-  let user = answers[i];
-  let status = "No Attempt";
-  let marks = 0;
-
-
-  let correctAns;
-
-if(q.type === "mcq"){
-    if(typeof q.answer === "object" && q.answer.type === "text"){
-        // Text MCQ: find index of option matching answer value
-        correctAns = q.options.findIndex(opt => {
-            if(typeof opt === "object") return false; // image option, won't match text
-            return opt === q.answer.value;
-        });
-    } else {
-        // Index-based answer (image MCQ or numeric index)
-        correctAns = q.answer;
     }
-} else if(q.type === "nat"){
-    correctAns = q.answer; // numeric answer
-}
 
-// ------------------ scoring ------------------
-if(user === null || user === "" || user === undefined){
-    left++;
-    status = "No Attempt";
-    marks = 0;
-} else if(user == correctAns){
-    correct++;
-    marks = q.marks;
-    total += marks;
-    status = "Correct";
-} else {
-    wrong++;
-    marks = -(q.negative || 0);
-    total += marks;
-    status = "Wrong";
-}
+    /* ---------------- GAMIFIED LEADERBOARD ---------------- */
+    const leaderboardEl = document.getElementById("leaderboardTableContainer");
+    if (!leaderboardEl) return;
 
-  html += `
-    <tr>
-      <td>${i+1}</td>
-      <td>${status}</td>
-      <td>${marks}</td>
-    </tr>
-  `;
-});
+    try {
+      const q = query(
+        collection(db, "test_results"),
+        where("testId", "==", testId),
+        orderBy("marks", "desc")
+      );
 
-html += `
-<div style="text-align:center;margin-top:15px;font-size:18px;font-weight:600;">
-  Total Score: ${total} / ${maxMarks}
-</div>
-`;
+      const querySnapshot = await getDocs(q);
+      if (querySnapshot.empty) {
+        leaderboardEl.innerHTML = `<p style="text-align:center; color:#777; font-style:italic;">No responses submitted yet. Be the first to attempt!</p>`;
+        return;
+      }
 
-html += `
-</table>
+      let tableHtml = `
+        <table style="width:100%; border-collapse:collapse; text-align:center; margin-top:10px; font-family:'Poppins',sans-serif; border-radius:8px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+          <thead>
+            <tr style="background:#0b1a33; color:#fff;">
+              <th style="padding:12px;">Rank</th>
+              <th style="padding:12px; text-align:left;">Student Name</th>
+              <th style="padding:12px;">Marks</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
 
-<h3 class="section-title">Solutions</h3>
-`;
+      let rank = 1;
+      querySnapshot.forEach((docSnap) => {
+        const row = docSnap.data();
+        let rankBadge = `#${rank}`;
+        let rowStyle = "border-bottom:1px solid #eee;";
+        let topperTag = "";
 
-  data.questions.forEach((q,i)=>{
-    let userAns = answers[i];  // pranav
-    html += `
-      <div class="solution-card">
-        <h4>Q${i+1}</h4>
-        ${renderContent(q.q)}
+        if (rank === 1) {
+          rankBadge = "👑 🥇";
+          rowStyle += "background:#fef9c3; font-weight:600;";
+          topperTag = `<span style="background:#ca8a04; color:#fff; font-size:10px; padding:2px 6px; border-radius:4px; margin-left:6px; font-weight:700;">TOPPER</span>`;
+        } else if (rank === 2) {
+          rankBadge = "🥈";
+          rowStyle += "background:#f8fafc;";
+        } else if (rank === 3) {
+          rankBadge = "🥉";
+          rowStyle += "background:#f8fafc;";
+        }
 
-        <p><b>You opted:</b> ${
-  userAns === null || userAns === undefined || userAns === "" 
-    ? "Not Attempted" 
-    : (q.type === "mcq"
-        ? `(${String.fromCharCode(97 + userAns)}) ${
-            typeof q.options[userAns] === "object"
-              ? renderContent(q.options[userAns])
-              : q.options[userAns]
-          }`
-        : userAns)
-}</p>
+        tableHtml += `
+          <tr style="${rowStyle}">
+            <td style="padding:10px; font-size:16px;">${rankBadge}</td>
+            <td style="padding:10px; text-align:left;">
+              <b>${sanitizeHTML(row.studentName || "Anonymous")}</b> ${topperTag}
+            </td>
+            <td style="padding:10px; font-weight:700; color:#16a34a;">${row.marks} / ${row.maxMarks}</td>
+          </tr>
+        `;
+        rank++;
+      });
 
-       <p><b>Answer:</b> ${
-  q.type === "mcq"
-    ? (
-        typeof q.answer === "number"
-          ? `(${String.fromCharCode(97 + q.answer)})`
-          : (q.answer.type === "text"
-              ? q.answer.value
-              : renderContent(q.answer))
-      )
-    : q.answer
-}</p>
+      tableHtml += `</tbody></table>`;
+      leaderboardEl.innerHTML = tableHtml;
 
-<p><b>Explanation:</b> ${
-    (typeof q.explanation === "object" && q.explanation.type === "text")
-        ? q.explanation.value
-        : (typeof q.explanation === "object"
-            ? renderContent(q.explanation)  // image or other object
-            : q.explanation)
-}</p>
-${q.youtube ? `
-  <p>
-    <a href="${q.youtube}" target="_blank" rel="noopener noreferrer"
-       style="color:#ff0000;font-weight:600;">
-       ▶ Watch Solution Video
-    </a>
-  </p>
-` : ""}
+    } catch (err) {
+      console.error("Leaderboard fetch error:", err);
+      leaderboardEl.innerHTML = `<p style="text-align:center; color:#888;">Leaderboard will be available after first attempt.</p>`;
+    }
+  }
+
+  /* ---------------- AUTH STATE LISTENER ---------------- */
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      currentUser = user;
+      localStorage.setItem("userUid", user.uid);
+      if (user.displayName) localStorage.setItem("userName", user.displayName);
+      checkAttemptAndLoadLeaderboard(user);
+    } else {
+      currentUser = null;
+      console.warn("User is not authenticated with Firebase Auth.");
+      checkAttemptAndLoadLeaderboard(null);
+    }
+  });
+
+  /* ---------------- FETCH DATA ---------------- */
+  fetch(`test/${testId}.json`)
+    .then((res) => {
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+      return res.json();
+    })
+    .then((json) => {
+      data = json;
+
+      const savedTime = localStorage.getItem("timeLeft");
+      timeLeft = savedTime ? parseInt(savedTime, 10) : data.time || 300;
+
+      let instHtml = "";
+      if (Array.isArray(data.instructions) && data.instructions.length > 0) {
+        instHtml = data.instructions.map((line) => `<li>${line}</li>`).join("");
+      } else {
+        instHtml = `
+          <li>Read each question carefully before answering.</li>
+          <li>Each correct answer carries marks specified in the paper.</li>
+          <li>Ensure stable internet connection during the examination.</li>
+        `;
+      }
+
+      if (instructionsContent) {
+        instructionsContent.innerHTML = `
+          <ul style="line-height:1.6; text-align:left; padding-left:20px;">${instHtml}</ul>
+          <div style="text-align:center;margin-top:20px;">
+            <button id="startTestBtn" onclick="window.startTest()" style="background:#28a745;color:#fff;padding:12px 28px;font-size:16px;border:none;border-radius:5px;cursor:pointer;font-weight:600;">
+              ▶ Start Test
+            </button>
+          </div>
+        `;
+      }
+      render();
+    })
+    .catch((err) => {
+      console.error("Failed to load test:", err);
+      if (instructionsContent) {
+        instructionsContent.innerHTML = `
+          <div style="color:red;text-align:center;padding:20px;">
+            ⚠️ Unable to load test paper (${testId}.json). Please verify test ID or try again.
+          </div>
+        `;
+      }
+    });
+
+  function sanitizeHTML(str) {
+    if (typeof str !== "string") return str;
+    return str.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  function renderContent(content) {
+    if (!content) return "";
+    if (typeof content === "object" && content.type === "image") {
+      return `<img src="${encodeURI(content.value)}" style="max-width:100%;border-radius:8px;" alt="Question Image">`;
+    }
+    return typeof content === "object" ? content.value || "" : content;
+  }
+
+  function afterRenderKaTeX() {
+    if (typeof renderMathInElement !== "undefined" && examApp) {
+      renderMathInElement(examApp, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false }
+        ]
+      });
+    }
+  }
+
+  function render() {
+    if (!data.questions || !data.questions[current]) return;
+
+    const q = data.questions[current];
+    let html = `<h3>Q${current + 1}</h3>`;
+    html += renderContent(q.q);
+
+    if (q.type === "mcq") {
+      q.options.forEach((opt, index) => {
+        const optionLabel = String.fromCharCode(97 + index);
+        const optionVal = typeof opt === "object" ? opt.value : opt;
+
+        html += `
+          <div>
+            <label style="cursor:pointer;">
+              <input type="radio" name="opt" value="${index}" onchange="window.saveAnswer()" ${answers[current] == index ? "checked" : ""}>
+              (${optionLabel}) ${typeof opt === "object" ? renderContent(opt) : optionVal}
+            </label>
+          </div>
+        `;
+      });
+    } else {
+      html += `<input type="number" id="nat" value="${answers[current] ?? ""}" oninput="window.saveAnswer()">`;
+    }
+
+    let btns = "";
+    if (current > 0) btns += `<button onclick="window.prevQuestion()">Prev</button> `;
+    if (current < data.questions.length - 1) btns += `<button onclick="window.nextQuestion()">Next</button> `;
+    btns += `<button onclick="window.markQuestion()">Mark</button> `;
+    btns += `<button onclick="window.confirmSubmitTest()" style="background:#28a745;color:#fff;border:none;padding:6px 12px;border-radius:4px;cursor:pointer;">Submit Test</button>`;
+
+    html += `<div style="margin-top:15px;display:flex;gap:8px;">${btns}</div>`;
+
+    const qBox = document.getElementById("questionBox");
+    if (qBox) qBox.innerHTML = html;
+
+    renderPalette();
+    afterRenderKaTeX();
+  }
+
+  window.saveAnswer = function () {
+    if (isReviewing) return; // Prevent overwriting answers in review mode
+    const q = data.questions[current];
+    if (!q) return;
+
+    if (q.type === "mcq") {
+      const sel = document.querySelector('input[name="opt"]:checked');
+      answers[current] = sel ? parseInt(sel.value, 10) : null;
+    } else {
+      const el = document.getElementById("nat");
+      answers[current] = el ? el.value.trim() : null;
+    }
+
+    localStorage.setItem("answers", JSON.stringify(answers));
+    localStorage.setItem("current", current);
+    localStorage.setItem("timeLeft", timeLeft);
+    localStorage.setItem("testStarted", "true");
+  };
+
+  window.nextQuestion = function () {
+    window.saveAnswer();
+    if (current < data.questions.length - 1) {
+      current++;
+      render();
+    }
+  };
+
+  window.prevQuestion = function () {
+    window.saveAnswer();
+    if (current > 0) {
+      current--;
+      render();
+    }
+  };
+
+  window.jumpToQuestion = function (i) {
+    window.saveAnswer();
+    current = i;
+    render();
+  };
+
+  window.markQuestion = function () {
+    marked[current] = true;
+    renderPalette();
+  };
+
+  function renderPalette() {
+    let html = "";
+    data.questions.forEach((q, i) => {
+      let cls = "notvisited";
+      if (answers[i] !== undefined && answers[i] !== null && answers[i] !== "") cls = "answered";
+      if (marked[i]) cls = "marked";
+      if (i === current) cls += " current";
+
+      html += `<button onclick="window.jumpToQuestion(${i})" class="${cls}">${i + 1}</button>`;
+    });
+
+    const paletteEl = document.getElementById("palette");
+    if (paletteEl) paletteEl.innerHTML = html;
+  }
+
+  window.confirmSubmitTest = function () {
+    const modal = document.createElement("div");
+    modal.id = "submitModal";
+    modal.innerHTML = `
+      <div style="position:fixed;inset:0;background:rgba(0,0,0,0.55);display:flex;align-items:center;justify-content:center;z-index:9999;padding:20px;">
+        <div style="background:#fff;width:100%;max-width:420px;border-radius:14px;padding:25px;text-align:center;">
+          <div style="font-size:42px;margin-bottom:10px;">⚠️</div>
+          <h3 style="margin:0 0 10px;color:#0b1a33;font-size:22px;">Submit Test?</h3>
+          <p style="margin:0;color:#555;line-height:1.6;font-size:15px;">
+            Are you sure you want to submit the test?<br>
+            <b>You will not be able to change your answers afterwards.</b>
+          </p>
+          <div style="display:flex;gap:10px;justify-content:center;margin-top:22px;">
+            <button id="cancelSubmitBtn" style="padding:10px 20px;border:1px solid #ccc;background:#fff;color:#333;border-radius:7px;cursor:pointer;">Cancel</button>
+            <button id="confirmSubmitBtn" style="padding:10px 20px;border:none;background:#28a745;color:#fff;border-radius:7px;cursor:pointer;font-weight:600;">Submit Test</button>
+          </div>
+        </div>
       </div>
     `;
-  });
 
-  html += `
-    <button onclick="goToFirst()">🔁 Restart the test again</button>
-    <button onclick="window.print()">📄 Print / Save</button>
-    <button onclick="window.location.href='/gate-articles.html'">
-  📘 Go to Articles
-</button>
-  `;
+    document.body.appendChild(modal);
 
-  document.getElementById("examApp").innerHTML = html;
-  if (typeof renderMathInElement !== "undefined") {
-  renderMathInElement(document.getElementById("examApp"), {
-    delimiters: [
-      {left: "$$", right: "$$", display: true},
-      {left: "$", right: "$", display: false}
-    ]
-  });
-}
-}
-
-/* ---------------- RESET ---------------- */
-function goToFirst(){
-  location.reload();
-}
-
-function startTest(){
-  localStorage.setItem("testStarted", "true");
-  document.getElementById("instructionsBox").style.display = "none";
-  document.getElementById("examApp").style.display = "block";
-  startTimer();
-}
-
-
-/* ---------------- INIT ---------------- */
-document.addEventListener("DOMContentLoaded", function(){
-
-  let started = localStorage.getItem("testStarted");
-
-  if(started === "true"){
-
-    // restore data
-    answers = JSON.parse(localStorage.getItem("answers")) || {};
-    current = parseInt(localStorage.getItem("current")) || 0;
-
-    let savedTime = localStorage.getItem("timeLeft");
-    timeLeft = savedTime ? parseInt(savedTime) : 300;
-
-    // show exam directly
-    document.getElementById("instructionsBox").style.display = "none";
-    document.getElementById("examApp").style.display = "block";
-
-
-    startTimer();
-
-  } 
-
-});
-
-// let timeLeft = 450;
-let timeLeft;
-let timerInterval;
-
-function startTimer(){
-
-  if(timerInterval) clearInterval(timerInterval);
-
-  // ✅ show immediately
-  let m = Math.floor(timeLeft / 60);
-  let s = timeLeft % 60;
-
-  let el = document.getElementById("timer");
-  if(el){
-    el.innerText = `⏳ ${m}:${s < 10 ? "0"+s : s}`;
-  }
-
-  // ✅ keep updating every second
-  timerInterval = setInterval(()=>{
-
-    if(timeLeft <= 0){
-      clearInterval(timerInterval);
+    document.getElementById("cancelSubmitBtn").onclick = () => modal.remove();
+    document.getElementById("confirmSubmitBtn").onclick = () => {
+      modal.remove();
       submitTest();
+    };
+  };
+
+  async function saveToFirestore(totalMarks, maxMarks, userAnswersMap) {
+    const activeUser = auth.currentUser;
+    const userUid = activeUser ? activeUser.uid : localStorage.getItem("userUid");
+    const userName = activeUser ? (activeUser.displayName || "Student") : (localStorage.getItem("userName") || "Student");
+
+    if (!userUid) {
+      console.warn("User UID absent. Result skipped from Firestore.");
       return;
     }
 
-    timeLeft--;
+    const docId = `${testId}_${userUid}`;
+    try {
+      await setDoc(doc(db, "test_results", docId), {
+        testId: testId,
+        uid: userUid,
+        studentName: userName,
+        marks: parseFloat(totalMarks.toFixed(2)),
+        maxMarks: maxMarks,
+        answers: userAnswersMap || {},
+        submittedAt: serverTimestamp()
+      });
+      console.log("Result saved to Firestore successfully.");
+    } catch (e) {
+      console.error("Error saving result to Firestore:", e.message);
+    }
+  }
 
-    // ✅ UPDATE AGAIN (this was missing)
-    let m = Math.floor(timeLeft / 60);
-    let s = timeLeft % 60;
+  async function submitTest(isReviewOnly = false) {
+    // Stop & Hide timer on test submit or review load
+    if (timerInterval) clearInterval(timerInterval);
+    if (timerEl) timerEl.style.display = "none";
 
-    let el = document.getElementById("timer");
-    if(el){
-      el.innerText = `⏳ ${m}:${s < 10 ? "0"+s : s}`;
+    // Hide Instruction Box Completely
+    const instMain = document.getElementById("instructionsBox") || document.getElementById("instructions");
+    if (instMain) instMain.style.display = "none";
+
+    if (!isReviewOnly) window.saveAnswer();
+
+    const activeAnswers = (isReviewOnly && savedAttemptData && savedAttemptData.answers) 
+      ? savedAttemptData.answers 
+      : answers;
+
+    let totalMarks = 0;
+    const maxMarks = data.questions.reduce((sum, q) => sum + (Number(q.marks) || 0), 0);
+
+    let rowsHtml = "";
+    data.questions.forEach((q, i) => {
+      const user = activeAnswers[i];
+      let status = "No Attempt";
+      let marks = 0;
+      let correctAns;
+
+      if (q.type === "mcq") {
+        if (typeof q.answer === "object" && q.answer.type === "text") {
+          correctAns = q.options.findIndex((opt) => typeof opt !== "object" && opt === q.answer.value);
+        } else {
+          correctAns = q.answer;
+        }
+      } else {
+        correctAns = q.answer;
+      }
+
+      if (user === null || user === undefined || user === "") {
+        status = "No Attempt";
+        marks = 0;
+      } else if (user == correctAns) {
+        marks = Number(q.marks) || 0;
+        totalMarks += marks;
+        status = "Correct";
+      } else {
+        marks = -(Number(q.negative) || 0);
+        totalMarks += marks;
+        status = "Wrong";
+      }
+
+      rowsHtml += `
+        <tr>
+          <td>${i + 1}</td>
+          <td>${status}</td>
+          <td>${marks}</td>
+        </tr>
+      `;
+    });
+
+    const finalScore = isReviewOnly && savedAttemptData 
+      ? savedAttemptData.marks 
+      : Number(totalMarks.toFixed(2));
+
+    if (!isReviewOnly) {
+      await saveToFirestore(finalScore, maxMarks, answers);
+
+      localStorage.removeItem("answers");
+      localStorage.removeItem("current");
+      localStorage.removeItem("timeLeft");
+      localStorage.removeItem("testStarted");
     }
 
-  }, 1000);
+    // 1. Solution Screen HTML
+    let html = `
+    <div id="header"></div>
 
-}
+    <h2 style="text-align:center;margin:20px auto;padding:14px;color:#0b1a33;border-bottom:3px solid #0b1a33;max-width:600px;">
+      ${isReviewOnly ? "Test Paper & Solutions Review" : "Test Result"}
+    </h2>
+    <table border="1" style="width: 60%;border-collapse:collapse;text-align:center;margin: 10px auto;">
+      <tr style="background:#0b1a33;color:#fff;">
+        <th>Q No</th>
+        <th>Status</th>
+        <th>Marks</th>
+      </tr>
+      ${rowsHtml}
+    </table>
+    <div style="text-align:center;margin-top:15px;font-size:18px;font-weight:600;">
+      Total Score: ${finalScore} / ${maxMarks}
+    </div>
+    <h3 class="section-title">Solutions</h3>
+  `;
+
+    data.questions.forEach((q, i) => {
+      const userAns = activeAnswers[i];
+      const userOptText =
+        userAns === null || userAns === undefined || userAns === ""
+          ? "Not Attempted"
+          : q.type === "mcq"
+          ? `(${String.fromCharCode(97 + userAns)}) ${typeof q.options[userAns] === "object" ? renderContent(q.options[userAns]) : q.options[userAns]}`
+          : userAns;
+
+      const correctText =
+        q.type === "mcq"
+          ? typeof q.answer === "number"
+            ? `(${String.fromCharCode(97 + q.answer)})`
+            : q.answer.type === "text"
+            ? q.answer.value
+            : renderContent(q.answer)
+          : q.answer;
+
+      const explanationText =
+        typeof q.explanation === "object" && q.explanation.type === "text"
+          ? q.explanation.value
+          : typeof q.explanation === "object"
+          ? renderContent(q.explanation)
+          : q.explanation;
+
+      html += `
+        <div class="solution-card" style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:15px; margin-bottom:15px; text-align:left;">
+          <h4>Q${i + 1}</h4>
+          ${renderContent(q.q)}
+          <p><b>You opted:</b> ${userOptText}</p>
+          <p><b>Correct Answer:</b> ${correctText}</p>
+          <p><b>Explanation:</b> ${explanationText}</p>
+          ${q.youtube ? `<p><a href="${encodeURI(q.youtube)}" target="_blank" rel="noopener noreferrer" style="color:#ff0000;font-weight:600;">▶ Watch Solution Video</a></p>` : ""}
+        </div>
+      `;
+    });
+
+    html += `
+      <div style="text-align:center;margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+        <button onclick="location.reload()" style="padding:10px 20px; cursor:pointer;">View Leadership Board & Rank</button>
+        <button onclick="window.print()" style="padding:10px 20px; cursor:pointer;">📄 Save / Print</button>
+        <a href="/gate-articles.html" style="text-decoration:none;">
+          <button style="padding:10px 20px; cursor:pointer; background:#0b1a33; color:#fff; border:none; border-radius:4px;">📚 Go to Articles</button>
+        </a>
+      </div>
+    `;
+
+    // 2. DOM update aur Header Load Logic
+    if (examApp) {
+      examApp.innerHTML = html;
+      afterRenderKaTeX();
+
+      setTimeout(() => {
+        const headerContainer = document.getElementById("header");
+        
+        if (typeof loadHeaderModule === "function") {
+          loadHeaderModule("header");
+        } else if (headerContainer) {
+          fetch("/header.html")
+            .then(res => {
+              if (!res.ok) throw new Error("Header load failed: " + res.status);
+              return res.text();
+            })
+            .then(headerHtml => {
+              headerContainer.innerHTML = headerHtml;
+              if (typeof window.dispatchEvent === "function") {
+                window.dispatchEvent(new Event("scroll"));
+              }
+            })
+            .catch(err => console.error("Error loading header on solution screen:", err));
+        }
+      }, 0);
+    }
+  }
+
+  window.startTest = function () {
+    isReviewing = false;
+    localStorage.setItem("testStarted", "true");
+    const instMain = document.getElementById("instructionsBox") || document.getElementById("instructions");
+    if (instMain) instMain.style.display = "none";
+    if (examApp) examApp.style.display = "block";
+    if (timerBox) timerBox.style.display = "block";
+    startTimer();
+  };
+
+  function startTimer() {
+    if (isReviewing) return; // Do not start timer in review mode
+    if (timerInterval) clearInterval(timerInterval);
+
+    function updateTimerUI() {
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        submitTest();
+        return;
+      }
+      const m = Math.floor(timeLeft / 60);
+      const s = timeLeft % 60;
+      if (timerEl) {
+        timerEl.innerText = `⏳ ${m}:${s < 10 ? "0" + s : s}`;
+      }
+      timeLeft--;
+    }
+
+    updateTimerUI();
+    timerInterval = setInterval(updateTimerUI, 1000);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const started = localStorage.getItem("testStarted");
+    if (started === "true" && !savedAttemptData) {
+      answers = JSON.parse(localStorage.getItem("answers")) || {};
+      current = parseInt(localStorage.getItem("current"), 10) || 0;
+
+      const instMain = document.getElementById("instructionsBox") || document.getElementById("instructions");
+      if (instMain) instMain.style.display = "none";
+      if (examApp) examApp.style.display = "block";
+      if (timerBox) timerBox.style.display = "block";
+      startTimer();
+    }
+  });
+})();

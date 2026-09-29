@@ -1,10 +1,9 @@
- function initNestedAccordions(scope = document){
-  const nestedAccordions =
-    scope.querySelectorAll('.nested-accordion');
+function initNestedAccordions(scope = document) {
+  const nestedAccordions = scope.querySelectorAll('.nested-accordion');
   nestedAccordions.forEach(acc => {
     acc.addEventListener('click', () => {
       nestedAccordions.forEach(a => {
-        if(a !== acc){
+        if (a !== acc) {
           a.classList.remove('active');
         }
       });
@@ -12,28 +11,26 @@
     });
   });
 }
- // Accordion
+
+// Sidebar Accordion
 const accordions = document.querySelectorAll('.sidebar .accordion');
 accordions.forEach(acc => {
   acc.addEventListener('click', () => {
     accordions.forEach(a => {
-      if(a !== acc) a.classList.remove('active');
+      if (a !== acc) a.classList.remove('active');
     });
     acc.classList.toggle('active');
   });
 });
+
 // ================================
 // Article Reading Time
 // ================================
-
 function updateReadingTime() {
-
   const article = document.querySelector('.generic-content-section');
-
   if (!article) return;
 
   const heading = article.querySelector('h1');
-
   if (!heading) return;
 
   // Remove existing reading time
@@ -46,7 +43,6 @@ function updateReadingTime() {
 
   // Average reading speed
   const wordsPerMinute = 200;
-
   const minutes = Math.max(1, Math.ceil(words / wordsPerMinute));
 
   // Create reading-time element
@@ -57,39 +53,42 @@ function updateReadingTime() {
   // Insert below article H1
   heading.insertAdjacentElement('afterend', meta);
 }
+
 initNestedAccordions();
 
 // Subtopic click loader
 const subtopicLinks = document.querySelectorAll('.subtopics a');
 const rightContent = document.getElementById('rightContent');
 
-
 subtopicLinks.forEach(link => {
   link.addEventListener('click', async (e) => {
-
     const file = link.getAttribute('data-file');
     const id = link.getAttribute('data-id');
 
-    if(file){
+    if (!rightContent) return;
+
+    if (file) {
       e.preventDefault();
 
-      const res = await fetch(file);
-      const html = await res.text();
+      try {
+        const res = await fetch(file);
+        const html = await res.text();
 
-      rightContent.innerHTML = `
-        <div class="blog-right reveal">
-          ${html}
-        </div>
-      `;
-      updateReadingTime();
-    }
-
-    else if(id){
+        rightContent.innerHTML = `
+          <div class="blog-right reveal">
+            ${html}
+          </div>
+        `;
+        updateReadingTime();
+      } catch (err) {
+        console.error("Content loading failed:", err);
+      }
+    } else if (id) {
       e.preventDefault();
 
       const content = window.subtopicData?.[id];
 
-      if(!content){
+      if (!content) {
         rightContent.innerHTML = `<p>Content not found.</p>`;
         return;
       }
@@ -100,77 +99,75 @@ subtopicLinks.forEach(link => {
           ${content}
         </div>
       `;
-        updateReadingTime();
+      updateReadingTime();
     }
 
     const revealEl = rightContent.querySelector('.reveal');
-    if(revealEl){
-      setTimeout(()=> revealEl.classList.add('active'),50);
+    if (revealEl) {
+      setTimeout(() => revealEl.classList.add('active'), 50);
     }
 
-    if(window.innerWidth <= 768){
-  document.getElementById('sidebar')?.classList.remove('show');
-  document.getElementById('hamburger')?.classList.remove('active');
-}
-
+    if (window.innerWidth <= 768) {
+      document.getElementById('sidebar')?.classList.remove('show');
+      document.getElementById('hamburger')?.classList.remove('active');
+    }
   });
 });
 
+// Sidebar Fetch (Safe Null Check Added - Solves Line 123 Error)
 fetch('/sidebar.html')
   .then(res => res.text())
   .then(data => {
+    const sidebarComp = document.getElementById('sidebar-component');
 
-    document.getElementById('sidebar-component').innerHTML = data;
+    if (sidebarComp) {
+      sidebarComp.innerHTML = data;
 
-    const sidebar = document.getElementById('sidebar');
-    const hamburger = document.getElementById('hamburger');
+      const sidebar = document.getElementById('sidebar');
 
-    // 🔹 Accordion logic
-    const accordions = sidebar.querySelectorAll('.accordion');
+      if (sidebar) {
+        // Accordion logic inside fetched sidebar
+        const sidebarAccordions = sidebar.querySelectorAll('.accordion');
 
-    accordions.forEach(acc => {
-      acc.addEventListener('click', () => {
+        sidebarAccordions.forEach(acc => {
+          acc.addEventListener('click', () => {
+            sidebarAccordions.forEach(a => {
+              if (a !== acc) a.classList.remove('active');
+            });
 
-        accordions.forEach(a => {
-          if(a !== acc) a.classList.remove('active');
+            acc.classList.toggle('active');
+          });
         });
 
-        acc.classList.toggle('active');
+        initNestedAccordions(sidebar);
+      }
+    }
+  })
+  .catch(err => console.error("Sidebar fetch failed:", err));
 
-      });
-    });
-initNestedAccordions(sidebar);
-  });
-
-  document.addEventListener('click', (e) => {
-
+// Global Document Click Event (Hamburger & Sidebar toggle)
+document.addEventListener('click', (e) => {
   const sidebar = document.getElementById('sidebar');
   const hamburger = document.getElementById('hamburger');
 
-  if(!sidebar || !hamburger) return;
+  if (!sidebar || !hamburger) return;
 
-  // hamburger click
-  if(hamburger.contains(e.target)){
-
+  // Hamburger click
+  if (hamburger.contains(e.target)) {
     sidebar.classList.toggle('show');
     hamburger.classList.toggle('active');
     return;
-
   }
 
-  // outside click close
-  if(window.innerWidth <= 768){
-
-    if(!sidebar.contains(e.target)){
-
+  // Outside click close on mobile screens
+  if (window.innerWidth <= 768) {
+    if (!sidebar.contains(e.target)) {
       sidebar.classList.remove('show');
       hamburger.classList.remove('active');
-
     }
-
   }
-
 });
+
 // Calculate reading time when article loads initially
 document.addEventListener("DOMContentLoaded", () => {
   updateReadingTime();
