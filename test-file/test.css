@@ -198,3 +198,17 @@ h3, h4 {
 #instructionsBox:has(#attemptStatusBox:not(:empty)) h2 {
   display: none !important;
 }
+.questionPaper{display:flex;gap:10px;padding:10px; align-items: flex-start;}
+@media(max-width:500px){
+  .questionPaper{
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  align-items: flex-start;
+  flex-direction: column;
+}
+#palette{
+  width: unset !important;
+  height:unset;
+}
+}

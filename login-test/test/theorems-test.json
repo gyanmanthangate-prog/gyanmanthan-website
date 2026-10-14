@@ -1,0 +1,250 @@
+{
+  "time": 1200,
+  "instructions": [
+    "<b>Attempt all questions</b>",
+"There are <b>10 questions</b> in total, carrying <b>14 marks</b>.",
+"Questions may carry <b>1 mark or 2 marks</b>; the marks for each question are mentioned against it.",
+"A wrong answer to a <b>1-mark question</b> will incur a penalty of <b>0.33 marks</b>.",
+"A wrong answer to a <b>2-mark question</b> will incur a penalty of <b>0.66 marks</b>.",
+"Time allotted: <b>20 minutes</b>.",
+"Submit the test after completion."
+
+  ],
+  "questions": [
+
+{
+  "q": {
+    "type": "text",
+    "value": "A 24 V battery of internal resistance 4 Ω is connected to a variable resistance R. The rate of heat dissipation in R is maximum when the current drawn from the battery is I. The current drawn from the battery will be I/2 when R is equal to: <b>1 Mark</b>"
+  },
+  "type": "mcq",
+  "options": [
+    "2 Ω",
+    "4 Ω",
+    "8 Ω",
+    "12 Ω"
+  ],
+  "answer": 2,
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": "The power dissipated in the external resistance R is maximum when R equals the internal resistance r. Given, E = 24 V and r = 4 Ω. Therefore, the current at maximum power is I = E/(R+r) = 24/(4+4) = 3 A. When the current is I/2 = 1.5 A, we have I = E/(R+r). Thus, 1.5 = 24/(R+4), giving R+4 = 16 and R = 12 Ω. Hence, option (D) is correct."
+}
+,
+{
+  "q": {
+    "type": "text",
+    "value": "For the circuit shown in the fig, the value of $i_N$ and $R_N$: -  <b>(1 Mark)</b><br /><img src=\"/images/q-tn-2-png.png\" alt=\"Circuit figure\" id=\"drawhand-fig\">"
+  },
+  "type": "mcq",
+   "options": [
+  "$2\\,A,\\ 20\\,\\Omega$",
+  "$2\\,A,\\ -20\\,\\Omega$",
+  "$0\\,A,\\ 20\\,\\Omega$",
+  "$0\\,A,\\ -20\\,\\Omega$"
+],
+  "answer": {
+    "type": "text",
+    "value": "$0\\,A,\\ 20\\,\\Omega$"
+  },
+  "marks": 1,
+  "negative": 0.33,
+  "explanation": {
+    "type": "image",
+    "value": "/images/q-tn-2-sol.png"
+  },
+  "youtube": null
+},
+{
+  "q": {
+    "type": "text",
+    "value": "In the following circuit, the maximum power transfer condition is met for the load $R_o$. -  <b>(2 Mark)</b><br /><img src=\"/images/q-tn-3.png\" alt=\"Circuit figure\" id=\"drawhand-fig\">"
+  },
+  "type": "mcq",
+  "options": [
+  "$2\\,\\Omega$",
+  "$3\\,\\Omega$",
+  "$1\\,\\Omega$",
+  "None of the above"
+],
+  "answer": {
+    "type": "text",
+    "value": "$3\\,\\Omega$"
+  },
+  "marks": 2,
+  "negative": 0.66,
+  "explanation": {
+    "type": "image",
+    "value": "/images/q-tn-3-sol.png"
+},
+  "youtube": null
+},
+  {
+    "q": {
+      "type": "text",
+      "value": "A DC circuit has a branch with a $6\\,\\Omega$ resistor carrying a current of $2\\,\\text{A}$. When this resistor is replaced by an ideal independent current source of $2\\,\\text{A}$ pointing in the same direction, what happens to the network? <b>(1 Marks)</b>"
+    },
+    "type": "mcq",
+    "options": [
+      "The voltages and currents throughout the entire network remain completely unchanged.",
+      "The network voltages change because a current source cannot replace a resistor.",
+      "The network becomes unsolvable due to a violation of KVL.",
+      "The currents in the rest of the network change because the branch impedance becomes infinite."
+    ],
+    "answer": {
+      "type": "text",
+      "value": "The voltages and currents throughout the entire network remain completely unchanged."
+    },
+    "marks": 1,
+    "negative": 0.33,
+    "explanation": {
+      "type": "text",
+      "value": "According to the Substitution Theorem, if the current through a branch is known ($2\\,\\text{A}$), that branch can be replaced by an independent current source of equal value ($2\\,\\text{A}$) without altering the voltages and currents in any other part of the network, assuming the network solution remains unique.<br />Therefore, the correct answer is <b>Option A.</b>"
+    },
+    "youtube": null
+  },
+  {
+    "q": {
+      "type": "text",
+      "value": "An AC source has an internal impedance $Z_s = 3 + j4\\,\\Omega$. A load impedance $Z_L = R_L + jX_L$ is connected across its terminals. If both $R_L$ and $X_L$ can be independently varied, the value of load impedance $Z_L$ for maximum power transfer is: <b>(1 Marks)</b>"
+    },
+    "type": "mcq",
+    "options": [
+      "3 - j4$\\Omega$",
+      "3 + j4$\\Omega$",
+      "5 + j0$\\Omega$",
+      "0 - j4$\\Omega$"
+    ],
+    "answer": {
+      "type": "text",
+      "value": "3 - j4$\\Omega$"
+    },
+    "marks": 1,
+    "negative": 0.33,
+    "explanation": {
+      "type": "text",
+      "value": "For maximum power transfer from an AC source with internal impedance $Z_s = R_s + jX_s$ to a load impedance $Z_L = R_L + jX_L$ where both load resistance and reactance are adjustable, the condition for maximum power transfer is the complex conjugate match:<br />$$Z_L = Z_s^* = 3 - j4\\,\\Omega$$<br />Therefore, the correct answer is <b>Option A: 3 - j4 $\\Omega$.</b>"
+    },
+    "youtube": null
+  },
+  {
+    "q": {
+      "type": "text",
+      "value": "An AC voltage source has an internal impedance $Z_s = 6 + j8\\,\\Omega$. If the load connected to the source is restricted to be purely resistive ($X_L = 0$), the value of load resistance $R_L$ for maximum power transfer is: <b>(1 Marks)</b><br />"
+    },
+    "type": "mcq",
+    "options": [
+      "6 $\\Omega$",
+      "8 $\\Omega$",
+      "10 $\\Omega$",
+      "14 $\\Omega$"
+    ],
+    "answer": {
+      "type": "text",
+      "value": "10 $\\Omega$"
+    },
+    "marks": 1,
+    "negative": 0.33,
+    "explanation": {
+      "type": "text",
+      "value": "When the load is purely resistive ($X_L = 0$) and only $R_L$ is variable, the condition for maximum power transfer is that $R_L$ must be equal to the magnitude of the source internal impedance:<br />$$R_L = |Z_s| = \\sqrt{R_s^2 + X_s^2}$$<br />$$R_L = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64}$$ $$=\\sqrt{100} = 10\\,\\Omega$$<br />Therefore, the correct answer is <b>Option C: 10 $\\Omega$.</b>"
+    },
+    "youtube": null
+  },
+  {
+    "q": {
+      "type": "text",
+      "value": "For a linear bilateral DC network, the Norton equivalent current $I_{sc}$ is $5\\,\\text{A}$ and the Norton equivalent resistance $R_N$ is $4\\,\\Omega$. If a load resistor $R_L = 6\\,\\Omega$ is connected across the Norton terminals, the current flowing through the load resistor is: <b>(1 Mark)</b>"
+    },
+    "type": "mcq",
+    "options": [
+      "2 A",
+      "3 A",
+      "5 A",
+      "2.5 A"
+    ],
+    "answer": {
+      "type": "text",
+      "value": "2 A"
+    },
+    "marks": 1,
+    "negative": 0.33,
+    "explanation": {
+      "type": "text",
+      "value": "Using Norton's theorem, the current flowing through the load resistor $R_L$ is given by the current division rule:<br />$$I_L = I_{sc} \\times \\left(\\frac{R_N}{R_N + R_L}\\right)$$<br />Given $I_{sc} = 5\\,\\text{A}$, $R_N = 4\\,\\Omega$, and $R_L = 6\\,\\Omega$:<br />$$I_L = 5 \\times \\left(\\frac{4}{4 + 6}\\right) = 5 \\times \\frac{4}{10} = 2\\,\\text{A}$$<br />Therefore, the correct answer is <b>Option A: 2 A.</b>"
+    },
+    "youtube": null
+  },
+  {
+  "q": {
+    "type": "text",
+    "value": "In the following circui, the value of $R_{\\text{th}}$ at terminal ab is: -  <b>(2 Mark)</b><br /><img src=\"/images/q-tn-1-png.png\" alt=\"Circuit figure\" id=\"drawhand-fig\">"
+  },
+  "type": "mcq",
+  "options": [
+    "$-3 \\Omega$",
+    "$\\frac{9}{8} \\Omega$",
+    "$-\\frac{8}{3} \\Omega$",
+    "None of the above"
+  ],
+  "answer": {
+    "type": "text",
+    "value":  "$-\\frac{8}{3} \\Omega$"
+  },
+  "marks": 2,
+  "negative": 0.66,
+  "explanation": {
+   "type": "image",
+   "value": "/images/nt-sol-2.png"
+  },
+  "youtube": null
+},
+{
+    "q": {
+      "type": "text",
+      "value": "In the circuit shown, what value of RL maximizes the power delivered to $R_L$ <br /> <img src=\"/images/q-tn-5.png\" alt=\"Ideal transformer circuit\" id=\"drawhand-fig\"><b>(2 Marks)</b>"
+    },
+    "type": "mcq",
+    "options": [
+     "$2.4 \\Omega$",
+    "$\\frac{8}{3} \\Omega$",
+    "$4 \\Omega$",
+    "$6 \\Omega$"
+    ],
+    "answer": {
+      "type": "text",
+      "value": "$4 \\Omega$"
+    },
+    "marks": 2,
+    "negative": 0.66,
+    "explanation": {
+      "type": "text",
+      "value": "For maximum power transfer, the load resistance $R_L$ must be equal to the Thevenin resistance $R_{eq}$, i.e., $R_L=R_{eq}$.<br />The open-circuit and short-circuit configurations are shown below:<br /><img src=\"/images/q-tn-5-sol-a.png\" alt=\"Open-circuit configuration\" id=\"drawhand-fig\"><img src=\"/images/q-tn-5-sol-b.png\" alt=\"Short-circuit configuration\" id=\"drawhand-fig\"><br />The open-circuit voltage is:<br />$$V_{oc}=100\\,\\text{V}$$<br />From the figure, calculate the short-circuit current $I_{sc}$. The Thevenin resistance is:<br />$$R_{th}=\\frac{V_{oc}}{I_{sc}}=4\\,\\Omega$$<br />For maximum power transfer:<br />$$R_L=R_{th}=4\\,\\Omega$$<br />Hence, option (C) is correct."
+    },
+    "youtube": null
+  },
+  {
+  "q": {
+    "type": "text",
+    "value": "If the secondary winding of the ideal transformer shown in the figure has 40 turns, the number of turns in the primary winding for maximum power transfer to the 2 $\\Omega$ resistor will be: <b>(2 Mark)</b><br /><img src=\"/images/q-tn-4.png\" alt=\"Ideal transformer circuit\" id=\"drawhand-fig\">"
+  },
+  "type": "mcq",
+  "options": [
+    "20",
+    "40",
+    "80",
+    "160"
+  ],
+  "answer": {
+    "type": "text",
+    "value": "80"
+  },
+  "marks": 2,
+  "negative": 0.66,
+  "explanation": {
+    "type": "text",
+    "value": "For maximum power transfer, the load resistance must be equal to the equivalent resistance of the source network as seen from the load terminals. The $8\\,\\Omega$ resistor on the primary side is reflected to the secondary side as:<br />$$R_{\\text{eq}}=\\left(\\frac{N_s}{N_p}\\right)^2 R_p$$<br />Here, $N_s=40$, $R_p=8\\,\\Omega$, and $R_L=2\\,\\Omega$. For maximum power transfer:<br />$$R_L=R_{\\text{eq}}$$<br />$$2=\\left(\\frac{40}{N_p}\\right)^2 8$$<br />$$\\frac{1}{4}=\\left(\\frac{40}{N_p}\\right)^2$$<br />Taking the square root:<br />$$\\frac{1}{2}=\\frac{40}{N_p}$$<br />$$N_p=80\\text{ turns}$$<br />Therefore, the correct answer is <b>Option C: 80 turns.</b>"
+  },
+  "youtube": null
+}
+]
+}
