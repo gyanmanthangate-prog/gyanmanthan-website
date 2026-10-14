@@ -172,11 +172,11 @@ const timerEl = timerBox;
       currentUser = user;
       localStorage.setItem("userUid", user.uid);
       if (user.displayName) localStorage.setItem("userName", user.displayName);
-      checkAttemptAndLoadLeaderboard(user);
+      checkAttemptAndLoadLeaderboard(user); //Cooment for deactivating login checks
     } else {
       currentUser = null;
       console.warn("User is not authenticated with Firebase Auth.");
-      checkAttemptAndLoadLeaderboard(null);
+      checkAttemptAndLoadLeaderboard(null); //Cooment for deactivating login checks
     }
   });
 
