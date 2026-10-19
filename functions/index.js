@@ -13,14 +13,14 @@ const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'gate@gyanmanthanclasses.com',
-        pass: 'geuu ofqa nkgs oazm' // <-- Yahan apna 16-digit Google App Password daalein (bina spaces ke)
+        pass: 'geuu ofqa nkgs oazm' // Aapka 16-digit Google App Password
     }
 });
 
 const ADMIN_EMAIL = 'gate@gyanmanthanclasses.com';
 
-// 1. New Request Notification (Admin ko email)
-exports.onNewUserRequest = onDocumentCreated("users/{userId}", async (event) => {
+// 1. New Request Notification (Admin ko email) - [Fixed double slash and path]
+exports.onNewUserRequest = onDocumentCreated("students/{userId}", async (event) => {
     const snapshot = event.data;
     if (!snapshot) return;
     const newUser = snapshot.data();
@@ -29,7 +29,7 @@ exports.onNewUserRequest = onDocumentCreated("users/{userId}", async (event) => 
         from: 'gate@gyanmanthanclasses.com',
         to: ADMIN_EMAIL,
         subject: 'New Test Access Request Received',
-        text: `Ek naye user ne test access ke liye request bheji hai!\n\nUser Email: ${newUser.email || 'N/A'}\n\nKripya Firebase Console par check karke enable karein.`
+        text: `Ek naye user ne test access ke liye request bheji hai!\n\nUser Name: ${newUser.name || 'N/A'}\nUser Email: ${newUser.email || 'N/A'}\n\nKripya Firebase Console par check karke enable karein.`
     };
 
     try {
@@ -40,8 +40,8 @@ exports.onNewUserRequest = onDocumentCreated("users/{userId}", async (event) => 
     }
 });
 
-// 2. Status Change Notification (User ko enable/disable email + Admin CC)
-exports.onUserStatusChange = onDocumentUpdated("users/{userId}", async (event) => {
+// 2. Status Change Notification (User ko enable/disable email + Admin CC) - [Fixed path to 'students']
+exports.onUserStatusChange = onDocumentUpdated("students/{userId}", async (event) => {
     const change = event.data;
     if (!change) return;
 
