@@ -1,7 +1,7 @@
 // Firebase setup
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
 import { getAuth, GoogleAuthProvider, FacebookAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
-import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot, connectFirestoreEmulator } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
 // Firebase config
 const firebaseConfig = {
@@ -17,7 +17,16 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore();
+// Initialize Firebase ke baad yeh jodein:
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+const db = getFirestore();
 
+if (window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost") {
+    connectFirestoreEmulator(db, "127.0.0.1", 8080);
+    console.log("Connected to Local Firestore Emulator 🚀");
+}
+firebase emulators:start
 document.addEventListener("DOMContentLoaded", () => {
     const loginButtons = document.getElementById('login-buttons');
     const commentForm = document.getElementById('comment-form');
